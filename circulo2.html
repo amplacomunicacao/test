@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+
+	body{ background: #ccc}
+
+
+a {
+	/*-webkit-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;*/
+}
+
+a{
+  	opacity: 0.5;
+}
+svg circle.border {
+	fill: none;
+	stroke: white;
+	stroke-width: 5;
+	stroke-dasharray: 1000;
+  	stroke-dashoffset: 1000;
+}
+svg circle.border-opacity {
+	fill: none;
+	stroke: white;
+	stroke-width: 5;
+  	opacity: 0.5;
+}
+
+a.anima{opacity: 1;}
+a.anima circle.border{ animation: dash 10s linear forwards; }
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+	</style>
+</head>
+<body>
+	
+	<a href="#">
+		<svg height="46" width="46">
+			<circle cx="23" cy="23" r="20" class="border-opacity" />
+			<circle cx="23" cy="23" r="20" class="border" />
+			<circle cx="23" cy="23" r="6" fill="white" />
+		</svg> 
+	</a>
+	<a href="#">
+		<svg height="46" width="46">
+			<circle cx="23" cy="23" r="20" class="border-opacity" />
+			<circle cx="23" cy="23" r="20" class="border" />
+			<circle cx="23" cy="23" r="6" fill="white" />
+		</svg> 
+	</a>
+	<a href="#">
+		<svg height="46" width="46">
+			<circle cx="23" cy="23" r="20" class="border-opacity" />
+			<circle cx="23" cy="23" r="20" class="border" />
+			<circle cx="23" cy="23" r="6" fill="white" />
+		</svg> 
+	</a>
+
+	<script type="text/javascript" src="js/vendor/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript">
+	$( function(){
+		$('a').click(function(event) {
+			event.preventDefault();
+
+			$('a').removeClass('anima');
+			$(this).addClass('anima');
+		});
+	});
+	</script>
+</body>
+</html>

@@ -135,7 +135,7 @@ header{
 		height: 165px;
 		position: absolute;
 		top: 0;
-		z-index: 2;
+		z-index: 5;
 
 		.row1{
 			height: 110px;
@@ -207,6 +207,7 @@ header{
 		height: 100%;
 		position: absolute;
 		top: 0;
+		overflow: hidden;
 		
 		.c-img, .c-img ul, .c-img li{
 			display: block;
@@ -216,12 +217,59 @@ header{
 		.c-img li{
 			background-size: cover;
 			background-position: center center;
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: none;
 		}
+		.c-img li:first-child{ display: block;}
 		.c-img img{ display: none;}
+
+		.c-link{
+			position: absolute;
+			bottom: 75px;
+			right: 0;
+			z-index: 2;
+
+			li{ display: inline-block; margin-right: 20px;}
+		}
 	}
 }
 
+.banner .c-link-circulo{
+	a{
+  		opacity: 0.5;
+	}
+	svg circle.border {
+		fill: none;
+		stroke: white;
+		stroke-width: 5;
+		stroke-dasharray: 1000;
+	  	stroke-dashoffset: 1000;
+	}
+	svg circle.border-opacity {
+		fill: none;
+		stroke: white;
+		stroke-width: 5;
+	  	opacity: 0.5;
+	}
 
+	a.anima{opacity: 1;}
+	a.anima circle.border{
+		-webkit-animation: dash 10s linear forwards;
+		animation: dash 10s linear forwards;
+	}
+	@-webkit-keyframes dash {
+	  to {
+	    stroke-dashoffset: 0;
+	  }
+	}
+	@keyframes dash {
+	  to {
+	    stroke-dashoffset: 0;
+	  }
+	}
+}
 
 /* Produtos
    ========================================================================== */
