@@ -23,51 +23,165 @@
 
 		<h1 class="hidden">Vitarella</h1>
 
-        <header>
+        <header class="slide">
 			<div class="menu">
 				<div class="row1">
 					<div class="content">
 						<img src="img/marca-1.png" height="72" width="126" alt="marca">
 						<nav>
 							<ul>
-								<li><a href="#">Sobre a vitarella</a></li>
-								<li><a href=""></a></li>
-								<li><a href=""></a></li>
+								<li><a href="#"><span class="sprite-1 icon-sobre"></span>&nbsp;&nbsp; Sobre a vitarella</a></li>
+								<li><a href="#"><span class="sprite-1 icon-imprensa"></span>&nbsp;&nbsp; Imprensa</a></li>
+								<li><a href="#"><span class="sprite-1 icon-contato"></span>&nbsp;&nbsp; Fale Conosco</a></li>
+								<li><a href="#" class="sprite-1 login-1 indent">Efetuar login</a></li>
+								<li><a href="#" class="sprite-1 busca-1 indent">pesquisar</a></li>
 							</ul>
 						</nav>
 					</div>					
 				</div>
 				<div class="row2">
 					<div class="bg"></div>
+					<div class="content">
+						<nav>
+							<ul>
+								<li>
+									<span class="linha-l"></span>
+									<a href="#"><span class="sprite-1 icon-produto"></span>&nbsp;&nbsp; Nosso Produtos</a>
+								</li>
+								<li>
+									<span class="linha-l"></span>
+									<a href="#"><span class="sprite-1 icon-receita"></span>&nbsp;&nbsp; Nossas Receitas</a>
+								</li>
+								<li>
+									<span class="linha-l"></span>
+									<a href="#"><span class="sprite-1 icon-aplicativo"></span>&nbsp;&nbsp; Dicas e Palicativos</a>
+									<span class="linha-r"></span>
+								</li>
+							</ul>
+						</nav>
+					</div>
 				</div>
 			</div>
-			<div class="banner">
-				<h2>banner</h2>
+			<div class="banner" id="banner">				
+				<div class="c-img">
+					<ul>
+						<li style="background-image: url(img/banner-1.jpg)"><img src="img/banner-1.jpg" alt="banner"></li>
+						<li><img src="" alt=""></li>
+						<li><img src="" alt=""></li>
+					</ul>
+				</div>
 			</div>
         </header>
 
-        <section class="produtos">
-        	<h2>produtos</h2>
+        <section class="produtos slide">
+        	<h2 class="hidden">produtos</h2>
+
+        	<div class="cena-produto" id="cena-produto" style="background-image: url(img/produto-1.jpg)">
+        		
+        	</div>
+        	<div class="carrossel">
+        		<ul>
+        			<li>
+        				<img src="img/produto-1-thumb.jpg" height="160" width="141" alt="">
+        				<p>Cream Cracker</p>
+        				<span class="linha"></span>
+        			</li>
+        		</ul>
+        	</div>
         </section>
 
-        <section class="receitas">
-        	<h2>receitas</h2>
+        <section class="receitas slide">
+        	<h2 class="hidden">receitas</h2>
+        	<div id="cena-receita" class="cena-receita">
+        		
+				<div class="banner" id="banner-receita">
+					<div class="c-img">
+						<ul>
+							<li style="background-image: url(img/receita-1.jpg)">
+							</li>
+						</ul>
+					</div>
+				</div>
+
+        	</div>
         </section>
 
-        <section class="aplicativos">
-        	<h2>aplicativos</h2>
+        <section class="aplicativos slide">
+        	<h2 class="hidden">aplicativos</h2>
+
+			<div class="banner" id="banner-aplicativo">	
+				<div class="c-img">
+					<ul>
+						<li style="background-image: url(img/aplicativo-1.jpg)"></li>
+					</ul>
+				</div>
+			</div>
         </section>
 
         <section class="servicos">
-        	<h2>sevicos</h2>
+        	<h2 class="hidden">sevicos</h2>
+			<div class="banner" id="banner-servico">
+				<ul>
+					<li>
+						<div class="box">
+							<div class="txt">
+								<h3>Como manter <br>a geladeira em ordem</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus impedit corporis dolor expedita vel labore similique ipsam nostrum minima nulla. Harum obcaecati nisi amet possimus non neque enim assumenda, ut.</p>
+								<a href="#" class="sprite-1 ver-mais">ver mais</a>
+							</div>
+						</div>
+						<div class="box right">
+							<img src="img/sevicos-2.jpg" alt="imagem">
+						</div>
+						<div class="clear"></div>
+					</li>
+				</ul>
+			</div>
         </section>
 
         <section class="noticias">
-        	<h2>notícias</h2>
+        	<h2 class="hidden">notícias</h2>
+			<div class="banner" id="banner-noticia">
+				<ul>
+					<li>
+						<div class="box">
+							<img src="img/noticia-1.jpg" alt="imagem">
+							<a href="#" class="sprite-1 play indent">vídeo</a>
+						</div>
+						<div class="box right">
+							<div class="txt">
+								<h3>Dia das mães <br>especial Vitarella</h3>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus impedit corporis dolor expedita vel labore similique ipsam nostrum minima nulla. Harum obcaecati nisi amet possimus non neque enim assumenda, ut.</p>
+							</div>
+						</div>
+						<div class="clear"></div>
+					</li>
+				</ul>
+			</div>
         </section>
 
         <footer>
-        	<h2>foooter</h2>
+        	<h2 class="hidden">foooter</h2>
+        	<div class="content">
+        		<nav>
+        			<a href="#">Sobre</a> <span class="sprite-1 ponto"></span>
+        			<a href="#">Imprensa</a> <span class="sprite-1 ponto"></span>
+        			<a href="#">Contato</a>
+        			<br><br>
+        			<a href="#" class="sprite-1 facebook">Facebook</a>
+        			<a href="#" class="sprite-1 twitter">Twitter</a>
+        			<a href="#" class="sprite-1 youtube">Youtube</a>
+        		</nav>
+        		<br>
+        		<p>
+        			Rodovia BR 101 Sul - Km 84 - Prazeres <br>
+					Jaboatão dos Guararapes - CEP 54345-160 <br>
+					0800 704 5664
+        		</p>
+        	</div>
+        	<div class="row">
+        		<p>Copyright® Vitarella - Todos os direitos reservados</p>
+        	</div>
         </footer>
 
 
@@ -76,6 +190,7 @@
 
 
         <script src="js/vendor/jquery-1.11.1.min.js"></script>
+        <script src="http://www.ampla.com.br/site_constelacao/v2/libs/pageSlider/js/jquery-mousewheel.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
 

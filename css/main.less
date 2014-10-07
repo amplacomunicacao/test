@@ -1,4 +1,3 @@
-
 /* ==========================================================================
    Reset CSS
    ========================================================================== */
@@ -21,8 +20,84 @@ html, body{height: 100%;}
 
 .clear{clear: both;}
 .hidden{display: none;}
+.indent{text-indent: -9999px;}
 
-body{font:12px Arial, Helvetica, sans-serif; color:#000; background:#fff;}
+body{font:10px 'TitilliumWeb-Regular', Arial, Helvetica, sans-serif; color:#999; background:#fff;}
+
+
+
+
+
+/* ==========================================================================
+   Font Face
+   ========================================================================== */
+
+/* Webfont: TitilliumWeb-Regular */
+@font-face {
+    font-family: 'TitilliumWeb-Regular';
+    src: url('../fonts/TitilliumWeb-Regular/TitilliumWeb-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/TitilliumWeb-Regular/TitilliumWeb-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/TitilliumWeb-Regular/TitilliumWeb-Regular.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/TitilliumWeb-Regular/TitilliumWeb-Regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/TitilliumWeb-Regular/TitilliumWeb-Regular.svg#TitilliumWeb-Regular') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: TitilliumWeb-Light */
+@font-face {
+    font-family: 'TitilliumWeb-Light';
+    src: url('../fonts/TitilliumWeb-Light/TitilliumWeb-Light.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/TitilliumWeb-Light/TitilliumWeb-Light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/TitilliumWeb-Light/TitilliumWeb-Light.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/TitilliumWeb-Light/TitilliumWeb-Light.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/TitilliumWeb-Light/TitilliumWeb-Light.svg#TitilliumWeb-Light') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+/* Webfont: TitilliumWeb-LightItalic */
+@font-face {
+    font-family: 'TitilliumWeb-LightItalic';
+    src: url('../fonts/TitilliumWeb-LightItalic/TitilliumWeb-LightItalic.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/TitilliumWeb-LightItalic/TitilliumWeb-LightItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/TitilliumWeb-LightItalic/TitilliumWeb-LightItalic.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/TitilliumWeb-LightItalic/TitilliumWeb-LightItalic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/TitilliumWeb-LightItalic/TitilliumWeb-LightItalic.svg#TitilliumWeb-LightItalic') format('svg'); /* Legacy iOS */
+    font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+
+
+/* ==========================================================================
+   Sprite
+   ========================================================================== */
+.sprite-1 {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../img/sprite-1.png);}
+
+.banner-left {width:67px; height:66px; background-position: -428px -183px}
+.banner-right {width:67px; height:66px; background-position: -359px -183px}
+.busca-1 {width:53px; height:53px; background-position: -437px -2px}
+.facebook {width:88px; height:89px; background-position: -347px -2px}
+.filtrar-receita {width:166px; height:53px; background-position: -179px -2px}
+.google {width:88px; height:89px; background-position: -179px -112px}
+.icon-aplicativo {width:30px; height:30px; background-position: -437px -57px}
+.icon-contato {width:18px; height:13px; background-position: -2px -234px}
+.icon-imprensa {width:14px; height:17px; background-position: -341px -93px}
+.icon-produto {width:20px; height:29px; background-position: -320px -57px}
+.icon-receita {width:32px; height:27px; background-position: -449px -89px}
+.icon-sobre {width:19px; height:17px; background-position: -320px -93px}
+.login-1 {width:166px; height:53px; background-position: -2px -179px}
+.play {width:175px; height:175px; background-position: -2px -2px}
+.ponto {width:3px; height:15px; background-position: -492px -2px}
+.twitter {width:88px; height:88px; background-position: -359px -93px}
+.ver-mais {width:91px; height:29px; background-position: -170px -203px}
+.ver-todos-2 {width:139px; height:53px; background-position: -179px -57px}
+.youtube {width:88px; height:88px; background-position: -269px -112px}
+
 
 
 
@@ -41,6 +116,10 @@ header, section, footer{
 	position: relative;
 }
 
+.font1{ font-family: 'TitilliumWeb-Regular'; }
+.font2{ font-family: 'TitilliumWeb-Light'; }
+.font3{ font-family: 'TitilliumWeb-LightItalic'; }
+
 /* ==========================================================================
    Home
    ========================================================================== */
@@ -49,14 +128,42 @@ header, section, footer{
    ========================================================================== */
 header{
 	height: 100%;
+	position: relative;
 
 	.menu{
+		width: 100%;
 		height: 165px;
+		position: absolute;
+		top: 0;
+		z-index: 2;
 
 		.row1{
 			height: 110px;
 			background: #ffc114;
 			img{ margin-top: 15px;}
+
+			nav{
+				float: right;
+				ul{ margin-top: 27px;}
+				li{ display: inline-block; float: left; margin-right: 19px;}
+				li:nth-child(1), li:nth-child(2), li:nth-child(3){margin-top: 20px;}
+				li:last-child{margin-right: 0;}
+				a{
+					text-decoration: none;
+					text-transform: uppercase;
+					color: #fff;
+					font-size: 1.4em;
+				}
+
+				.icon-sobre{
+					float: left;
+				    margin-top: 4px;
+				}
+				.icon-imprensa{
+					float: left;
+				    margin-top: 3px;
+				}
+			}
 		}
 		.row2{
 			height: 55px;
@@ -68,11 +175,49 @@ header{
 				width: 100%;
 				height: 100%;
 			}
+			
+			nav{
+				li{
+					display: inline-block; float: left; width: 33.3%; height: 55px; box-sizing: border-box; text-align: center; padding-top: 12px; position: relative;
+					&:hover{ border-bottom: 2px solid #ffcc00;}
+				}
+				a{
+					text-decoration: none;
+					text-transform: uppercase;
+					color: #fff;
+					font-size: 2em;
+					display: block;
+				}
+				.linha-l, .linha-r{
+					display: block;
+					width: 1px;
+					height: 20px;
+					background: #fff;
+					position: absolute;
+					top: 20px;
+					left: 0;
+				}
+				.linha-r{ left: auto; right: 0;}
+			}
 		}
 	}
 
 	.banner{
+		width: 100%;
 		height: 100%;
+		position: absolute;
+		top: 0;
+		
+		.c-img, .c-img ul, .c-img li{
+			display: block;
+			width: 100%;
+			height: 100%;
+		}
+		.c-img li{
+			background-size: cover;
+			background-position: center center;
+		}
+		.c-img img{ display: none;}
 	}
 }
 
@@ -82,13 +227,86 @@ header{
    ========================================================================== */
 .produtos{
 	height: 100%;
+	position: relative;
+	
+
+	.cena-produto{
+		width: 100%;
+		height: 100%;
+		position: absolute;		
+		background-size: cover;
+		background-position: center center;
+	}
+
+	.carrossel{
+		overflow: hidden;
+		width: 100%;
+		height: 250px;
+		position: absolute;	
+		z-index: 2;
+		bottom: 0;
+		background: #fff;
+
+		ul{ width: 100%; height: 250px;}
+		li{
+			width: 250px;
+			height: 250px;
+			float: left;
+			position: relative;
+			text-align: center;
+
+			p{
+				margin-top: 30px;
+				display: table-cell;
+			    height: 50px;
+			    margin-top: 30px;
+			    text-align: center;
+			    vertical-align: middle;
+			    width: 250px;
+				font-size: 1.6em;
+				text-transform: uppercase;
+			}
+
+			.linha{
+				display: block;
+				width: 1px;
+				height: 40px;
+				background: #999;
+				position: absolute;
+				top: 105px;
+				right: 0;
+			}
+		}
+
+	}
+
+
 }
 
 
 /* Receitas
    ========================================================================== */
-.produtos{
+.receitas{
 	height: 100%;
+	position: relative;
+
+	.cena-receita, .banner, .c-img{
+		width: 100%;
+		height: 100%;
+		position: relative;		
+	}
+
+	.banner{
+
+		li{
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background-size: cover;
+			background-position: center center;
+		}
+	}	
 }
 
 
@@ -96,27 +314,127 @@ header{
    ========================================================================== */
 .aplicativos{
 	height: 560px;
+	position: relative;
+
+	.banner, .c-img{
+		width: 100%;
+		height: 100%;
+		position: relative;		
+	}
+
+	.banner{
+
+		.c-img li{
+			display: block;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			background-repeat: no-repeat;
+			background-position: center center;
+		}
+	}
 }
 
 
 /* Servicos
    ========================================================================== */
 .servicos{
-	height: 560px;
+	max-height: 560px;
+	position: relative;
+
+	.banner, ul, li{
+		width: 100%;
+		height: 100%;
+		position: relative;		
+		display: block;
+	}
+
+	.banner{
+
+		.box{
+			width: 50%;
+			/*height: 100%;*/
+			float: left;
+			position: relative;
+
+			img{
+				width: 100%;
+				height: 100%;
+				min-width: 500px;
+				min-height: 280px;
+			}
+
+			.txt{
+				width: 500px;
+				position: absolute;
+				right: 85px;
+
+				h3{
+					.font3;
+					font-size: 4.8em;
+					line-height: 1.2em;
+					text-transform: uppercase;
+					margin-bottom: 30px;
+				}
+				p{ font: 1.6em Justus, Times; }
+			}
+		}
+		.box.right{ float: right; }
+	}
 }
 
 
 /* Noticias
    ========================================================================== */
 .noticias{
-	height: 560px;
+
+	&:extend(.servicos all);
+
+	.banner .box .txt{ right: auto; left: 50px;}
+
+	.play{
+		position: absolute;
+		top: 27%;
+		left: 37%;
+		z-index: 2;
+	}
 }
 
 
 /* Rodape
    ========================================================================== */
 footer{
-	height: 375px;
+	background: #494949;
+	.font2;
+	font-size: 2em;
+	color: #fff;
+
+	.content{
+		width: 445px;
+		padding: 50px 0 40px;
+		text-align: center;
+	}
+
+	a{
+		color: #fff;
+		text-transform: uppercase;
+		text-decoration: none;
+	}
+
+	.ponto{ margin: 0 15px;}
+
+	.sprite-1{
+		.indent;
+		margin-right: 25px;
+	}
+
+	.row{
+		background: #2e2e2e;
+		height: 40px;
+		.font3;
+		font-size: 0.5em;
+		p{ text-align: center; line-height: 40px; text-transform: uppercase;}
+	}
 }
 
 
