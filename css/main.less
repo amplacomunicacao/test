@@ -78,25 +78,31 @@ body{font:10px 'TitilliumWeb-Regular', Arial, Helvetica, sans-serif; color:#999;
    ========================================================================== */
 .sprite-1 {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../img/sprite-1.png);}
 
-.banner-left {width:67px; height:66px; background-position: -428px -183px}
-.banner-right {width:67px; height:66px; background-position: -359px -183px}
-.busca-1 {width:53px; height:53px; background-position: -437px -2px}
-.facebook {width:88px; height:89px; background-position: -347px -2px}
-.filtrar-receita {width:166px; height:53px; background-position: -179px -2px}
-.google {width:88px; height:89px; background-position: -179px -112px}
-.icon-aplicativo {width:30px; height:30px; background-position: -437px -57px}
-.icon-contato {width:18px; height:13px; background-position: -2px -234px}
-.icon-imprensa {width:14px; height:17px; background-position: -341px -93px}
-.icon-produto {width:20px; height:29px; background-position: -320px -57px}
-.icon-receita {width:32px; height:27px; background-position: -449px -89px}
-.icon-sobre {width:19px; height:17px; background-position: -320px -93px}
-.login-1 {width:166px; height:53px; background-position: -2px -179px}
+.banner-left {width:67px; height:66px; background-position: -533px -92px}
+.banner-right {width:67px; height:66px; background-position: -464px -93px}
+.busca-1 {width:53px; height:53px; background-position: -734px -84px}
+.facebook {width:88px; height:89px; background-position: -437px -2px}
+.filtrar-receita {width:166px; height:53px; background-position: -179px -57px}
+.google {width:88px; height:89px; background-position: -347px -2px}
+.icon-aplicativo {width:30px; height:30px; background-position: -751px -33px}
+.icon-contato {width:18px; height:13px; background-position: -384px -93px}
+.icon-imprensa {width:14px; height:17px; background-position: -368px -93px}
+.icon-produto {width:20px; height:29px; background-position: -817px -33px}
+.icon-receita {width:32px; height:27px; background-position: -783px -33px}
+.icon-sobre {width:19px; height:17px; background-position: -347px -93px}
+.login-1 {width:166px; height:53px; background-position: -179px -2px}
 .play {width:175px; height:175px; background-position: -2px -2px}
-.ponto {width:3px; height:15px; background-position: -492px -2px}
-.twitter {width:88px; height:88px; background-position: -359px -93px}
-.ver-mais {width:91px; height:29px; background-position: -170px -203px}
-.ver-todos-2 {width:139px; height:53px; background-position: -179px -57px}
-.youtube {width:88px; height:88px; background-position: -269px -112px}
+.ponto {width:3px; height:15px; background-position: -404px -93px}
+.seta-dir {width:42px; height:80px; background-position: -690px -92px}
+.seta-dir:hover {width:42px; height:80px; background-position: -707px -2px}
+.seta-esq {width:42px; height:80px; background-position: -602px -92px}
+.seta-esq:hover {width:42px; height:80px; background-position: -646px -92px}
+.twitter {width:88px; height:88px; background-position: -617px -2px}
+.ver-mais {width:91px; height:29px; background-position: -734px -139px}
+.ver-mais-2 {width:91px; height:29px; background-position: -751px -2px}
+.ver-mais-3 {width:142px; height:57px; background-position: -179px -112px}
+.ver-todos-2 {width:139px; height:53px; background-position: -323px -112px}
+.youtube {width:88px; height:88px; background-position: -527px -2px}
 
 
 
@@ -401,6 +407,28 @@ header{
 
 	.banner{
 
+		.content{ text-align: center; }
+
+		.c-txt{			
+			position: absolute;
+			z-index: 2;
+			top: 90px;
+
+			color: #fff;
+			h3{
+				.font3;
+				font-size: 5em;
+				text-transform: uppercase;
+				margin: 35px 0 15px;
+			}
+			p{
+				font: 1.6em Justus;
+				width: 400px;
+				margin: 0 auto;
+				margin-bottom: 15px;
+			}
+		}
+
 		.c-img li{
 			display: block;
 			width: 100%;
@@ -409,6 +437,16 @@ header{
 			background-repeat: no-repeat;
 			background-position: center center;
 		}
+
+		a.seta-esq, a.seta-dir{
+			position: absolute;
+			z-index: 2;
+			top: 220px;
+			left: 50%;
+			margin-left: -545px;
+			text-indent: -9999px;
+		}
+		a.seta-dir{ margin-left: 545px; }
 	}
 }
 
@@ -458,6 +496,11 @@ header{
 		}
 		.box.right{ float: right; }
 	}
+
+	.ver-mais-2{
+		margin-left: 83%;
+		text-indent: -9999px;
+	}
 }
 
 
@@ -475,6 +518,9 @@ header{
 		left: 37%;
 		z-index: 2;
 	}
+
+	.ver-mais-2{ margin-left: 25px;}
+	p{ margin-left: 40px;}
 }
 
 

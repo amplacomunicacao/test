@@ -192,6 +192,11 @@
             <filename>youtube.png</filename>
             <filename>ponto.png</filename>
             <filename>ver-mais-2.png</filename>
+            <filename>seta-dir-hover.png</filename>
+            <filename>seta-dir.png</filename>
+            <filename>seta-esq-hover.png</filename>
+            <filename>seta-esq.png</filename>
+            <filename>ver-mais-3.jpg</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
