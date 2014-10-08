@@ -6,7 +6,10 @@ $( function(){
     var receitaCarrossel = false;
 
 
-	// scrool nas etapas
+    /* banner aplicativos */
+    $('#banner-aplicativo').carrossel2();
+
+	/* scrool nas etapas */
 	var scrollingScreen = false;
 	$(".slide").mousewheel(function (event, delta) {
 
@@ -151,6 +154,92 @@ $( function(){
         }
 
         $(window).bind('load', iniIntervalo);
+
+        return this;
+    };
+}(jQuery));
+
+
+
+/*
+    carrossel Aplicativos
+*/
+(function($){
+
+    $.fn.carrossel2 = function(options){
+
+        var self = this,
+            total = 0,
+            clique = false,
+            intervalo;
+
+        total = this.find('.c-img ul li').length;
+
+
+        // click anterior
+        this.find('a.last').click( function(event) {
+            
+            event.preventDefault();
+
+            clearInterval(intervalo);
+
+            var i = self.find('.c-img').find('.ativo').index();
+
+            if (i > 0){
+            	// retira a ativo e pega a lista
+                var li = self.find('.c-img ul li');
+                $(li).css('z-index', '2').removeClass('ativo');
+
+                // anima
+                li.eq(i-1).css({'left': '-100%', 'z-index': '2'}).addClass('ativo').show(0).animate({ left: 0}, 800, "easeInOutQuart");
+                li.eq(i).animate({ left: '100%'}, 800, "easeInOutQuart");
+
+                // exibe o texto
+                // self.find('.c-txt p').eq(i-1).addClass('ativo').fadeIn();
+            }
+
+        });
+
+
+        // click proximo
+        this.find('a.next').click( function(event) {
+            
+            event.preventDefault();
+
+            clearInterval(intervalo);
+
+            clickNext();
+        });
+
+        function clickNext(){
+
+            var i = self.find('.c-img').find('.ativo').index();
+
+            if (i+1 < total){
+                // retira a ativo e pega a lista
+                var li = self.find('.c-img ul li');
+                $(li).css('z-index', '2').removeClass('ativo');
+
+                // anima
+                li.eq(i+1).css({'left': '100%', 'z-index': '2'}).addClass('ativo').show(0).animate({ left: 0}, 800, "easeInOutQuart");
+                li.eq(i).animate({ left: '-100%'}, 800, "easeInOutQuart");
+
+                // exibe o texto
+                // self.find('.c-txt p').eq(i-1).addClass('ativo').fadeIn();
+            }
+        }
+
+
+        // passando automaticamente
+        function iniIntervalo(){
+            intervalo = setInterval( function(){
+                
+                clickNext();
+
+            }, 4000);
+        }
+
+        // $(window).bind('load', iniIntervalo);
 
         return this;
     };
