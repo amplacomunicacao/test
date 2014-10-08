@@ -1,0 +1,14 @@
+
+
+- “		aplicativos
+- “		serviços
+- “		notícias
+
+- carrossel receitas
+- quando não estiver na seção Parar o carrossel
+- layout fluido
+- corrigir bolinhas dos carrosseis
+- produtos: hover (?)
+
+
+22:40
