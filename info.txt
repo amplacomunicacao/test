@@ -1,13 +1,14 @@
 
 
-- “		aplicativos
+- “		aplicativos (animar texto)
 - “		serviços
 - “		notícias
-
-- carrossel receitas
-- layout fluido
-- corrigir bolinhas dos carrosseis
+- carrossel Receitas - iniciar com o scroll
 - produtos: hover (?)
 
 
-22:40
+http://www.awwwards.com/touchswipe-a-jquery-plugin-for-touch-and-gesture-based-interaction.html
+https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
+http://areaaperta.com/nicescroll/
+
+http://www.queness.com/post/11755/11-multi-touch-and-touch-events-javascript-libraries

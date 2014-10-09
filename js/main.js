@@ -3,11 +3,12 @@ $( function(){
 
 	/* banner topo */
     $('#banner').carrossel1();
-    var receitaCarrossel = false;
+    var receitaCarrossel = false;    
 
 
     /* banner aplicativos */
     $('#banner-aplicativo').carrossel2();
+
 
 	/* scrool nas etapas */
 	var scrollingScreen = false;
@@ -51,6 +52,53 @@ $( function(){
 	    return false; 
 	});
 
+
+
+    /* Mobile
+       ============================================================================== */
+    /* banner topo */
+    $("#banner, #banner-receita").swipe({
+      swipe:function(event, direction, distance, duration, fingerCount) {
+        // $(this).text("You swiped " + direction );
+
+        var i = $(this).find('.c-img ul li.ativo').index();
+
+        if (direction === 'left' && i < $(this).find('.c-img ul li').length ){
+                $(this).find('.c-link ul li').eq(i+1).find('a').trigger('click');
+        
+        }else if (direction === 'right' && i > 0 ){
+                $(this).find('.c-link ul li').eq(i-1).find('a').trigger('click');
+        
+        }/*else if(direction === 'up'){
+            // var top = $(".slide").eq(1).offset().top;
+            $("html,body").animate({ scrollTop: '+=300' }, "easeInOutQuint");
+        }*/
+      },
+    allowPageScroll: 'vertical'});
+
+
+    /* banner receitas */    
+    $("#banner-aplicativo").swipe({
+      swipe:function(event, direction, distance, duration, fingerCount) {
+        // $(this).text("You swiped " + direction );
+
+        var i = $(this).find('.c-img ul li.ativo').index();
+
+        if (direction === 'left'){
+                $(this).find('a.next').trigger('click');
+        
+        }else if (direction === 'right'){
+                $(this).find('a.last').trigger('click');
+        
+        }/*else if(direction === 'up'){
+            // var top = $(".slide").eq(1).offset().top;
+            $("html,body").animate({ scrollTop: '+=300' }, "easeInOutQuint");
+        }*/
+      },
+    allowPageScroll: 'vertical'});
+
+    // $('#banner-receita').carrossel1({'auto': true});
+
 });
 
 
@@ -66,16 +114,20 @@ $( function(){
 
         var self = this,
             total = 0,
-            intervalo;
+            intervalo, 
+            innerWidth = window.innerWidth;
 
-        total = this.find('.c-img > ul li').length;
+        total = this.find('.c-img > ul li').css('width', innerWidth+'px').length;
+        
+        var ul = self.find('.c-img > ul');
+        var li = ul.find('li');
 
 
         // se tiver passado opcoes
         var settings = $.extend( {
           'auto' : false
         }, options);
-        console.log(settings.auto);
+
         if (settings.auto){
             iniIntervalo();
             self.find('.c-link a').eq(0).addClass('anima');
@@ -95,9 +147,9 @@ $( function(){
         });
 
         function clickNext(index){
+            // var ul = self.find('.c-img > ul');
 
             // index atual
-            var ul = self.find('.c-img > ul');
             var indexAtual = ul.find('.ativo').index();
 
             // se NAO tiver passado o Index (indice)
@@ -116,10 +168,10 @@ $( function(){
             if (index !== indexAtual){
                 
                 // pega a lista
-                var li = ul.find('li');
+                // var li = ul.find('li');
 
                 // animacao para frente
-                if (index > indexAtual){
+                /*if (index > indexAtual){
                     // retira a ativo
                     $(li).css('z-index', '1').removeClass('ativo');
                     // anima
@@ -132,7 +184,15 @@ $( function(){
                     // anima
                     li.eq(index).css({'left': '-100%', 'z-index': '2'}).addClass('ativo').show(0).animate({ left: 0}, 800, "easeInOutQuart");
                     li.eq(indexAtual).animate({ left: '100%'}, 800, "easeInOutQuart");
-                }
+                }*/
+
+
+                /* novo (com scroll) */
+                // retira a classe
+                $(ul).find('.ativo').removeClass('ativo');
+                li.eq(index).addClass('ativo');
+                // anima
+                self.find('.c-img').animate({ scrollLeft: innerWidth*index}, 800, "easeInOutQuart");
 
 
                 // anima botao
@@ -155,6 +215,17 @@ $( function(){
 
         $(window).bind('load', iniIntervalo);
 
+
+
+        // atualiza tamanho da li
+        function update(){
+            innerWidth = window.innerWidth;
+            self.find('.c-img > ul li').css('width', innerWidth+'px');
+            self.find('.c-img').scrollLeft(0);
+        }
+
+        $(window).bind('resize', update);
+
         return this;
     };
 }(jQuery));
@@ -171,9 +242,13 @@ $( function(){
         var self = this,
             total = 0,
             clique = false,
-            intervalo;
+            intervalo, 
+            innerWidth = window.innerWidth;
 
-        total = this.find('.c-img ul li').length;
+        total = this.find('.c-img > ul li').css('width', innerWidth+'px').length;
+
+        var ul = self.find('.c-img > ul');
+        var li = ul.find('li');
 
 
         // click anterior
@@ -186,17 +261,30 @@ $( function(){
             var i = self.find('.c-img').find('.ativo').index();
 
             if (i > 0){
-            	// retira a ativo e pega a lista
+            	/*// retira a ativo e pega a lista
                 var li = self.find('.c-img ul li');
                 $(li).css('z-index', '2').removeClass('ativo');
 
                 // anima
                 li.eq(i-1).css({'left': '-100%', 'z-index': '2'}).addClass('ativo').show(0).animate({ left: 0}, 800, "easeInOutQuart");
-                li.eq(i).animate({ left: '100%'}, 800, "easeInOutQuart");
+                li.eq(i).animate({ left: '100%'}, 800, "easeInOutQuart");*/
+
+                /* novo (com scroll) */
+                // retira a classe
+                $(ul).find('.ativo').removeClass('ativo');
+                li.eq(i-1).addClass('ativo');
+                // anima
+                self.find('.c-img').animate({ scrollLeft: innerWidth*(i-1)}, 800, "easeInOutQuart");
 
                 // exibe o texto
                 // self.find('.c-txt p').eq(i-1).addClass('ativo').fadeIn();
+
+                // ativa o botao next
+                self.find('a.next').removeClass('disabled');
             }
+            
+            // botao
+            if (i-1 == 0) self.find('a.last').addClass('disabled');
 
         });
 
@@ -216,17 +304,30 @@ $( function(){
             var i = self.find('.c-img').find('.ativo').index();
 
             if (i+1 < total){
-                // retira a ativo e pega a lista
+                /*// retira a ativo e pega a lista
                 var li = self.find('.c-img ul li');
                 $(li).css('z-index', '2').removeClass('ativo');
 
                 // anima
                 li.eq(i+1).css({'left': '100%', 'z-index': '2'}).addClass('ativo').show(0).animate({ left: 0}, 800, "easeInOutQuart");
-                li.eq(i).animate({ left: '-100%'}, 800, "easeInOutQuart");
+                li.eq(i).animate({ left: '-100%'}, 800, "easeInOutQuart");*/
+
+                /* novo (com scroll) */
+                // retira a classe
+                $(ul).find('.ativo').removeClass('ativo');
+                li.eq(i+1).addClass('ativo');
+                // anima
+                self.find('.c-img').animate({ scrollLeft: innerWidth*(i+1)}, 800, "easeInOutQuart");
 
                 // exibe o texto
                 // self.find('.c-txt p').eq(i-1).addClass('ativo').fadeIn();
+
+                // ativa o botao last
+                self.find('a.last').removeClass('disabled');
             }
+
+            // botao
+            if (i+1 == 2) self.find('a.next').addClass('disabled');
         }
 
 
@@ -239,8 +340,66 @@ $( function(){
             }, 4000);
         }
 
-        // $(window).bind('load', iniIntervalo);
+        // $(window).bind('load', iniIntervalo);        
+
+
+
+        // atualiza tamanho da li
+        function update(){
+            innerWidth = window.innerWidth;
+            self.find('.c-img > ul li').css('width', innerWidth+'px');
+            self.find('.c-img').scrollLeft(0);
+        }
+
+        $(window).bind('resize', update);
 
         return this;
     };
+}(jQuery));
+
+
+
+
+/*
+    bg parallax
+*/
+(function($){
+
+    $.fn.parallaxBg = function(options){
+
+        var settings = $.extend({
+            xpos: 'center',
+            yspeed: 0.4,
+            yaddpx: 1
+        }, options );
+
+        var self = this,
+            bgHeight = 750,
+            windowHeight = window.innerHeight;
+
+
+        function update(){
+            var pos = window.scrollY;               
+    
+            self.each( function(){
+
+                    var element = $(this);
+                    var top = element.offset().top;
+                    var height = element.height();
+
+                    // caso esteja fora da arrea de visualizacao
+                    if (top + height < pos || top > pos + windowHeight) return;
+                    
+                    element.css('backgroundPosition', settings.xpos + " " + Math.round((top - pos) * settings.yspeed + (settings.yaddpx)) + "px");
+            });
+        }
+
+    
+        $(window).bind('scroll', update).resize(update);
+        update();
+
+
+        return this;
+    };
+
 }(jQuery));
