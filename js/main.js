@@ -3,7 +3,6 @@ $( function(){
 
 	/* banner topo */
     $('#banner').carrossel1();
-    var receitaCarrossel = false;    
 
 
     /* banner aplicativos */
@@ -15,11 +14,10 @@ $( function(){
 	$(".slide").mousewheel(function (event, delta) {
 
         // ativa carrossel Receitas
-        if (receitaCarrossel === false && $(this).hasClass('produtos') ){
+        /*if (receitaCarrossel === false && $(this).hasClass('produtos') ){
             $('#banner-receita').carrossel1({'auto': true});
-
-            receitaCarrossel = true;
-        }
+			receitaCarrossel = true;
+        }*/
 
         // se estiver na tela Aplicativos
 		if ( delta < 0 && $(this).hasClass('aplicativos') ){
@@ -104,6 +102,27 @@ $( function(){
 
 
 
+/*
+	ativa o banner Receita
+ */
+var receitaCarrossel = false;
+function receitaCarrosselInit(){
+	if (!receitaCarrossel){
+		var top = window.scrollY;
+
+		if ( top >= $("#cena-receita").offset().top ){
+
+			$('#banner-receita').carrossel1({'auto': true});
+			receitaCarrossel = true;
+		}
+	}
+}
+$(window).bind('scroll', receitaCarrosselInit);
+$(window).bind('load', receitaCarrosselInit);
+
+
+
+
 
 /*
     carrossel tipo 1
@@ -160,7 +179,7 @@ $( function(){
                     index = 0;
                     // como ja passou por todos automaticamente...
                     clearInterval(intervalo);
-                     $(this).find('circle.border').css({'animation-duration': '5s', '-webkit-animation-duration': '5s'});
+                    self.find('.c-link a').find('circle.border').css({'animation-duration': '5s', '-webkit-animation-duration': '5s'});
                 }
             }
 
@@ -363,7 +382,7 @@ $( function(){
 /*
     bg parallax
 */
-(function($){
+/*(function($){
 
     $.fn.parallaxBg = function(options){
 
@@ -402,4 +421,4 @@ $( function(){
         return this;
     };
 
-}(jQuery));
+}(jQuery));*/
