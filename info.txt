@@ -1,6 +1,6 @@
 
 
-- “		aplicativos (animar texto)
+- criar âncoras
 - “		serviços
 - “		notícias
 - carrossel Receitas - iniciar com o scroll

@@ -2,7 +2,7 @@ $( function(){
 
 
 	/* banner topo */
-    $('#banner').carrossel1();
+    $('#banner').carrossel1({'auto': true});
 
 
     /* banner aplicativos */
@@ -140,6 +140,10 @@ $(window).bind('load', receitaCarrosselInit);
         
         var ul = self.find('.c-img > ul');
         var li = ul.find('li');
+        var liTxt = self.find('.c-txt > .content > ul');
+
+        // zera
+        self.find('.c-img').scrollLeft(0);
 
 
         // se tiver passado opcoes
@@ -217,6 +221,26 @@ $(window).bind('load', receitaCarrosselInit);
                 // anima botao
                 self.find('.c-link a').removeClass('anima');
                 self.find('.c-link a').eq(index).addClass('anima');
+
+
+                // anima e exibe o texto, caso possua
+                if (liTxt){
+	                var txt = self.find('.c-txt');
+	                if (index > indexAtual){
+		                liTxt.find('.ativo').removeClass('ativo').delay(100).fadeOut(200);
+		                txt.delay(100).animate({ left: 0}, 200, function() {
+		                		liTxt.find('li').eq(index).addClass('ativo').fadeIn(300);
+				                txt.css('left', '40%').animate({ left: '20%'}, 300);
+		                });
+	            	}else{
+	            		liTxt.find('.ativo').removeClass('ativo').delay(100).fadeOut(200);
+		                txt.delay(100).animate({ left: '40%'}, 200, function() {
+		                		liTxt.find('li').eq(index).addClass('ativo').fadeIn(300);
+				                txt.css('left', 0).animate({ left: '20%'}, 300);
+		                });
+	            	}
+            	}
+
             }
         }
 
@@ -232,7 +256,7 @@ $(window).bind('load', receitaCarrosselInit);
             }, 5000);
         }
 
-        $(window).bind('load', iniIntervalo);
+        // $(window).bind('load', iniIntervalo);
 
 
 
@@ -268,7 +292,10 @@ $(window).bind('load', receitaCarrosselInit);
 
         var ul = self.find('.c-img > ul');
         var li = ul.find('li');
+        var liTxt = self.find('.c-txt > .content > ul');
 
+        // zera
+        self.find('.c-img').scrollLeft(0);
 
         // click anterior
         this.find('a.last').click( function(event) {
@@ -296,7 +323,14 @@ $(window).bind('load', receitaCarrosselInit);
                 self.find('.c-img').animate({ scrollLeft: innerWidth*(i-1)}, 800, "easeInOutQuart");
 
                 // exibe o texto
-                // self.find('.c-txt p').eq(i-1).addClass('ativo').fadeIn();
+                /*liTxt.find('.ativo').removeClass('ativo').fadeOut(0);
+                liTxt.find('li').eq(i-1).addClass('ativo').fadeIn();*/                
+                var txt = self.find('.c-txt');
+                liTxt.find('.ativo').removeClass('ativo').delay(100).fadeOut(200);
+                txt.delay(100).animate({ left: 200}, 200, function() {
+                		liTxt.find('li').eq(i-1).addClass('ativo').fadeIn(300);
+		                txt.css('left', '-300px').animate({ left: 0}, 300);
+                });
 
                 // ativa o botao next
                 self.find('a.next').removeClass('disabled');
@@ -338,8 +372,13 @@ $(window).bind('load', receitaCarrosselInit);
                 // anima
                 self.find('.c-img').animate({ scrollLeft: innerWidth*(i+1)}, 800, "easeInOutQuart");
 
-                // exibe o texto
-                // self.find('.c-txt p').eq(i-1).addClass('ativo').fadeIn();
+                // anima e exibe o texto
+                var txt = self.find('.c-txt');
+                liTxt.find('.ativo').removeClass('ativo').delay(100).fadeOut(200);
+                txt.delay(100).animate({ left: -200}, 200, function() {
+                		liTxt.find('li').eq(i+1).addClass('ativo').fadeIn(300);
+		                txt.css('left', '300px').animate({ left: 0}, 300);
+                });
 
                 // ativa o botao last
                 self.find('a.last').removeClass('disabled');
