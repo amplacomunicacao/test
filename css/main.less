@@ -78,33 +78,45 @@ body{font:10px 'TitilliumWeb-Regular', Arial, Helvetica, sans-serif; color:#999;
    ========================================================================== */
 .sprite-1 {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../img/sprite-1.png);}
 
-.banner-left {width:67px; height:66px; background-position: -533px -92px}
-.banner-right {width:67px; height:66px; background-position: -464px -93px}
-.busca-1 {width:53px; height:53px; background-position: -734px -84px}
-.facebook {width:88px; height:89px; background-position: -437px -2px}
-.filtrar-receita {width:166px; height:53px; background-position: -179px -57px}
-.google {width:88px; height:89px; background-position: -347px -2px}
-.icon-aplicativo {width:30px; height:30px; background-position: -751px -33px}
-.icon-contato {width:18px; height:13px; background-position: -384px -93px}
-.icon-imprensa {width:14px; height:17px; background-position: -368px -93px}
-.icon-produto {width:20px; height:29px; background-position: -817px -33px}
-.icon-receita {width:32px; height:27px; background-position: -783px -33px}
-.icon-sobre {width:19px; height:17px; background-position: -347px -93px}
-.login-1 {width:166px; height:53px; background-position: -179px -2px}
+.app-calculadora {width:84px; height:84px; background-position: -265px -93px}
+.app-calculadora2 {width:62px; height:62px; background-position: -539px -2px}
+.app-calculadora2-ativo {width:62px; height:62px; background-position: -509px -157px}
+.app-cozinha {width:84px; height:84px; background-position: -179px -93px}
+.app-cozinha2 {width:63px; height:63px; background-position: -444px -174px}
+.app-cozinha2-ativo {width:63px; height:63px; background-position: -483px -92px}
+.app-lista2 {width:63px; height:63px; background-position: -270px -179px}
+.app-lista2-ativo {width:63px; height:63px; background-position: -335px -179px}
+.app-receitas2 {width:63px; height:63px; background-position: -140px -179px}
+.app-receitas2-ativo {width:63px; height:63px; background-position: -205px -179px}
+.banner-left {width:67px; height:66px; background-position: -71px -179px}
+.banner-right {width:67px; height:66px; background-position: -2px -179px}
+.busca-1 {width:53px; height:53px; background-position: -573px -144px}
+.facebook {width:88px; height:89px; background-position: -269px -2px}
+.filtrar-receita {width:166px; height:53px; background-position: -634px -199px}
+.google {width:88px; height:89px; background-position: -179px -2px}
+.icon-aplicativo {width:30px; height:30px; background-position: -509px -221px}
+.icon-contato {width:18px; height:13px; background-position: -449px -239px}
+.icon-imprensa {width:14px; height:17px; background-position: -560px -66px}
+.icon-mais {width:37px; height:36px; background-position: -744px -2px}
+.icon-produto {width:20px; height:29px; background-position: -785px -2px}
+.icon-receita {width:32px; height:27px; background-position: -692px -88px}
+.icon-sobre {width:19px; height:17px; background-position: -539px -66px}
+.login-1 {width:166px; height:53px; background-position: -634px -144px}
 .play {width:175px; height:175px; background-position: -2px -2px}
-.ponto {width:3px; height:15px; background-position: -404px -93px}
-.seta-dir {width:42px; height:80px; background-position: -690px -92px}
-.seta-dir:hover {width:42px; height:80px; background-position: -707px -2px}
-.seta-esq {width:42px; height:80px; background-position: -602px -92px}
-.seta-esq:hover {width:42px; height:80px; background-position: -646px -92px}
-.twitter {width:88px; height:88px; background-position: -617px -2px}
-.ver-mais {width:91px; height:29px; background-position: -734px -139px}
-.ver-mais-2 {width:91px; height:29px; background-position: -751px -2px}
-.ver-mais-3 {width:142px; height:57px; background-position: -179px -112px}
-.ver-todos-2 {width:139px; height:53px; background-position: -323px -112px}
-.youtube {width:88px; height:88px; background-position: -527px -2px}
+.ponto {width:3px; height:15px; background-position: -444px -239px}
+.seta-dir {width:42px; height:80px; background-position: -400px -174px}
+.seta-dir-ativo {width:42px; height:80px; background-position: -439px -92px}
+.seta-esq {width:42px; height:80px; background-position: -351px -93px}
+.seta-esq-ativo {width:42px; height:80px; background-position: -395px -92px}
+.twitter {width:88px; height:88px; background-position: -449px -2px}
+.ver-mais {width:91px; height:29px; background-position: -541px -221px}
+.ver-mais-2 {width:91px; height:29px; background-position: -692px -57px}
+.ver-mais-3 {width:142px; height:57px; background-position: -548px -85px}
+.ver-todos-2 {width:139px; height:53px; background-position: -603px -2px}
+.youtube {width:88px; height:88px; background-position: -359px -2px}
 
-
+.app-calculadora2.ativo{ .app-calculadora2-ativo }
+.app-cozinha2.ativo{ .app-cozinha2-ativo }
 
 
 /* ==========================================================================
@@ -127,6 +139,10 @@ header, section, footer{
 .font3{ font-family: 'TitilliumWeb-LightItalic'; }
 
 #msg-landscape{display:none}
+
+a.ancora{ position: absolute; top: 0;}
+
+a{ text-decoration: none; color: #fff; }
 
 /* ==========================================================================
    Home
@@ -446,6 +462,7 @@ header{
 .aplicativos{
 	height: 560px;
 	position: relative;
+	overflow: hidden;
 
 	.banner, .c-img{
 		width: 100%;
@@ -456,27 +473,29 @@ header{
 
 	.banner{
 
-		.content{ text-align: center; }
+		.content{ text-align: center; position: absolute; top: 0; }
 
 		.c-txt{			
 			position: absolute;
 			z-index: 2;
 			top: 90px;
 			width: 100%;
+			letter-spacing: 1px;
 
 			color: #fff;
 			h3{
 				.font3;
 				font-size: 5em;
 				text-transform: uppercase;
-				margin: 35px 0 15px;
+				margin: 35px 0 0;
+				line-height: 1em;
 			}
 			p{
 				font: 1.6em Justus;
 				width: 400px;
-				margin: 0 auto;
-				margin-bottom: 15px;
+				margin: 20px auto 30px;
 			}
+			li{ text-align: center;}
 		}
 		
 		
@@ -501,20 +520,61 @@ header{
 		a.next, a.last{
 			position: absolute;
 			z-index: 2;
-			top: 220px;
-			left: 50%;
-			margin-left: -545px;
+			top: 140px;
+			left: 3%;
 			text-indent: -9999px;
 		}
-		a.next{ margin-left: 545px; }
-		a.seta-dir.disabled:hover { .seta-dir }
-		a.seta-esq.disabled:hover { .seta-esq }
+		a.next{ left: auto; right: 3%; }
+		a.ver-todos{
+			display: block;
+			position: absolute;
+			top: 60px;
+			right: 3%;
+			.font2;
+			font-size: 1.6em;
+			color: #fff;
+
+			span{ float: left; margin: -5px 5px 0;}
+		}
 
 
 		.c-txt li{ display: none;}
 		.c-txt li:first-child{ display: block;}
 		/*.c-img li{ display: none;}
 		.c-img li:first-child{ display: block;}*/
+	}
+
+	nav{
+		width: 325px;
+		height: 100%;
+		position: absolute;
+		right: -325px;
+		top: 0;
+		z-index: 3;
+		display: none;
+		
+		ul{ height: 100%;}
+		li{ display: block; height: 25%; }		
+		a{
+			display: block;
+			height: 100%;
+			background: #303030;
+			color: #999;
+			.font3;
+			font-size: 2.4em;
+			line-height: 30px;
+			box-sizing: border-box;
+			border-bottom: 1px solid #000;
+
+			.sprite-1{ float: left; margin: 38px 17px 0 30px;}
+			.txt{ float: left; margin: 38px 0 0;}
+			.amarelo{ color: #ffcc00; font-size: 0.9em;}
+		}
+		li:nth-child(2) a .txt{ margin-top: 50px;}
+		li.ativo a{
+			background: #222;
+			color: #fff;
+		}
 	}
 }
 

@@ -48,15 +48,15 @@
 							<ul>
 								<li>
 									<span class="linha-l"></span>
-									<a href="#"><span class="sprite-1 icon-produto"></span>&nbsp;&nbsp; Nosso Produtos</a>
+									<a href="#produtos" class="scroll"><span class="sprite-1 icon-produto"></span>&nbsp;&nbsp; Nosso Produtos</a>
 								</li>
 								<li>
 									<span class="linha-l"></span>
-									<a href="#"><span class="sprite-1 icon-receita"></span>&nbsp;&nbsp; Nossas Receitas</a>
+									<a href="#receitas" class="scroll"><span class="sprite-1 icon-receita"></span>&nbsp;&nbsp; Nossas Receitas</a>
 								</li>
 								<li>
 									<span class="linha-l"></span>
-									<a href="#"><span class="sprite-1 icon-aplicativo"></span>&nbsp;&nbsp; Dicas e Aplicativos</a>
+									<a href="#dicas-e-aplicativos" class="scroll"><span class="sprite-1 icon-aplicativo"></span>&nbsp;&nbsp; Dicas e Aplicativos</a>
 									<span class="linha-r"></span>
 								</li>
 							</ul>
@@ -115,6 +115,7 @@
 
         <section class="produtos slide">
         	<h2 class="hidden">produtos</h2>
+        	<a name="produtos" class="ancora"></a>
 
         	<div class="cena-produto" id="cena-produto" style="background-image: url(img/produto-1.jpg)">
         		
@@ -152,6 +153,7 @@
 
         <section class="receitas slide">
         	<h2 class="hidden">receitas</h2>
+        	<a name="receitas" class="ancora"></a>
         	<div id="cena-receita" class="cena-receita">
         		
 				<div class="banner" id="banner-receita">
@@ -230,45 +232,46 @@
 
         <section class="aplicativos slide">
         	<h2 class="hidden">aplicativos</h2>
+        	<a name="dicas-e-aplicativos" class="ancora"></a>
 
 			<div class="banner" id="banner-aplicativo">	
 				<div class="c-img">
 					<ul>
 						<li class="ativo" style="background-image: url(img/aplicativo-1.jpg)">
 						</li>
-						<li style="background-image: url(img/aplicativo-1.jpg)">
-						</li>
-						<li style="background-image: url(img/aplicativo-1.jpg)">
+						<li style="background-image: url(img/app-cozinha-vitarella.jpg)">
 						</li>
 					</ul>
 				</div>
 				<div class="c-txt">
-					<div class="content">
 					<ul>
 						<li class="ativo">
-							<img src="img/app-icon-1.png" height="84" width="84" alt="icone">
-							<h3>Minhas Receitas</h3>
+							<span class="sprite-1 app-calculadora"></span>
+							<h3>Calculadora de Festinha</h3>
 							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum nisi eveniet maiores laudantium error, repellendus ea dicta nesciunt.</p>
-							<a href="#" class="sprite-1 ver-mais-3 indent">ver mais</a>
+							<a href="#" class="sprite-1 ver-mais indent">ver mais</a>
 						</li>
 						<li>
-							<img src="img/app-icon-1.png" height="84" width="84" alt="icone">
-							<h3>Minhas Receitas 2</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum nisi eveniet maiores laudantium error, repellendus ea dicta nesciunt.</p>
-							<a href="#" class="sprite-1 ver-mais-3 indent">ver mais</a>
-						</li>
-						<li>
-							<img src="img/app-icon-1.png" height="84" width="84" alt="icone">
-							<h3>Minhas Receitas 3</h3>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum nisi eveniet maiores laudantium error, repellendus ea dicta nesciunt.</p>
-							<a href="#" class="sprite-1 ver-mais-3 indent">ver mais</a>
+							<span class="sprite-1 app-cozinha"></span>
+							<h3>Cozinha Vitarella</h3>
+							<p>Para compartilhar receitas deliciosas, <br>aprovadas pela Vitarella e com sua garantia <br>de qualidade e credibilidade.</p>
+							<a href="#" class="sprite-1 ver-mais indent">ver mais</a>
 						</li>
 					</ul>
-					</div>
+					<a href="#" class="sprite-1 seta-esq last">anterior</a>
+					<a href="#" class="sprite-1 seta-dir-ativo next">próximo</a>
 				</div>
-				<a href="#" class="sprite-1 seta-esq last disabled">anterior</a>
-				<a href="#" class="sprite-1 seta-dir next">próximo</a>
+				<a href="#" class="ver-todos" id="ver-todos-app"><span class="sprite-1 icon-mais"></span> Ver todos aplicativos</a>
 			</div>
+
+			<nav id="sidebar-app">
+				<ul>
+					<li class="ativo"><a href="#"><span class="sprite-1 app-calculadora2 ativo"></span><span class="txt">Calculadora <br>de festinha</span></a></li>
+					<li><a href="#"><span class="sprite-1 app-cozinha2"></span><span class="txt">Cozinha Vitarella</span></a></li>
+					<li><a href="#"><span class="sprite-1 app-receitas2"></span><span class="txt">Minhas Receitas <br><span class="amarelo">Em breve</span></span></a></li>
+					<li><a href="#"><span class="sprite-1 app-lista2"></span><span class="txt">Lista de Compras <br><span class="amarelo">Em breve</span></span></a></li>
+				</ul>
+			</nav>
         </section>
 
         <section class="servicos">

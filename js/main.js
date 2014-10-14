@@ -52,6 +52,77 @@ $( function(){
 
 
 
+    /* sidebar app */
+    $('#ver-todos-app').click(function(event) {
+        event.preventDefault();
+
+        if ( parseInt($('#sidebar-app').css('right')) ){
+
+            $('#sidebar-app').show(0).animate({right: 0}, 800, "easeInOutQuart");
+            $('#banner-aplicativo .c-txt, #banner-aplicativo .c-img > ul li').animate({'width': window.innerWidth - 330}, 800, "easeInOutQuart");
+            // $('#banner-aplicativo .content').animate({'width': window.innerWidth - 330});
+
+            $(this).animate({'margin-right': '330px'}, 800, "easeInOutQuart");
+
+            var i = $('#banner-aplicativo').find('.c-img').find('.ativo').index();
+            $('#banner-aplicativo').find('.c-img').animate({ scrollLeft: (window.innerWidth - 330)*(i)}, 800, "easeInOutQuart");
+        }else{
+            $('#sidebar-app').animate({right: -325}, 800, "easeInOutQuart").delay(800).hide(0);
+            $('#banner-aplicativo .c-txt, #banner-aplicativo .c-img > ul li').animate({'width': window.innerWidth}, 800, "easeInOutQuart");
+            // $('#banner-aplicativo .content').animate({'width': window.innerWidth});
+
+            $(this).animate({'margin-right': '0'}, 800, "easeInOutQuart");
+
+            var i = $('#banner-aplicativo').find('.c-img').find('.ativo').index();
+            $('#banner-aplicativo').find('.c-img').animate({ scrollLeft: (window.innerWidth)*(i)}, 800, "easeInOutQuart");
+        }
+
+    });
+     $('#sidebar-app a').click(function(event) {
+         event.preventDefault();
+
+         bannerAplicativosExibe( $(this).parent().index() );
+     });
+
+
+    /* click ancora - scroll*/
+    $("a.scroll").click(function(event){
+         clickMenu = true;
+
+        //prevent the default action for the click event
+        event.preventDefault();
+        
+        //get the full url - like mysitecom/index.htm#home
+        var full_url = this.href;
+        
+        //split the url by # and get the anchor target name - home in mysitecom/index.htm#home
+        var parts = full_url.split("#");
+        var trgt = parts[1];
+        
+        //get the top offset of the target anchor
+        var target_offset = $("a[name="+trgt+"]").offset();
+        var target_top = target_offset.top;
+        
+        //goto that anchor by setting the body scroll top to anchor top
+        // animaMenu(target_top);
+        $('html, body').animate({scrollTop:target_top}, 800, function(){ clickMenu = false; });
+        
+        
+        //to change the browser URL to the given link location
+        if(full_url!=window.location){
+          window.history.pushState({path:full_url},'',full_url);
+        }
+        
+        // ativo botao do menu
+        // $("#menu li a").removeClass('ativo');
+        // $(this).addClass('ativo');      
+    });
+
+
+
+
+
+
     /* Mobile
        ============================================================================== */
     /* banner topo */
@@ -95,7 +166,9 @@ $( function(){
       },
     allowPageScroll: 'vertical'});
 
-    // $('#banner-receita').carrossel1({'auto': true});
+    /* FIM - Mobile
+       ============================================================================== */
+
 
 });
 
@@ -292,7 +365,7 @@ $(window).bind('load', receitaCarrosselInit);
 
         var ul = self.find('.c-img > ul');
         var li = ul.find('li');
-        var liTxt = self.find('.c-txt > .content > ul');
+        var liTxt = self.find('.c-txt > ul');
 
         // zera
         self.find('.c-img').scrollLeft(0);
@@ -304,22 +377,19 @@ $(window).bind('load', receitaCarrosselInit);
 
             clearInterval(intervalo);
 
+            clickLast();
+        });
+        function clickLast(){
+
             var i = self.find('.c-img').find('.ativo').index();
 
             if (i > 0){
-            	/*// retira a ativo e pega a lista
-                var li = self.find('.c-img ul li');
-                $(li).css('z-index', '2').removeClass('ativo');
 
-                // anima
-                li.eq(i-1).css({'left': '-100%', 'z-index': '2'}).addClass('ativo').show(0).animate({ left: 0}, 800, "easeInOutQuart");
-                li.eq(i).animate({ left: '100%'}, 800, "easeInOutQuart");*/
-
-                /* novo (com scroll) */
                 // retira a classe
                 $(ul).find('.ativo').removeClass('ativo');
                 li.eq(i-1).addClass('ativo');
                 // anima
+                innerWidth = parseInt(self.find('.c-img > ul li').eq(0).css('width'));
                 self.find('.c-img').animate({ scrollLeft: innerWidth*(i-1)}, 800, "easeInOutQuart");
 
                 // exibe o texto
@@ -328,18 +398,20 @@ $(window).bind('load', receitaCarrosselInit);
                 var txt = self.find('.c-txt');
                 liTxt.find('.ativo').removeClass('ativo').delay(100).fadeOut(200);
                 txt.delay(100).animate({ left: 200}, 200, function() {
-                		liTxt.find('li').eq(i-1).addClass('ativo').fadeIn(300);
-		                txt.css('left', '-300px').animate({ left: 0}, 300);
+                        liTxt.find('li').eq(i-1).addClass('ativo').fadeIn(300);
+                        txt.css('left', '-300px').animate({ left: 0}, 300);
                 });
 
                 // ativa o botao next
-                self.find('a.next').removeClass('disabled');
+                self.find('a.next').removeClass('seta-dir').addClass('seta-dir-ativo');
+
+                // seleciona na sidebar
+                selecionaSidebar(i-1);
             }
             
-            // botao
-            if (i-1 == 0) self.find('a.last').addClass('disabled');
-
-        });
+            // desativa botao last ?
+            if (i-1 == 0) self.find('a.last').removeClass('seta-esq-ativo').addClass('seta-esq');
+        }
 
 
         // click proximo
@@ -351,42 +423,47 @@ $(window).bind('load', receitaCarrosselInit);
 
             clickNext();
         });
-
         function clickNext(){
 
             var i = self.find('.c-img').find('.ativo').index();
 
             if (i+1 < total){
-                /*// retira a ativo e pega a lista
-                var li = self.find('.c-img ul li');
-                $(li).css('z-index', '2').removeClass('ativo');
 
-                // anima
-                li.eq(i+1).css({'left': '100%', 'z-index': '2'}).addClass('ativo').show(0).animate({ left: 0}, 800, "easeInOutQuart");
-                li.eq(i).animate({ left: '-100%'}, 800, "easeInOutQuart");*/
-
-                /* novo (com scroll) */
                 // retira a classe
                 $(ul).find('.ativo').removeClass('ativo');
                 li.eq(i+1).addClass('ativo');
                 // anima
+                innerWidth = parseInt(self.find('.c-img > ul li').eq(0).css('width'));
                 self.find('.c-img').animate({ scrollLeft: innerWidth*(i+1)}, 800, "easeInOutQuart");
 
                 // anima e exibe o texto
                 var txt = self.find('.c-txt');
-                liTxt.find('.ativo').removeClass('ativo').delay(100).fadeOut(200);
+                liTxt.find('li.ativo').removeClass('ativo').delay(100).fadeOut(200);
                 txt.delay(100).animate({ left: -200}, 200, function() {
                 		liTxt.find('li').eq(i+1).addClass('ativo').fadeIn(300);
 		                txt.css('left', '300px').animate({ left: 0}, 300);
                 });
 
                 // ativa o botao last
-                self.find('a.last').removeClass('disabled');
+                self.find('a.last').removeClass('seta-esq').addClass('seta-esq-ativo');
+                
+                // seleciona na sidebar
+                selecionaSidebar(i+1);
             }
 
             // botao
-            if (i+1 == 2) self.find('a.next').addClass('disabled');
+            if (i+1 == total-1) self.find('a.next').removeClass('seta-dir-ativo').addClass('seta-dir');
         }
+
+        // seleciona 1 na sidebar
+        function selecionaSidebar(i){
+            $('#sidebar-app .ativo').removeClass('ativo');
+            $('#sidebar-app ul li').eq(i).addClass('ativo').find('a > span.sprite-1').addClass('ativo');
+        }
+
+        $.fn.carrossel2.method = function(text) {
+            return '<strong>' + text + '</strong>';
+        };
 
 
         // passando automaticamente
@@ -399,7 +476,6 @@ $(window).bind('load', receitaCarrosselInit);
         }
 
         // $(window).bind('load', iniIntervalo);        
-
 
 
         // atualiza tamanho da li
@@ -415,6 +491,26 @@ $(window).bind('load', receitaCarrosselInit);
     };
 }(jQuery));
 
+
+
+function bannerAplicativosExibe(ind){
+
+    
+    var i = $('#banner-aplicativo').find('.c-img').find('.ativo').index();
+    var total = $('#banner-aplicativo').find('.c-img > ul li').length;
+
+    // while (ind !== i){
+        i = $('#banner-aplicativo').find('.c-img').find('.ativo').index();
+
+        if (ind > i && ind < total){
+            $('#banner-aplicativo a.next').trigger('click');
+            ind++;
+        }else if (ind < i){
+            $('#banner-aplicativo a.last').trigger('click');
+            ind--;
+        }
+    // }
+}
 
 
 

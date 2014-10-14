@@ -1,10 +1,13 @@
 
 
-- criar âncoras
-- “		serviços
-- “		notícias
-- carrossel Receitas - iniciar com o scroll
-- produtos: hover (?)
+- aplicativos - extender o método do carrossel e organizar a bagaça
+- receitas
+	ao scrollar mudar a url
+- produtos: hover ?
+- carrossel serviços
+- carrossel notícias
+- menu
+- tablet
 
 
 http://www.awwwards.com/touchswipe-a-jquery-plugin-for-touch-and-gesture-based-interaction.html
@@ -12,3 +15,8 @@ https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
 http://areaaperta.com/nicescroll/
 
 http://www.queness.com/post/11755/11-multi-touch-and-touch-events-javascript-libraries
+
+
+trotem
+Throttle
+
