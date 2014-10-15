@@ -1,3 +1,4 @@
+<?php include 'inc/init.php'; ?>
 <!doctype html>
 <html class="no-js" lang="pt-br">
     <head>
@@ -113,7 +114,7 @@
 			</div>
         </header>
 
-        <section class="produtos slide">
+        <section class="produtos slide" data-url="produtos">
         	<h2 class="hidden">produtos</h2>
         	<a name="produtos" class="ancora"></a>
 
@@ -121,37 +122,84 @@
         		
         	</div>
         	<div class="carrossel">
+        		<div id="produtos-carrossel">
         		<ul>
         			<li>
-        				<img src="img/produto-1-thumb.jpg" height="170" width="189" alt="">
-        				<p>Biscoitos Salgados</p>
-        				<span class="linha"></span>
+        				<a href="#">
+	        				<img src="img/produto-1-thumb.jpg" height="170" width="189" alt="">
+	        				<p>Biscoitos Salgados</p>
+	        				<span class="linha"></span>
+        				</a>
         			</li>
         			<li>
-        				<img src="img/produto-2-thumb.jpg" height="170" width="148" alt="">
-        				<p>Cream Crackers <br>Crocks</p>
-        				<span class="linha"></span>
+        				<a href="#">
+	        				<img src="img/produto-2-thumb.jpg" height="170" width="148" alt="">
+	        				<p>Cream Crackers <br>Crocks</p>
+	        				<span class="linha"></span>
+        				</a>
         			</li>
         			<li>
-        				<img src="img/produto-3-thumb.jpg" height="170" width="189" alt="">
-        				<p>Wafers</p>
-        				<span class="linha"></span>
+        				<a href="#">
+	        				<img src="img/produto-3-thumb.jpg" height="170" width="189" alt="">
+	        				<p>Wafers</p>
+	        				<span class="linha"></span>
+        				</a>
         			</li>
         			<li>
-        				<img src="img/produto-4-thumb.jpg" height="170" width="147" alt="">
-        				<p>Maria e Maizena</p>
-        				<span class="linha"></span>
+        				<a href="#">
+	        				<img src="img/produto-4-thumb.jpg" height="170" width="147" alt="">
+	        				<p>Maria e Maizena</p>
+	        				<span class="linha"></span>
+        				</a>
         			</li>
         			<li>
-        				<img src="img/produto-5-thumb.jpg" height="170" width="141" alt="">
-        				<p>Cream Cracker</p>
-        				<span class="linha"></span>
+        				<a href="#">
+	        				<img src="img/produto-5-thumb.jpg" height="170" width="141" alt="">
+	        				<p>Cream Cracker</p>
+	        				<span class="linha"></span>
+        				</a>
+        			</li>
+        			<li>
+        				<a href="#">
+	        				<img src="img/produto-1-thumb.jpg" height="170" width="189" alt="">
+	        				<p>Biscoitos Salgados</p>
+	        				<span class="linha"></span>
+        				</a>
+        			</li>
+        			<li>
+        				<a href="#">
+	        				<img src="img/produto-2-thumb.jpg" height="170" width="148" alt="">
+	        				<p>Cream Crackers <br>Crocks</p>
+	        				<span class="linha"></span>
+        				</a>
+        			</li>
+        			<li>
+        				<a href="#">
+	        				<img src="img/produto-3-thumb.jpg" height="170" width="189" alt="">
+	        				<p>Wafers</p>
+	        				<span class="linha"></span>
+        				</a>
+        			</li>
+        			<li>
+        				<a href="#">
+	        				<img src="img/produto-4-thumb.jpg" height="170" width="147" alt="">
+	        				<p>Maria e Maizena</p>
+	        				<span class="linha"></span>
+        				</a>
+        			</li>
+        			<li>
+        				<a href="#">
+	        				<img src="img/produto-5-thumb.jpg" height="170" width="141" alt="">
+	        				<p>Cream Cracker</p>
+	        				<span class="linha"></span>
+        				</a>
         			</li>
         		</ul>
+        		</div>
         	</div>
         </section>
 
-        <section class="receitas slide">
+        <section class="receitas slide" data-url="receitas">
         	<h2 class="hidden">receitas</h2>
         	<a name="receitas" class="ancora"></a>
         	<div id="cena-receita" class="cena-receita">
@@ -230,7 +278,7 @@
         	</div>
         </section>
 
-        <section class="aplicativos slide">
+        <section class="aplicativos slide" data-url="dicas-e-aplicativos">
         	<h2 class="hidden">aplicativos</h2>
         	<a name="dicas-e-aplicativos" class="ancora"></a>
 
@@ -387,12 +435,15 @@
 
 
 
-
+		<script type="text/javascript">
+		var __URL = '<?= __URL ?>';
+		</script>
 
         <script src="js/vendor/jquery-1.11.1.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/vendor/jquery-mousewheel.min.js"></script>
         <script src="js/vendor/jquery.touchSwipe.min.js"></script>
+        <script src="js/vendor/jquery.nicescroll.min.js"></script>
         <script src="js/vendor/jquery-ui.min.js"></script>
         <script src="js/main.js"></script>
 

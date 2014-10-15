@@ -1,12 +1,10 @@
 
 
-- aplicativos - extender o método do carrossel e organizar a bagaça
-- receitas
-	ao scrollar mudar a url
-- produtos: hover ?
+- produtos
+- menu
 - carrossel serviços
 - carrossel notícias
-- menu
+- receitas
 - tablet
 
 
@@ -16,6 +14,12 @@ http://areaaperta.com/nicescroll/
 
 http://www.queness.com/post/11755/11-multi-touch-and-touch-events-javascript-libraries
 
+
+http://codigofonte.uol.com.br/artigos/aprenda-a-criar-seu-proprio-plugin-no-jquery
+http://blog.alexandremagno.net/2008/01/um-padrao-de-desenvolvimento-para-plugins-do-jquery/
+http://iainjmitchell.com/blog/?p=360
+http://digifilia.com/desenvolvendo-plugins-com-jquery/
+http://javiani.wordpress.com/2010/01/24/oop-em-javascript-heranca-e-singleton-pattern/
 
 trotem
 Throttle

@@ -1,15 +1,15 @@
 $( function(){
 
 
-	/* banner topo */
+	// banner topo 
     $('#banner').carrossel1({'auto': true});
 
 
-    /* banner aplicativos */
-    $('#banner-aplicativo').carrossel2();
+    // banner aplicativos 
+   var __telaAplicativo = new TelaAplicativo('banner-aplicativo');
 
 
-	/* scrool nas etapas */
+	// scrool nas etapas 
 	var scrollingScreen = false;
 	$(".slide").mousewheel(function (event, delta) {
 
@@ -42,9 +42,15 @@ $( function(){
 	            else if ( delta > 0 )
 	                top = candidates.last().offset().top;
 	        }
+
+            /*if ( $(this).data('url') ){
+                var full_url = __URL + $(this).data('url');
+                window.history.pushState({path:full_url},'',full_url);
+            }*/
 	        
 	        $("html,body").animate({ scrollTop:top }, "easeInOutQuint", function() {
-	            scrollingScreen = false; 	            
+	            scrollingScreen = false;
+
 	        });
 	    }
 	    return false; 
@@ -52,40 +58,7 @@ $( function(){
 
 
 
-    /* sidebar app */
-    $('#ver-todos-app').click(function(event) {
-        event.preventDefault();
-
-        if ( parseInt($('#sidebar-app').css('right')) ){
-
-            $('#sidebar-app').show(0).animate({right: 0}, 800, "easeInOutQuart");
-            $('#banner-aplicativo .c-txt, #banner-aplicativo .c-img > ul li').animate({'width': window.innerWidth - 330}, 800, "easeInOutQuart");
-            // $('#banner-aplicativo .content').animate({'width': window.innerWidth - 330});
-
-            $(this).animate({'margin-right': '330px'}, 800, "easeInOutQuart");
-
-            var i = $('#banner-aplicativo').find('.c-img').find('.ativo').index();
-            $('#banner-aplicativo').find('.c-img').animate({ scrollLeft: (window.innerWidth - 330)*(i)}, 800, "easeInOutQuart");
-        }else{
-            $('#sidebar-app').animate({right: -325}, 800, "easeInOutQuart").delay(800).hide(0);
-            $('#banner-aplicativo .c-txt, #banner-aplicativo .c-img > ul li').animate({'width': window.innerWidth}, 800, "easeInOutQuart");
-            // $('#banner-aplicativo .content').animate({'width': window.innerWidth});
-
-            $(this).animate({'margin-right': '0'}, 800, "easeInOutQuart");
-
-            var i = $('#banner-aplicativo').find('.c-img').find('.ativo').index();
-            $('#banner-aplicativo').find('.c-img').animate({ scrollLeft: (window.innerWidth)*(i)}, 800, "easeInOutQuart");
-        }
-
-    });
-     $('#sidebar-app a').click(function(event) {
-         event.preventDefault();
-
-         bannerAplicativosExibe( $(this).parent().index() );
-     });
-
-
-    /* click ancora - scroll*/
+    // click ancora - scroll 
     $("a.scroll").click(function(event){
          clickMenu = true;
 
@@ -110,7 +83,8 @@ $( function(){
         
         //to change the browser URL to the given link location
         if(full_url!=window.location){
-          window.history.pushState({path:full_url},'',full_url);
+            // full_url = full_url.replace('#', '');
+            window.history.pushState({path:full_url},'',full_url);
         }
         
         // ativo botao do menu
@@ -125,7 +99,7 @@ $( function(){
 
     /* Mobile
        ============================================================================== */
-    /* banner topo */
+    // banner topo 
     $("#banner, #banner-receita").swipe({
       swipe:function(event, direction, distance, duration, fingerCount) {
         // $(this).text("You swiped " + direction );
@@ -146,7 +120,7 @@ $( function(){
     allowPageScroll: 'vertical'});
 
 
-    /* banner receitas */    
+    // banner receitas     
     $("#banner-aplicativo").swipe({
       swipe:function(event, direction, distance, duration, fingerCount) {
         // $(this).text("You swiped " + direction );
@@ -166,6 +140,23 @@ $( function(){
       },
     allowPageScroll: 'vertical'});
 
+
+    // carrossel produtos
+    /*$("#produtos-carrossel").swipe({
+      swipeStatus: function(event, phase, direction, distance) {
+        // $(this).text("You swiped " + direction );
+        console.log(phase);
+        if (phase == "move" && direction === 'left'){            
+            $('#produtos-carrossel').animate({ scrollLeft: '+=400'}, 800, "easeInOutQuart");
+
+        }else if (phase == "move" && direction === 'right'){
+            $('#produtos-carrossel').animate({ scrollLeft: '-=400'}, 800, "easeInOutQuart");
+        }
+      },
+      triggerOnTouchEnd: true, allowPageScroll: 'vertical' });*/
+    // $("#produtos-carrossel").niceScroll();
+    $("#produtos-carrossel").niceScroll({cursorcolor:"#F00",cursoropacitymax:0.7,touchbehavior:true});
+
     /* FIM - Mobile
        ============================================================================== */
 
@@ -174,25 +165,61 @@ $( function(){
 
 
 
-
-/*
-	ativa o banner Receita
- */
+// ativa o banner Receita
 var receitaCarrossel = false;
 function receitaCarrosselInit(){
 	if (!receitaCarrossel){
-		var top = window.scrollY;
+        // var top = window.scrollY;
 
-		if ( top >= $("#cena-receita").offset().top ){
+		if ( scrollTop >= $("#cena-receita").offset().top ){
 
 			$('#banner-receita').carrossel1({'auto': true});
 			receitaCarrossel = true;
 		}
 	}
 }
-$(window).bind('scroll', receitaCarrosselInit);
-$(window).bind('load', receitaCarrosselInit);
 
+
+// muda url no scroll
+var mudaUrlScrollInterval;
+function mudaUrlScroll(){
+
+    var topReceita = $("section.receitas").offset().top;
+    var topProdutos = $("section.produtos").offset().top;
+    var topAplicativos = $("section.aplicativos").offset().top;
+
+    switch(scrollTop){
+        case topReceita: url = 'receitas'; break;
+        case topProdutos: url = 'produtos'; break;
+        case topAplicativos: url = 'aplicativos'; break;
+        default: url = ''; break;
+    }
+
+     window.history.pushState({path: __URL + url}, '', __URL + url);
+}
+
+
+// eventos no scroll 
+function eventosScroll(){
+    scrollTop = window.scrollY;
+
+    // ativo carrossel receita
+    receitaCarrosselInit();
+
+    // muda url
+    // clearTimeout(mudaUrlScrollInterval);
+    // mudaUrlScrollInterval = setTimeout( function(){ mudaUrlScroll(); }, 500);
+}
+
+// eventos no load 
+function eventosLoad(){
+
+    // ativo carrossel receita
+    receitaCarrosselInit();
+}
+var scrollTop = window.scrollY;
+$(window).bind('scroll', eventosScroll);
+$(window).bind('load', eventosLoad);
 
 
 
@@ -348,169 +375,198 @@ $(window).bind('load', receitaCarrosselInit);
 
 
 
+
+
+
+
 /*
-    carrossel Aplicativos
-*/
-(function($){
+    Tela Aplicativos - Home
+ */
+var TelaAplicativo = (function(){
 
-    $.fn.carrossel2 = function(options){
+    var self = new TelaAplicativo(),
+        total,
+        innerWidth = window.innerWidth,
+        ul,
+        li,
+        liTxt,
+        tela;
 
-        var self = this,
-            total = 0,
-            clique = false,
-            intervalo, 
-            innerWidth = window.innerWidth;
+    // contrutor 
+    function TelaAplicativo(id){
 
-        total = this.find('.c-img > ul li').css('width', innerWidth+'px').length;
+        tela = $('#'+id);
 
-        var ul = self.find('.c-img > ul');
-        var li = ul.find('li');
-        var liTxt = self.find('.c-txt > ul');
+        total = tela.find('.c-img > ul li').css('width', innerWidth+'px').length;
+        ul = tela.find('.c-img > ul');
+        li = ul.find('li');
+        liTxt = tela.find('.c-txt > ul');
 
-        // zera
-        self.find('.c-img').scrollLeft(0);
+        // zera o scroll
+        tela.find('.c-img').scrollLeft(0);
 
-        // click anterior
-        this.find('a.last').click( function(event) {
-            
+        // click anterior - evento
+        tela.find('a.last').click( function(event) {            
             event.preventDefault();
 
-            clearInterval(intervalo);
-
-            clickLast();
+            self.clickLast();
         });
-        function clickLast(){
 
-            var i = self.find('.c-img').find('.ativo').index();
-
-            if (i > 0){
-
-                // retira a classe
-                $(ul).find('.ativo').removeClass('ativo');
-                li.eq(i-1).addClass('ativo');
-                // anima
-                innerWidth = parseInt(self.find('.c-img > ul li').eq(0).css('width'));
-                self.find('.c-img').animate({ scrollLeft: innerWidth*(i-1)}, 800, "easeInOutQuart");
-
-                // exibe o texto
-                /*liTxt.find('.ativo').removeClass('ativo').fadeOut(0);
-                liTxt.find('li').eq(i-1).addClass('ativo').fadeIn();*/                
-                var txt = self.find('.c-txt');
-                liTxt.find('.ativo').removeClass('ativo').delay(100).fadeOut(200);
-                txt.delay(100).animate({ left: 200}, 200, function() {
-                        liTxt.find('li').eq(i-1).addClass('ativo').fadeIn(300);
-                        txt.css('left', '-300px').animate({ left: 0}, 300);
-                });
-
-                // ativa o botao next
-                self.find('a.next').removeClass('seta-dir').addClass('seta-dir-ativo');
-
-                // seleciona na sidebar
-                selecionaSidebar(i-1);
-            }
-            
-            // desativa botao last ?
-            if (i-1 == 0) self.find('a.last').removeClass('seta-esq-ativo').addClass('seta-esq');
-        }
-
-
-        // click proximo
-        this.find('a.next').click( function(event) {
-            
+        // click proximo - evento
+        tela.find('a.next').click( function(event) {            
             event.preventDefault();
 
-            clearInterval(intervalo);
-
-            clickNext();
+            self.clickNext();
         });
-        function clickNext(){
+    }
 
-            var i = self.find('.c-img').find('.ativo').index();
 
-            if (i+1 < total){
+    // click last 
+    TelaAplicativo.prototype.clickLast = function(){
 
-                // retira a classe
-                $(ul).find('.ativo').removeClass('ativo');
-                li.eq(i+1).addClass('ativo');
-                // anima
-                innerWidth = parseInt(self.find('.c-img > ul li').eq(0).css('width'));
-                self.find('.c-img').animate({ scrollLeft: innerWidth*(i+1)}, 800, "easeInOutQuart");
+        var i = tela.find('.c-img').find('.ativo').index();
 
-                // anima e exibe o texto
-                var txt = self.find('.c-txt');
-                liTxt.find('li.ativo').removeClass('ativo').delay(100).fadeOut(200);
-                txt.delay(100).animate({ left: -200}, 200, function() {
-                		liTxt.find('li').eq(i+1).addClass('ativo').fadeIn(300);
-		                txt.css('left', '300px').animate({ left: 0}, 300);
-                });
+        if (i > 0){
 
-                // ativa o botao last
-                self.find('a.last').removeClass('seta-esq').addClass('seta-esq-ativo');
-                
-                // seleciona na sidebar
-                selecionaSidebar(i+1);
-            }
+            // retira a classe
+            $(ul).find('.ativo').removeClass('ativo');
+            li.eq(i-1).addClass('ativo');
+            // anima
+            innerWidth = parseInt(tela.find('.c-img > ul li').eq(0).css('width'));
+            tela.find('.c-img').animate({ scrollLeft: innerWidth*(i-1)}, 800, "easeInOutQuart");
 
-            // botao
-            if (i+1 == total-1) self.find('a.next').removeClass('seta-dir-ativo').addClass('seta-dir');
+            // exibe o texto              
+            var txt = tela.find('.c-txt');
+            liTxt.find('.ativo').removeClass('ativo').delay(100).fadeOut(200);
+            txt.delay(100).animate({ left: 200}, 200, function() {
+                    liTxt.find('li').eq(i-1).addClass('ativo').fadeIn(300);
+                    txt.css('left', '-300px').animate({ left: 0}, 300);
+            });
+
+            // ativa o botao next
+            tela.find('a.next').removeClass('seta-dir').addClass('seta-dir-ativo');
+
+            // seleciona na sidebar
+            selecionaBtSidebar(i-1);
+        }
+        
+        // desativa botao last ?
+        if (i-1 == 0) tela.find('a.last').removeClass('seta-esq-ativo').addClass('seta-esq');
+    }
+
+
+    // click next 
+    TelaAplicativo.prototype.clickNext = function(){
+
+        var i = tela.find('.c-img').find('.ativo').index();
+
+        if (i+1 < total){
+
+            // retira a classe
+            $(ul).find('.ativo').removeClass('ativo');
+            li.eq(i+1).addClass('ativo');
+            // anima
+            innerWidth = parseInt(tela.find('.c-img > ul li').eq(0).css('width'));
+            tela.find('.c-img').animate({ scrollLeft: innerWidth*(i+1)}, 800, "easeInOutQuart");
+
+            // anima e exibe o texto
+            var txt = tela.find('.c-txt');
+            liTxt.find('li.ativo').removeClass('ativo').delay(100).fadeOut(200);
+            txt.delay(100).animate({ left: -200}, 200, function() {
+                    liTxt.find('li').eq(i+1).addClass('ativo').fadeIn(300);
+                    txt.css('left', '300px').animate({ left: 0}, 300);
+            });
+
+            // ativa o botao last
+            tela.find('a.last').removeClass('seta-esq').addClass('seta-esq-ativo');
+            
+            // seleciona na sidebar
+            selecionaBtSidebar(i+1);
         }
 
-        // seleciona 1 na sidebar
-        function selecionaSidebar(i){
-            $('#sidebar-app .ativo').removeClass('ativo');
-            $('#sidebar-app ul li').eq(i).addClass('ativo').find('a > span.sprite-1').addClass('ativo');
-        }
-
-        $.fn.carrossel2.method = function(text) {
-            return '<strong>' + text + '</strong>';
-        };
-
-
-        // passando automaticamente
-        function iniIntervalo(){
-            intervalo = setInterval( function(){
-                
-                clickNext();
-
-            }, 4000);
-        }
-
-        // $(window).bind('load', iniIntervalo);        
-
-
-        // atualiza tamanho da li
-        function update(){
-            innerWidth = window.innerWidth;
-            self.find('.c-img > ul li').css('width', innerWidth+'px');
-            self.find('.c-img').scrollLeft(0);
-        }
-
-        $(window).bind('resize', update);
-
-        return this;
-    };
-}(jQuery));
-
-
-
-function bannerAplicativosExibe(ind){
+        // botao
+        if (i+1 == total-1) tela.find('a.next').removeClass('seta-dir-ativo').addClass('seta-dir');
+    }
 
     
-    var i = $('#banner-aplicativo').find('.c-img').find('.ativo').index();
-    var total = $('#banner-aplicativo').find('.c-img > ul li').length;
+    // atualiza tamanho da li
+    TelaAplicativo.prototype.update = function(){
+        innerWidth = window.innerWidth;
+        tela.find('.c-img > ul li').css('width', innerWidth+'px');
+        tela.find('.c-img').scrollLeft(0);
+    }
 
-    // while (ind !== i){
-        i = $('#banner-aplicativo').find('.c-img').find('.ativo').index();
+    $(window).bind('resize', self.update);
+ 
+    
+    
 
-        if (ind > i && ind < total){
-            $('#banner-aplicativo a.next').trigger('click');
-            ind++;
-        }else if (ind < i){
-            $('#banner-aplicativo a.last').trigger('click');
-            ind--;
+    // exibir sidebar 
+    $('#ver-todos-app').click(function(event) {
+        event.preventDefault();
+
+        if ( parseInt($('#sidebar-app').css('right')) ){
+
+            $('#sidebar-app').show(0).animate({right: 0}, 800, "easeInOutQuart");
+            $('#banner-aplicativo .c-txt, #banner-aplicativo .c-img > ul li').animate({'width': window.innerWidth - 330}, 800, "easeInOutQuart");
+            // $('#banner-aplicativo .content').animate({'width': window.innerWidth - 330});
+
+            $(this).animate({'margin-right': '330px'}, 800, "easeInOutQuart");
+
+            var i = $('#banner-aplicativo').find('.c-img').find('.ativo').index();
+            $('#banner-aplicativo').find('.c-img').animate({ scrollLeft: (window.innerWidth - 330)*(i)}, 800, "easeInOutQuart");
+        }else{
+            $('#sidebar-app').animate({right: -325}, 800, "easeInOutQuart").delay(800).hide(0);
+            $('#banner-aplicativo .c-txt, #banner-aplicativo .c-img > ul li').animate({'width': window.innerWidth}, 800, "easeInOutQuart");
+            // $('#banner-aplicativo .content').animate({'width': window.innerWidth});
+
+            $(this).animate({'margin-right': '0'}, 800, "easeInOutQuart");
+
+            var i = $('#banner-aplicativo').find('.c-img').find('.ativo').index();
+            $('#banner-aplicativo').find('.c-img').animate({ scrollLeft: (window.innerWidth)*(i)}, 800, "easeInOutQuart");
         }
-    // }
-}
+
+    });
+    
+    // click em um link da sidebar 
+    $('#sidebar-app a').click(function(event) {
+        event.preventDefault();
+        showApp( $(this).parent().index() );
+    });
+
+    // exibe algum app no carrossel 
+    function showApp(ind){
+        
+        var i = $('#banner-aplicativo').find('.c-img').find('.ativo').index();
+        var total = $('#banner-aplicativo').find('.c-img > ul li').length;
+
+        // while (ind !== i){
+            i = $('#banner-aplicativo').find('.c-img').find('.ativo').index();
+
+            if (ind > i && ind < total){
+                $('#banner-aplicativo a.next').trigger('click');
+                ind++;
+            }else if (ind < i){
+                $('#banner-aplicativo a.last').trigger('click');
+                ind--;
+            }
+        // }
+    }
+
+    // seleciona 1 na sidebar 
+    function selecionaBtSidebar(i){
+        $('#sidebar-app .ativo').removeClass('ativo');
+        $('#sidebar-app ul li').eq(i).addClass('ativo').find('a > span.sprite-1').addClass('ativo');
+    }
+
+
+    return TelaAplicativo;
+
+})();
+
+// var __telaAplicativo = new TelaAplicativo('banner-aplicativo');
+
+
 
 
 
