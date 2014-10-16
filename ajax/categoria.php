@@ -14,5 +14,5 @@
 		</li>
 	</ul>
 
-	<a href="#" class="subcategoria" data-cod="1">abrir</a>
+	<!-- <a href="#" class="subcategoria" data-cod="1">abrir</a> -->
 </div>

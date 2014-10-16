@@ -135,7 +135,7 @@
 	        					<a href="#"><img src="externos/receita-tumb-1.png" height="125" width="126" alt="receita"><span class="mask"></span></a>
 	        				</li>
 	        			</ul>
-						<a href="#" class="subcategoria" data-cod="1">abrir</a>
+						<!-- <a href="#" class="subcategoria" data-cod="1">abrir</a> -->
         			</div>
         		</div>
 
@@ -165,7 +165,7 @@
 	        				<span class="linha"></span>
         				</a>
         			</li>
-        			<li class="ativo">
+        			<li>
         				<a href="#" data-cod="1">
 	        				<img src="img/produto-3-thumb.jpg" height="170" width="189" alt="">
 	        				<p>Wafers</p>

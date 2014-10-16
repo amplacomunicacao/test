@@ -155,7 +155,13 @@ $( function(){
       },
       triggerOnTouchEnd: true, allowPageScroll: 'vertical' });*/
     // $("#produtos-carrossel").niceScroll();
-    $("#produtos-carrossel").niceScroll({cursorcolor:"#F00",cursoropacitymax:0.7,touchbehavior:true});
+    
+    $("#produtos-carrossel").niceScroll({cursorcolor:"#ffcc00",cursoropacitymax:0.7,touchbehavior:true});
+    $("#produtos-carrossel").bind('scroll', function(event) {
+        scrollAtivo = true;
+        scrollAtivoTime = setTimeout( function(){ scrollAtivo = false; }, 1000);
+    });
+
 
     /* FIM - Mobile
        ============================================================================== */
@@ -163,7 +169,8 @@ $( function(){
 
 });
 
-
+var scrollAtivo = false,
+        scrollAtivoTime;
 
 // ativa o banner Receita
 var receitaCarrossel = false;
@@ -585,8 +592,10 @@ var TelaProduto = ( function(){
 
 
     // click - categoria
-    $('#produtos-carrossel > ul li a').click(function(event) {
+   /* $('#produtos-carrossel > ul li a').click(function(event) {
         event.preventDefault();
+
+        if (scrollAtivo) return false;
 
         $('#produtos-carrossel > ul li.ativo').removeClass('ativo');
         $(this).parent().addClass('ativo');
@@ -614,28 +623,38 @@ var TelaProduto = ( function(){
                 }, 1000);
             }
         });
-    }
+    }*/
 
     // atualiza tamanho do carrossel produto
     TelaProduto.prototype.carrosselMenor = function(){
         $('#cena-produto').css('height', (window.innerHeight - 187) + 'px');
         $('.produtos .carrossel').addClass('subcategoria');
-        $('#bt-produtos').trigger('click');
+        // $('#bt-produtos').trigger('click');
+        window.scrollTo(0, $("a[name=produtos]").offset().top);
 
         $("#produtos-carrossel").getNiceScroll().resize();
     }
     TelaProduto.prototype.carrosselMaior = function(){
         $('#cena-produto').css('height', (window.innerHeight - 250) + 'px');
         $('.produtos .carrossel').removeClass('subcategoria');
-        $('#bt-produtos').trigger('click');
+        // $('#bt-produtos').trigger('click');
+        window.scrollTo(0, $("a[name=produtos]").offset().top);
+
+        $('#produtos-carrossel > ul li.ativo').removeClass('ativo');
 
         $("#produtos-carrossel").getNiceScroll().resize();
     }
 
 
     // click - subcategoria
-    tela.on('click', 'a.subcategoria', function(event) {
+    // tela.on('click', 'a.subcategoria', function(event) {
+    $('#produtos-carrossel > ul li a').click(function(event) {
         event.preventDefault();
+
+        if (scrollAtivo) return false;
+
+        $('#produtos-carrossel > ul li.ativo').removeClass('ativo');
+        $(this).parent().addClass('ativo');
 
         self.exibeSubcategoria( $(this).data('cod') );
     });
@@ -650,6 +669,7 @@ var TelaProduto = ( function(){
             beforeSend: function(){
                 tela.find('.load').fadeIn();
                 tela.find('.cena1').hide(0);
+                self.carrosselMenor();
             },
             success: function(data){
 
@@ -657,7 +677,7 @@ var TelaProduto = ( function(){
                     tela.find('.cena2').html(data).show(0);
                     tela.find('.load').fadeOut();
 
-                    self.carrosselMenor();
+                    // self.carrosselMenor();
                 }, 400);
             }
         });
