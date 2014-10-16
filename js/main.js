@@ -173,7 +173,9 @@ function receitaCarrosselInit(){
 
 		if ( scrollTop >= $("#cena-receita").offset().top ){
 
-			$('#banner-receita').carrossel1({'auto': true});
+            setTimeout( function(){
+			     $('#banner-receita').carrossel1({'auto': true});
+            }, 1000);
 			receitaCarrossel = true;
 		}
 	}
@@ -565,6 +567,161 @@ var TelaAplicativo = (function(){
 })();
 
 // var __telaAplicativo = new TelaAplicativo('banner-aplicativo');
+
+
+
+/*
+    Tela Produtos
+ */
+var TelaProduto = ( function(){
+
+    var self = new TelaProduto(),
+        tela;
+
+
+    function TelaProduto(){
+        tela = $('#cena-produto');
+    }
+
+
+    // click - categoria
+    $('#produtos-carrossel > ul li a').click(function(event) {
+        event.preventDefault();
+
+        $('#produtos-carrossel > ul li.ativo').removeClass('ativo');
+        $(this).parent().addClass('ativo');
+
+        self.exibeCategoria( $(this).data('cod') );
+    });
+    TelaProduto.prototype.exibeCategoria = function(id){
+
+        $.ajax({
+            url: __URL+'ajax/categoria.php',
+            type: 'POST',
+            dataType: 'html',
+            cache: true,
+            data: {cod: id },
+            beforeSend: function(){
+                tela.find('.load').fadeIn();
+                tela.find('.cena2').hide();
+            },
+            success: function(data){
+
+                setTimeout( function(){
+                    tela.find('.cena1').html(data).show(0);
+                    tela.find('.load').fadeOut();
+                    self.carrosselMaior();
+                }, 1000);
+            }
+        });
+    }
+
+    // atualiza tamanho do carrossel produto
+    TelaProduto.prototype.carrosselMenor = function(){
+        $('#cena-produto').css('height', (window.innerHeight - 187) + 'px');
+        $('.produtos .carrossel').addClass('subcategoria');
+        $('#bt-produtos').trigger('click');
+
+        $("#produtos-carrossel").getNiceScroll().resize();
+    }
+    TelaProduto.prototype.carrosselMaior = function(){
+        $('#cena-produto').css('height', (window.innerHeight - 250) + 'px');
+        $('.produtos .carrossel').removeClass('subcategoria');
+        $('#bt-produtos').trigger('click');
+
+        $("#produtos-carrossel").getNiceScroll().resize();
+    }
+
+
+    // click - subcategoria
+    tela.on('click', 'a.subcategoria', function(event) {
+        event.preventDefault();
+
+        self.exibeSubcategoria( $(this).data('cod') );
+    });
+    TelaProduto.prototype.exibeSubcategoria = function(id){
+
+        $.ajax({
+            url: __URL+'ajax/subcategoria.php',
+            type: 'POST',
+            dataType: 'html',
+            cache: true,
+            data: {cod: id },
+            beforeSend: function(){
+                tela.find('.load').fadeIn();
+                tela.find('.cena1').hide(0);
+            },
+            success: function(data){
+
+                setTimeout( function(){
+                    tela.find('.cena2').html(data).show(0);
+                    tela.find('.load').fadeOut();
+
+                    self.carrosselMenor();
+                }, 400);
+            }
+        });
+    }
+    // click fechar - subcategoria
+    tela.find('.cena2').on('click', 'a.fechar', function(event) {
+        event.preventDefault();
+
+        tela.find('.load').fadeIn();
+        tela.find('.cena2').hide();
+        setTimeout( function(){
+            tela.find('.cena1').show(0);
+            tela.find('.load').fadeOut();
+
+            self.carrosselMaior();
+         }, 400);
+    });
+
+    
+    // click - produto
+    tela.find('.cena2').on('click', '.lista-produtos li a', function(event) {
+        event.preventDefault();
+
+        self.exibeProduto( $(this).data('cod') );
+    });
+    TelaProduto.prototype.exibeProduto = function(id){
+
+        $.ajax({
+            url: __URL+'ajax/produto.php',
+            type: 'POST',
+            dataType: 'html',
+            cache: true,
+            data: {cod: id },
+            beforeSend: function(){
+                tela.find('.load').fadeIn();
+                tela.find('.cena2').hide(0);
+            },
+            success: function(data){
+
+                setTimeout( function(){
+                    tela.find('.cena3').html(data).show(0);
+                    tela.find('.load').fadeOut();
+                }, 400);
+            }
+        });
+    }
+    // click fechar - produto
+    tela.find('.cena3').on('click', 'a.fechar', function(event) {
+        event.preventDefault();
+
+        tela.find('.load').fadeIn();
+        tela.find('.cena3').hide();
+        setTimeout( function(){
+            tela.find('.cena2').show(0);
+            tela.find('.load').fadeOut();
+         }, 400);
+    });
+
+
+
+    return TelaProduto;
+
+})();
+
 
 
 

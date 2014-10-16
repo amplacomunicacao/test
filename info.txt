@@ -1,6 +1,10 @@
 
 
 - produtos
+	DÚVIDAS
+	- onde coloca o click pra entrar na categoria (no ipad não tem hover)?
+	- problema na imagem do produto: temos que decidir como fica a foto do produto 		(muito pesada)
+	- a área produto numa tela meno (inclusive ipad) o passador vai ficar por cima…
 - menu
 - carrossel serviços
 - carrossel notícias

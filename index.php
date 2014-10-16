@@ -49,7 +49,7 @@
 							<ul>
 								<li>
 									<span class="linha-l"></span>
-									<a href="#produtos" class="scroll"><span class="sprite-1 icon-produto"></span>&nbsp;&nbsp; Nosso Produtos</a>
+									<a href="#produtos" class="scroll" id="bt-produtos"><span class="sprite-1 icon-produto"></span>&nbsp;&nbsp; Nosso Produtos</a>
 								</li>
 								<li>
 									<span class="linha-l"></span>
@@ -118,77 +118,104 @@
         	<h2 class="hidden">produtos</h2>
         	<a name="produtos" class="ancora"></a>
 
-        	<div class="cena-produto" id="cena-produto" style="background-image: url(img/produto-1.jpg)">
-        		
+        	<div class="cena-produto" id="cena-produto">
+				
+				<div class="load"><img src="<?= __URL ?>img/loader.gif" height="16" width="16" alt="carregando..."></div>
+
+        		<div class="cena1">
+        			<div class="bg" style="background-image: url(externos/produto-1.jpg)"></div>
+        			<div class="content">
+	        			<h3>Wafers</h3>
+	        			<p>Receitas com esse produto</p>
+	        			<ul class="receitas">
+	        				<li>
+	        					<a href="#"><img src="externos/receita-tumb-1.png" height="125" width="126" alt="receita"><span class="mask"></span></a>
+	        				</li>
+	        				<li>
+	        					<a href="#"><img src="externos/receita-tumb-1.png" height="125" width="126" alt="receita"><span class="mask"></span></a>
+	        				</li>
+	        			</ul>
+						<a href="#" class="subcategoria" data-cod="1">abrir</a>
+        			</div>
+        		</div>
+
+        		<div class="cena2">
+
+        		</div>
+
+        		<div class="cena3">
+        			
+        		</div>
+
         	</div>
         	<div class="carrossel">
         		<div id="produtos-carrossel">
         		<ul>
         			<li>
-        				<a href="#">
+        				<a href="#" data-cod="1">
 	        				<img src="img/produto-1-thumb.jpg" height="170" width="189" alt="">
 	        				<p>Biscoitos Salgados</p>
 	        				<span class="linha"></span>
         				</a>
         			</li>
         			<li>
-        				<a href="#">
+        				<a href="#" data-cod="1">
 	        				<img src="img/produto-2-thumb.jpg" height="170" width="148" alt="">
 	        				<p>Cream Crackers <br>Crocks</p>
 	        				<span class="linha"></span>
         				</a>
         			</li>
-        			<li>
-        				<a href="#">
+        			<li class="ativo">
+        				<a href="#" data-cod="1">
 	        				<img src="img/produto-3-thumb.jpg" height="170" width="189" alt="">
 	        				<p>Wafers</p>
 	        				<span class="linha"></span>
         				</a>
         			</li>
         			<li>
-        				<a href="#">
+        				<a href="#" data-cod="1">
 	        				<img src="img/produto-4-thumb.jpg" height="170" width="147" alt="">
 	        				<p>Maria e Maizena</p>
 	        				<span class="linha"></span>
         				</a>
         			</li>
         			<li>
-        				<a href="#">
+        				<a href="#" data-cod="1">
 	        				<img src="img/produto-5-thumb.jpg" height="170" width="141" alt="">
 	        				<p>Cream Cracker</p>
 	        				<span class="linha"></span>
         				</a>
         			</li>
         			<li>
-        				<a href="#">
+        				<a href="#" data-cod="1">
 	        				<img src="img/produto-1-thumb.jpg" height="170" width="189" alt="">
 	        				<p>Biscoitos Salgados</p>
 	        				<span class="linha"></span>
         				</a>
         			</li>
         			<li>
-        				<a href="#">
+        				<a href="#" data-cod="1">
 	        				<img src="img/produto-2-thumb.jpg" height="170" width="148" alt="">
 	        				<p>Cream Crackers <br>Crocks</p>
 	        				<span class="linha"></span>
         				</a>
         			</li>
         			<li>
-        				<a href="#">
+        				<a href="#" data-cod="1">
 	        				<img src="img/produto-3-thumb.jpg" height="170" width="189" alt="">
 	        				<p>Wafers</p>
 	        				<span class="linha"></span>
         				</a>
         			</li>
         			<li>
-        				<a href="#">
+        				<a href="#" data-cod="1">
 	        				<img src="img/produto-4-thumb.jpg" height="170" width="147" alt="">
 	        				<p>Maria e Maizena</p>
 	        				<span class="linha"></span>
         				</a>
         			</li>
         			<li>
-        				<a href="#">
+        				<a href="#" data-cod="1">
 	        				<img src="img/produto-5-thumb.jpg" height="170" width="141" alt="">
 	        				<p>Cream Cracker</p>
 	        				<span class="linha"></span>
