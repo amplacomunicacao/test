@@ -2,9 +2,7 @@
 
 - produtos
 	DÚVIDAS
-	- onde coloca o click pra entrar na categoria (no ipad não tem hover)?
-	- problema na imagem do produto: temos que decidir como fica a foto do produto 		(muito pesada)
-	- a área produto numa tela meno (inclusive ipad) o passador vai ficar por cima…
+	- na interna, passar para o próximo produto: no ipad não tem hover, como saber 		qual sabor é o próximo?
 - menu
 - carrossel serviços
 - carrossel notícias
@@ -19,12 +17,4 @@ http://areaaperta.com/nicescroll/
 http://www.queness.com/post/11755/11-multi-touch-and-touch-events-javascript-libraries
 
 
-http://codigofonte.uol.com.br/artigos/aprenda-a-criar-seu-proprio-plugin-no-jquery
-http://blog.alexandremagno.net/2008/01/um-padrao-de-desenvolvimento-para-plugins-do-jquery/
-http://iainjmitchell.com/blog/?p=360
-http://digifilia.com/desenvolvendo-plugins-com-jquery/
-http://javiani.wordpress.com/2010/01/24/oop-em-javascript-heranca-e-singleton-pattern/
-
-trotem
-Throttle
 

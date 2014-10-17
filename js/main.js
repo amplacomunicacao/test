@@ -1,12 +1,39 @@
 $( function(){
 
+    // form
+    $('textarea, input[type=text]').focus( function(){
+        if ( this.value == this.defaultValue ) this.value = '';
+    });
+    $('textarea, input[type=text]').blur( function(){
+        if ( this.value == '' ) this.value = this.defaultValue;
+    });
 
 	// banner topo 
     $('#banner').carrossel1({'auto': true});
 
+    // banner produto
+    $('#banner-produto').carrossel1();
 
     // banner aplicativos 
-   var __telaAplicativo = new TelaAplicativo('banner-aplicativo');
+    var __telaAplicativo = new TelaAplicativo('banner-aplicativo');
+
+    // receita - sidebar
+    $('#sidebar-receita .bt').click(function(event) {
+        event.preventDefault();
+
+        // $('#sidebar-receita .submenu').slideUp();
+
+        $('#sidebar-receita .bt').removeClass('ativo');
+
+        if ( $(this).parent().find('.submenu').css('display') === 'block' ){
+            $('#sidebar-receita .submenu').slideUp();
+        }else{
+            $('#sidebar-receita .submenu').slideUp();
+            $(this).parent().find('.submenu').slideDown();
+            $(this).addClass('ativo');
+        }
+
+    });
 
 
 	// scrool nas etapas 
@@ -100,7 +127,7 @@ $( function(){
     /* Mobile
        ============================================================================== */
     // banner topo 
-    $("#banner, #banner-receita").swipe({
+    $("#banner, #banner-receita, #banner-produto").swipe({
       swipe:function(event, direction, distance, duration, fingerCount) {
         // $(this).text("You swiped " + direction );
 
@@ -226,9 +253,16 @@ function eventosLoad(){
     // ativo carrossel receita
     receitaCarrosselInit();
 }
+
+// eventos no resize
+function eventosResize(){
+    
+}
+
 var scrollTop = window.scrollY;
 $(window).bind('scroll', eventosScroll);
 $(window).bind('load', eventosLoad);
+$(window).bind('resize', eventosResize);
 
 
 
@@ -661,14 +695,14 @@ var TelaProduto = ( function(){
     TelaProduto.prototype.exibeSubcategoria = function(id){
 
         $.ajax({
-            url: __URL+'ajax/subcategoria.php',
+            url: __URL+'ajax/produtos-subcategoria.php',
             type: 'POST',
             dataType: 'html',
             cache: true,
             data: {cod: id },
             beforeSend: function(){
                 tela.find('.load').fadeIn();
-                tela.find('.cena1').hide(0);
+                tela.find('.cena1, .cena2, .cena3').hide(0);
                 self.carrosselMenor();
             },
             success: function(data){
@@ -726,6 +760,19 @@ var TelaProduto = ( function(){
     }
     // click fechar - produto
     tela.find('.cena3').on('click', 'a.fechar', function(event) {
+        event.preventDefault();
+
+        tela.find('.load').fadeIn();
+        tela.find('.cena3, .cena2').hide();
+        setTimeout( function(){
+            tela.find('.cena1').show(0);
+            tela.find('.load').fadeOut();
+
+            self.carrosselMaior();
+         }, 400);
+    });
+    // click voltar
+    tela.find('.cena3').on('click', 'a.voltar', function(event) {
         event.preventDefault();
 
         tela.find('.load').fadeIn();

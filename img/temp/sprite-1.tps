@@ -208,6 +208,17 @@
             <filename>app-lista2.png</filename>
             <filename>app-receitas2-ativo.png</filename>
             <filename>app-receitas2.png</filename>
+            <filename>fechar.png</filename>
+            <filename>next-2.png</filename>
+            <filename>prev-2.png</filename>
+            <filename>seta-l.png</filename>
+            <filename>bt-nutricional.png</filename>
+            <filename>seta-dir-2.png</filename>
+            <filename>seta-esq-2.png</filename>
+            <filename>seta-baixo-ativo.png</filename>
+            <filename>seta-baixo.png</filename>
+            <filename>seta-cima.png</filename>
+            <filename>busca-receita.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
