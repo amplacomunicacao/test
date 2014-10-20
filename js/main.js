@@ -194,6 +194,7 @@ $( function(){
        ============================================================================== */
 
 
+
 });
 
 var scrollAtivo = false,
@@ -256,7 +257,7 @@ function eventosLoad(){
 
 // eventos no resize
 function eventosResize(){
-    
+    _telaReceita.update();
 }
 
 var scrollTop = window.scrollY;
@@ -791,6 +792,47 @@ var TelaProduto = ( function(){
 
 
 
+
+
+/*
+    Tela Receitas
+ */
+var TelaReceita = (function(){
+
+    var tela;
+
+    function TelaReceita(){
+        tela = $('#cena-receita');
+    }
+
+
+    TelaReceita.prototype.init = function(){
+        var self = this;
+
+        // ajusta tamanho
+        // tela.css('width', window.innerWidth - 320);
+        // tela.find('ul li').css('width', window.innerWidth - 320);
+
+        // carrossel receitas
+        // $("#cena-receita .resultado").niceScroll({cursorcolor:"#ffcc00",cursoropacitymax:0.7,touchbehavior:true, autohidemode: false});
+
+        // add evento
+        $('#sidebar-receita a.filtro').click(function(event) {
+            event.preventDefault();
+
+            // 
+        });
+    };
+
+    TelaReceita.prototype.update = function(){
+        tela.css('width', window.innerWidth - 320);
+    }
+
+    return TelaReceita;
+})();
+
+var _telaReceita = new TelaReceita();
+_telaReceita.init();
 
 
 

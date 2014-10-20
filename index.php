@@ -354,65 +354,169 @@
 						</li>
 						</ul>
 					</div>
-
 				</div>
+				
+				<!-- <div class="resultado">
+					<div class="box">
+						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
+						<div class="mask">
+							<div class="desc">
+							<h4>Lasanha especial Vitarella</h4>
+							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
+							<br>
+							<a href="#" class="sprite-1 ver-mais"></a>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
+						<div class="mask">
+							<div class="desc">
+							<h4>Lasanha especial Vitarella</h4>
+							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
+							<br>
+							<a href="#" class="sprite-1 ver-mais"></a>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
+						<div class="mask">
+							<div class="desc">
+							<h4>Lasanha especial Vitarella</h4>
+							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
+							<br>
+							<a href="#" class="sprite-1 ver-mais"></a>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
+						<div class="mask">
+							<div class="desc">
+							<h4>Lasanha especial Vitarella</h4>
+							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
+							<br>
+							<a href="#" class="sprite-1 ver-mais"></a>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
+						<div class="mask">
+							<div class="desc">
+							<h4>Lasanha especial Vitarella</h4>
+							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
+							<br>
+							<a href="#" class="sprite-1 ver-mais"></a>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
+						<div class="mask">
+							<div class="desc">
+							<h4>Lasanha especial Vitarella</h4>
+							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
+							<br>
+							<a href="#" class="sprite-1 ver-mais"></a>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
+						<div class="mask">
+							<div class="desc">
+							<h4>Lasanha especial Vitarella</h4>
+							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
+							<br>
+							<a href="#" class="sprite-1 ver-mais"></a>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
+						<div class="mask">
+							<div class="desc">
+							<h4>Lasanha especial Vitarella</h4>
+							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
+							<br>
+							<a href="#" class="sprite-1 ver-mais"></a>
+							</div>
+						</div>
+					</div>
+					<div class="box">
+						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
+						<div class="mask">
+							<div class="desc">
+							<h4>Lasanha especial Vitarella</h4>
+							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
+							<br>
+							<a href="#" class="sprite-1 ver-mais"></a>
+							</div>
+						</div>
+					</div>
+				</div> -->
 
-				<aside id="sidebar-receita">
+        	</div>
+
+        	<aside id="sidebar-receita">
 					<h3>Receitas</h3>
 					<div class="sprite-1 busca-receita">
-						<input type="text" value="Digite sua busca">
-						<input type="submit" value="buscar">
+						<form action="" method="post">
+							<input type="text" value="Digite sua busca">
+							<input type="submit" value="buscar">
+						</form>
 					</div>
 					<ul>
 						<li>
 							<a href="#" class="bt">Tipos de prato <span class="sprite-1 seta-baixo"></span></a>
 							<ul class="submenu">
-								<li><a href="#">Entrada</a></li>
-								<li><a href="#">Prato principal</a></li>
-								<li><a href="#">Sobremesa</a></li>
-								<li><a href="#">Lanche</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Entrada</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Prato principal</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Sobremesa</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Lanche</a></li>
 							</ul>
 						</li>
 						<li>
 							<a href="#" class="bt">Por produtos <span class="sprite-1 seta-baixo"></span></a>
 							<ul class="submenu">
-								<li><a href="#">Entrada</a></li>
-								<li><a href="#">Prato principal</a></li>
-								<li><a href="#">Sobremesa</a></li>
-								<li><a href="#">Lanche</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Entrada</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Prato principal</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Sobremesa</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Lanche</a></li>
 							</ul>
 						</li>
 						<li>
 							<a href="#" class="bt">Tempode preparo <span class="sprite-1 seta-baixo"></span></a>
 							<ul class="submenu">
-								<li><a href="#">Entrada</a></li>
-								<li><a href="#">Prato principal</a></li>
-								<li><a href="#">Sobremesa</a></li>
-								<li><a href="#">Lanche</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Entrada</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Prato principal</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Sobremesa</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Lanche</a></li>
 							</ul>
 						</li>
 						<li>
 							<a href="#" class="bt">Nívelde dificuldade <span class="sprite-1 seta-baixo"></span></a>
 							<ul class="submenu">
-								<li><a href="#">Entrada</a></li>
-								<li><a href="#">Prato principal</a></li>
-								<li><a href="#">Sobremesa</a></li>
-								<li><a href="#">Lanche</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Entrada</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Prato principal</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Sobremesa</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Lanche</a></li>
 							</ul>
 						</li>
 						<li>
 							<a href="#" class="bt">Favoritas <span class="sprite-1 seta-baixo"></span></a>
 							<ul class="submenu">
-								<li><a href="#">Entrada</a></li>
-								<li><a href="#">Prato principal</a></li>
-								<li><a href="#">Sobremesa</a></li>
-								<li><a href="#">Lanche</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Entrada</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Prato principal</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Sobremesa</a></li>
+								<li><a href="#" class="filtro" data-filtro="tipo">Lanche</a></li>
 							</ul>
 						</li>
 					</ul>
 				</aside>
 
-        	</div>
         </section>
 
         <section class="aplicativos slide" data-url="dicas-e-aplicativos">
