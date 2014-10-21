@@ -246,6 +246,16 @@ function eventosScroll(){
     // muda url
     // clearTimeout(mudaUrlScrollInterval);
     // mudaUrlScrollInterval = setTimeout( function(){ mudaUrlScroll(); }, 500);
+
+    // menu
+    /*if ( scrollTop > 165 ){
+        $('header .menu').css({ position: 'fixed', top: '-165px'});
+        $('header .menu-2').animate({top: 0}, 800, "easeInOutQuart");
+
+    }else if(scrollTop == 0){
+        $('header .menu').css({ position: 'absolute'}).delay(800).animate({top: 0}, 800, "easeInOutQuart");;
+        $('header .menu-2').animate({top: '-65px'}, 800, "easeInOutQuart");
+    }*/
 }
 
 // eventos no load 
@@ -253,12 +263,20 @@ function eventosLoad(){
 
     // ativo carrossel receita
     receitaCarrosselInit();
+
+    if ( parseInt($('#cena-produto').css('height')) >= window.innerHeight)
+        $('#cena-produto').css('height', (window.innerHeight - 250) + 'px');
+    
 }
 
 // eventos no resize
 function eventosResize(){
     _telaReceita.update();
+
+    if ( parseInt($('#cena-produto').css('height')) >= window.innerHeight) 
+        $('#cena-produto').css('height', (window.innerHeight - 250) + 'px');
 }
+
 
 var scrollTop = window.scrollY;
 $(window).bind('scroll', eventosScroll);
@@ -809,18 +827,48 @@ var TelaReceita = (function(){
     TelaReceita.prototype.init = function(){
         var self = this;
 
-        // ajusta tamanho
-        // tela.css('width', window.innerWidth - 320);
-        // tela.find('ul li').css('width', window.innerWidth - 320);
-
-        // carrossel receitas
-        // $("#cena-receita .resultado").niceScroll({cursorcolor:"#ffcc00",cursoropacitymax:0.7,touchbehavior:true, autohidemode: false});
-
         // add evento
         $('#sidebar-receita a.filtro').click(function(event) {
             event.preventDefault();
 
-            // 
+            var filtro = $(this).data('filtro');
+
+            $.ajax({
+                url: __URL+'ajax/receita-busca.php',
+                type: 'POST',
+                dataType: 'html',
+                cache: true,
+                data: {busca: filtro },
+                beforeSend: function(){
+                    tela.find('.load').fadeIn();
+                    tela.find('.banner').hide(0);
+                },
+                success: function(data){
+
+                    setTimeout( function(){
+                        tela.find('.resultado').html(data).show(0);
+                        tela.find('.load').fadeOut();
+
+                        // ajusta tamanho
+                        tela.css('width', window.innerWidth - 320);
+                        tela.find('.resultado ul li').css({'width': window.innerWidth - 320, 'height': window.innerHeight});
+
+                        // carrossel receitas
+                        tela.find(".resultado").niceScroll({cursorcolor:"#ffcc00",cursoropacitymax:0.7,touchbehavior:true, autohidemode: false});
+
+                        /*
+                        ------------------------------------------------------------------------------------------------------------
+                        tela.css('width', window.innerWidth - 320);
+                          
+                        var tamanho = parseInt( (window.innerWidth - 320) * 33)/100;
+                        $('#cena-receita .resultado .box').css('width', tamanho);
+
+                        $("#cena-receita").niceScroll({cursorcolor:"#ffcc00",cursoropacitymax:0.7,touchbehavior:true, autohidemode: false});
+                        ------------------------------------------------------------------------------------------------------------
+                         */
+                    }, 400);
+                }
+            }); 
         });
     };
 

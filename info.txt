@@ -1,11 +1,9 @@
 
 
-- produtos
-	DÚVIDAS
-	- na interna, passar para o próximo produto: no ipad não tem hover, como saber 		qual sabor é o próximo?
 - menu
 - carrossel serviços
 - carrossel notícias
+- produtos: passar para o próximo produto, no ipad não tem hover, como saber qual sabor é o próximo?
 - receitas
 - tablet
 

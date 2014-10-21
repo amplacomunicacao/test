@@ -8,7 +8,7 @@ setlocale(LC_ALL, 'pt_BR', 'ptb', 'PT_BR.UTF8');
 date_default_timezone_set('America/Recife');
 
 /* define url root */
-define('__URL', 'http://localhost/vitarella_site_novo/');
+define('__URL', 'http://192.168.201.13/vitarella_site_novo/');
 
 /* define site path */
 // $site_path = realpath(dirname(__FILE__));

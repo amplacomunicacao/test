@@ -219,6 +219,10 @@
             <filename>seta-baixo.png</filename>
             <filename>seta-cima.png</filename>
             <filename>busca-receita.png</filename>
+            <filename>icon-tempo.png</filename>
+            <filename>mais.png</filename>
+            <filename>ver-mais-4.png</filename>
+            <filename>menu-mobile.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

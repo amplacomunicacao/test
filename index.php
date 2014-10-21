@@ -30,7 +30,7 @@
 			<div class="menu">
 				<div class="row1">
 					<div class="content">
-						<img src="img/marca-1.png" height="72" width="126" alt="marca">
+						<img src="img/marca-1.png" height="72" width="126" alt="logomarca">
 						<nav>
 							<ul>
 								<li><a href="#"><span class="sprite-1 icon-sobre"></span>&nbsp;&nbsp; Sobre a vitarella</a></li>
@@ -64,6 +64,14 @@
 						</nav>
 					</div>
 				</div>
+			</div>
+
+			<div class="menu-2">
+				<div class="content">
+					<img src="img/marca-1.png" height="48" width="85" alt="logomarca">
+					<a href="#" class="sprite-1 menu-mobile">menu</a>
+				</div>
+				<div class="clear"></div>
 			</div>
 
 			<div class="banner" id="banner">				
@@ -285,6 +293,7 @@
         	<h2 class="hidden">receitas</h2>
         	<a name="receitas" class="ancora"></a>
         	<div id="cena-receita" class="cena-receita">
+				<div class="load"><img src="<?= __URL ?>img/loader.gif" height="16" width="16" alt="carregando..."></div>
         		
 				<div class="banner" id="banner-receita">
 					<div class="c-img">
@@ -355,108 +364,10 @@
 						</ul>
 					</div>
 				</div>
-				
-				<!-- <div class="resultado">
-					<div class="box">
-						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
-						<div class="mask">
-							<div class="desc">
-							<h4>Lasanha especial Vitarella</h4>
-							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
-							<br>
-							<a href="#" class="sprite-1 ver-mais"></a>
-							</div>
-						</div>
-					</div>
-					<div class="box">
-						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
-						<div class="mask">
-							<div class="desc">
-							<h4>Lasanha especial Vitarella</h4>
-							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
-							<br>
-							<a href="#" class="sprite-1 ver-mais"></a>
-							</div>
-						</div>
-					</div>
-					<div class="box">
-						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
-						<div class="mask">
-							<div class="desc">
-							<h4>Lasanha especial Vitarella</h4>
-							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
-							<br>
-							<a href="#" class="sprite-1 ver-mais"></a>
-							</div>
-						</div>
-					</div>
-					<div class="box">
-						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
-						<div class="mask">
-							<div class="desc">
-							<h4>Lasanha especial Vitarella</h4>
-							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
-							<br>
-							<a href="#" class="sprite-1 ver-mais"></a>
-							</div>
-						</div>
-					</div>
-					<div class="box">
-						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
-						<div class="mask">
-							<div class="desc">
-							<h4>Lasanha especial Vitarella</h4>
-							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
-							<br>
-							<a href="#" class="sprite-1 ver-mais"></a>
-							</div>
-						</div>
-					</div>
-					<div class="box">
-						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
-						<div class="mask">
-							<div class="desc">
-							<h4>Lasanha especial Vitarella</h4>
-							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
-							<br>
-							<a href="#" class="sprite-1 ver-mais"></a>
-							</div>
-						</div>
-					</div>
-					<div class="box">
-						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
-						<div class="mask">
-							<div class="desc">
-							<h4>Lasanha especial Vitarella</h4>
-							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
-							<br>
-							<a href="#" class="sprite-1 ver-mais"></a>
-							</div>
-						</div>
-					</div>
-					<div class="box">
-						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
-						<div class="mask">
-							<div class="desc">
-							<h4>Lasanha especial Vitarella</h4>
-							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
-							<br>
-							<a href="#" class="sprite-1 ver-mais"></a>
-							</div>
-						</div>
-					</div>
-					<div class="box">
-						<img src="externos/receita-1-thumbnail.jpg" alt="foto da receita">
-						<div class="mask">
-							<div class="desc">
-							<h4>Lasanha especial Vitarella</h4>
-							<p>De 30 minutos a 1 hora - <span class="amarelo">Nível Difícil</span></p>
-							<br>
-							<a href="#" class="sprite-1 ver-mais"></a>
-							</div>
-						</div>
-					</div>
-				</div> -->
+
+				<div class="resultado">
+					
+				</div>
 
         	</div>
 
@@ -567,26 +478,16 @@
         	<h2 class="hidden">sevicos</h2>
 			<div class="banner" id="banner-servico">
 				<div class="box">
-					<a href="#" class="sprite-1 ver-todos-2 indent">ver todos</a>
+					<a href="#" class="ver-todos-2"><span class="sprite-1 mais"></span> Ver todos os serviços</a>
 
 					<div class="c-txt">
 						<ul>
 							<li>
 							<h3>Como manter <br>a geladeira em ordem</h3>
-							<!-- <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus impedit corporis dolor expedita vel labore similique ipsam nostrum minima nulla. Harum obcaecati nisi amet possimus non neque enim assumenda, ut.</p> -->
+							<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
 							<br>
-							<a href="#" class="sprite-1 ver-mais-2">ver mais</a>
+							<a href="#" class="sprite-1 ver-mais-4">ver mais</a>
 							</li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="box right">
-					
-					<img src="img/sevicos-2.jpg" alt="imagem">
-					<!-- <div class="c-img">
-						<ul>
-							<li><img src="img/sevicos-2.jpg" alt="imagem"></li>
 						</ul>
 					</div>
 
@@ -595,32 +496,42 @@
 						<li>
 							<a href="#" class="anima">
 								<svg height="46" width="46">
-									<circle cx="23" cy="23" r="20" class="border-opacity" />
-									<circle cx="23" cy="23" r="20" class="border" />
-									<circle cx="23" cy="23" r="6" fill="#999999" />
+									<circle cx="20" cy="20" r="17" class="border-opacity" />
+									<circle cx="20" cy="20" r="17" class="border" />
+									<circle cx="20" cy="20" r="5" fill="#999999" />
 								</svg> 
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<svg height="46" width="46">
-									<circle cx="23" cy="23" r="20" class="border-opacity" />
-									<circle cx="23" cy="23" r="20" class="border" />
-									<circle cx="23" cy="23" r="6" fill="#999999" />
+									<circle cx="20" cy="20" r="17" class="border-opacity" />
+									<circle cx="20" cy="20" r="17" class="border" />
+									<circle cx="20" cy="20" r="5" fill="#999999" />
 								</svg> 
 							</a>
 						</li>
 						<li>
 							<a href="#">
 								<svg height="46" width="46">
-									<circle cx="23" cy="23" r="20" class="border-opacity" />
-									<circle cx="23" cy="23" r="20" class="border" />
-									<circle cx="23" cy="23" r="6" fill="#999999" />
+									<circle cx="20" cy="20" r="17" class="border-opacity" />
+									<circle cx="20" cy="20" r="17" class="border" />
+									<circle cx="20" cy="20" r="5" fill="#999999" />
 								</svg> 
 							</a>
 						</li>
 						</ul>
-					</div> -->
+					</div>
+				</div>
+
+				<div class="box right">
+					
+					<!-- <img src="img/sevicos-2.jpg" alt="imagem"> -->
+					<div class="c-img">
+						<ul>
+							<li><img src="img/sevicos-2.jpg" alt="imagem"></li>
+						</ul>
+					</div>
 				</div>
 				<div class="clear"></div>
 			</div>
@@ -636,11 +547,49 @@
 							<a href="#" class="sprite-1 play indent">vídeo</a>
 						</div>
 						<div class="box right">
+							<a href="#" class="ver-todos-2"><span class="sprite-1 mais"></span> Ver todos as notícias</a>
+
 							<div class="c-txt">
-								<h3>Dia das mães <br>especial Vitarella</h3>
-								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus impedit corporis dolor expedita vel labore similique ipsam nostrum minima nulla. Harum obcaecati nisi amet possimus non neque enim assumenda, ut.</p>
-								<br>
-								<a href="#" class="sprite-1 ver-mais-2">ver mais</a>
+								<ul>
+									<li>
+									<h3>Campanha 20 anos <br>da Vitarella</h3>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </p>
+									<br>
+									<a href="#" class="sprite-1 ver-mais-4">ver mais</a>
+									</li>
+								</ul>
+							</div>
+
+							<div class="c-link c-link-circulo">
+								<ul>
+								<li>
+									<a href="#" class="anima">
+										<svg height="46" width="46">
+											<circle cx="20" cy="20" r="17" class="border-opacity" />
+											<circle cx="20" cy="20" r="17" class="border" />
+											<circle cx="20" cy="20" r="5" fill="#999999" />
+										</svg> 
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<svg height="46" width="46">
+											<circle cx="20" cy="20" r="17" class="border-opacity" />
+											<circle cx="20" cy="20" r="17" class="border" />
+											<circle cx="20" cy="20" r="5" fill="#999999" />
+										</svg> 
+									</a>
+								</li>
+								<li>
+									<a href="#">
+										<svg height="46" width="46">
+											<circle cx="20" cy="20" r="17" class="border-opacity" />
+											<circle cx="20" cy="20" r="17" class="border" />
+											<circle cx="20" cy="20" r="5" fill="#999999" />
+										</svg> 
+									</a>
+								</li>
+								</ul>
 							</div>
 						</div>
 						<div class="clear"></div>
@@ -686,7 +635,7 @@
         <script src="js/vendor/jquery.touchSwipe.min.js"></script>
         <script src="js/vendor/jquery.nicescroll.min.js"></script>
         <script src="js/vendor/jquery-ui.min.js"></script>
-        <script src="js/main.js"></script>
+        <script src="js/main.js?v=2"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. 
         <script>
