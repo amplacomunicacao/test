@@ -14,6 +14,9 @@ $( function(){
     // banner produto
     $('#banner-produto').carrossel1();
 
+    // banner receita
+    $('#banner-receita').carrossel1();
+
     // banner aplicativos 
     var __telaAplicativo = new TelaAplicativo('banner-aplicativo');
 
@@ -33,6 +36,30 @@ $( function(){
             $(this).addClass('ativo');
         }
 
+    });
+
+    // clique nova pagina
+    $('#loader').css('display', 'block');
+    $('a.link').click(function(event) {
+        event.preventDefault();
+
+        $('#loader').fadeIn( function(){
+            window.location.href = this.href;
+        });
+    });
+
+    // busca
+    $('.menu li.busca a').click(function(event) {
+        event.preventDefault();
+
+        $(this).parent().css('width', '200px');
+        setTimeout( function(){ $('.menu li.busca input').show(0).focus(); }, 400);
+    });
+    $('.menu li.busca input').blur(function(event) {
+        event.preventDefault();
+
+        $(this).parent().css('width', '53px');
+        $(this).parent().find('input').hide(0);
     });
 
 
@@ -75,7 +102,7 @@ $( function(){
                 window.history.pushState({path:full_url},'',full_url);
             }*/
 	        
-	        $("html,body").animate({ scrollTop:top }, "easeInOutQuint", function() {
+	        $("html,body").animate({ scrollTop:top }, 800, function() {
 	            scrollingScreen = false;
 
 	        });
@@ -105,14 +132,14 @@ $( function(){
         
         //goto that anchor by setting the body scroll top to anchor top
         // animaMenu(target_top);
-        $('html, body').animate({scrollTop:target_top}, 800, function(){ clickMenu = false; });
+        $('html, body').stop().animate({scrollTop:target_top}, 800, function(){ clickMenu = false; });
         
         
         //to change the browser URL to the given link location
-        if(full_url!=window.location){
-            // full_url = full_url.replace('#', '');
+        /*if(full_url!=window.location){
+            full_url = full_url.substr(0, full_url.lastIndexOf('/')+1 ) + trgt;
             window.history.pushState({path:full_url},'',full_url);
-        }
+        }*/
         
         // ativo botao do menu
         // $("#menu li a").removeClass('ativo');
@@ -168,6 +195,38 @@ $( function(){
     allowPageScroll: 'vertical'});
 
 
+    // body
+    // $("#produtos-carrossel").niceScroll({cursorcolor:"#ffcc00",cursoropacitymax:0.7,touchbehavior:true});
+    /*$("html, body").swipe({
+      swipe:function(event, direction, distance, duration, fingerCount) {
+        // $(this).text("You swiped " + direction );
+        
+        if(direction === 'up'){
+            alert('')
+            var scrollTop = parseInt(window.scrollY);
+
+            var topProdutos = $("section.produtos").offset().top;
+            var topReceita = $("section.receitas").offset().top;
+            var topAplicativos = $("section.aplicativos").offset().top;
+
+            if ( scrollTop < topProdutos){
+                destino = topProdutos;
+            
+            }else if ( scrollTop < topReceita){
+                destino = topReceita;
+            
+            }else if ( scrollTop < topAplicativos){
+                destino = topAplicativos;
+            }            
+
+            $("html,body").animate({ scrollTop: destino }, 800, "easeInOutQuint");
+        }
+      },
+    allowPageScroll: 'vertical'});*/
+
+
+
+
     // carrossel produtos
     /*$("#produtos-carrossel").swipe({
       swipeStatus: function(event, phase, direction, distance) {
@@ -193,8 +252,6 @@ $( function(){
     /* FIM - Mobile
        ============================================================================== */
 
-
-
 });
 
 var scrollAtivo = false,
@@ -217,72 +274,45 @@ function receitaCarrosselInit(){
 }
 
 
-// muda url no scroll
-var mudaUrlScrollInterval;
-function mudaUrlScroll(){
-
-    var topReceita = $("section.receitas").offset().top;
-    var topProdutos = $("section.produtos").offset().top;
-    var topAplicativos = $("section.aplicativos").offset().top;
-
-    switch(scrollTop){
-        case topReceita: url = 'receitas'; break;
-        case topProdutos: url = 'produtos'; break;
-        case topAplicativos: url = 'aplicativos'; break;
-        default: url = ''; break;
-    }
-
-     window.history.pushState({path: __URL + url}, '', __URL + url);
-}
 
 
-// eventos no scroll 
-function eventosScroll(){
-    scrollTop = window.scrollY;
 
-    // ativo carrossel receita
-    receitaCarrosselInit();
+/*
+    menu
+ */
+var Menu = (function(){
 
-    // muda url
-    // clearTimeout(mudaUrlScrollInterval);
-    // mudaUrlScrollInterval = setTimeout( function(){ mudaUrlScroll(); }, 500);
+    var Menu = {};
 
-    // menu
-    /*if ( scrollTop > 165 ){
-        $('header .menu').css({ position: 'fixed', top: '-165px'});
-        $('header .menu-2').animate({top: 0}, 800, "easeInOutQuart");
+    Menu.secundario = false;
 
-    }else if(scrollTop == 0){
-        $('header .menu').css({ position: 'absolute'}).delay(800).animate({top: 0}, 800, "easeInOutQuart");;
-        $('header .menu-2').animate({top: '-65px'}, 800, "easeInOutQuart");
-    }*/
-}
+    Menu.exibePrincipal = function(){
+        this.secundario = false;
+        $('#menu-2').stop().animate({top: '-62px'}, 400, "easeInOutQuart", function(){
+            $('#menu').css({ position: 'absolute'}).delay(400).stop().show().animate({top: 0}, 800, "easeInOutQuart");
+        });        
+    };
 
-// eventos no load 
-function eventosLoad(){
+    Menu.exibeSecundario = function(){
+        this.secundario = true;
+        $('#menu').css({ position: 'fixed', top: '-165px'}).hide();
+        $('#menu-2').stop().animate({top: 0}, 800, "easeInOutQuart");
+    };
 
-    // ativo carrossel receita
-    receitaCarrosselInit();
+    Menu.exibePrincipalFixed = function(){
+        this.secundario = false;
+        $('#menu-2').stop().animate({top: '-62px'}, 400, "easeInOutQuart", function(){
+            $('#menu').delay(400).stop().show().animate({top: 0}, 800, "easeInOutQuart");
+        });
+    };
 
-    if ( parseInt($('#cena-produto').css('height')) >= window.innerHeight)
-        $('#cena-produto').css('height', (window.innerHeight - 250) + 'px');
-    
-}
+    return Menu;
+})();
 
-// eventos no resize
-function eventosResize(){
-    _telaReceita.update();
-
-    if ( parseInt($('#cena-produto').css('height')) >= window.innerHeight) 
-        $('#cena-produto').css('height', (window.innerHeight - 250) + 'px');
-}
-
-
-var scrollTop = window.scrollY;
-$(window).bind('scroll', eventosScroll);
-$(window).bind('load', eventosLoad);
-$(window).bind('resize', eventosResize);
-
+$('#menu-2 a').click(function(event) {
+    event.preventDefault();
+    Menu.exibePrincipalFixed();
+});
 
 
 
@@ -569,23 +599,23 @@ var TelaAplicativo = (function(){
 
         if ( parseInt($('#sidebar-app').css('right')) ){
 
-            $('#sidebar-app').show(0).animate({right: 0}, 800, "easeInOutQuart");
-            $('#banner-aplicativo .c-txt, #banner-aplicativo .c-img > ul li').animate({'width': window.innerWidth - 330}, 800, "easeInOutQuart");
+            $('#sidebar-app').show(0).stop().animate({right: 0}, 800, "easeInOutQuart");
+            $('#banner-aplicativo .c-txt, #banner-aplicativo .c-img > ul li').stop().animate({'width': window.innerWidth - 330}, 800, "easeInOutQuart");
             // $('#banner-aplicativo .content').animate({'width': window.innerWidth - 330});
 
-            $(this).animate({'margin-right': '330px'}, 800, "easeInOutQuart");
+            $(this).stop().animate({'margin-right': '330px'}, 800, "easeInOutQuart");
 
             var i = $('#banner-aplicativo').find('.c-img').find('.ativo').index();
-            $('#banner-aplicativo').find('.c-img').animate({ scrollLeft: (window.innerWidth - 330)*(i)}, 800, "easeInOutQuart");
+            $('#banner-aplicativo').find('.c-img').stop().animate({ scrollLeft: (window.innerWidth - 330)*(i)}, 800, "easeInOutQuart");
         }else{
-            $('#sidebar-app').animate({right: -325}, 800, "easeInOutQuart").delay(800).hide(0);
-            $('#banner-aplicativo .c-txt, #banner-aplicativo .c-img > ul li').animate({'width': window.innerWidth}, 800, "easeInOutQuart");
+            $('#sidebar-app').stop().animate({right: -325}, 800, "easeInOutQuart").delay(800).hide(0);
+            $('#banner-aplicativo .c-txt, #banner-aplicativo .c-img > ul li').stop().animate({'width': window.innerWidth}, 800, "easeInOutQuart");
             // $('#banner-aplicativo .content').animate({'width': window.innerWidth});
 
-            $(this).animate({'margin-right': '0'}, 800, "easeInOutQuart");
+            $(this).stop().animate({'margin-right': '0'}, 800, "easeInOutQuart");
 
             var i = $('#banner-aplicativo').find('.c-img').find('.ativo').index();
-            $('#banner-aplicativo').find('.c-img').animate({ scrollLeft: (window.innerWidth)*(i)}, 800, "easeInOutQuart");
+            $('#banner-aplicativo').find('.c-img').stop().animate({ scrollLeft: (window.innerWidth)*(i)}, 800, "easeInOutQuart");
         }
 
     });
@@ -680,18 +710,18 @@ var TelaProduto = ( function(){
 
     // atualiza tamanho do carrossel produto
     TelaProduto.prototype.carrosselMenor = function(){
-        $('#cena-produto').css('height', (window.innerHeight - 187) + 'px');
+        // $('#cena-produto').css('height', (window.innerHeight - 187) + 'px');
         $('.produtos .carrossel').addClass('subcategoria');
         // $('#bt-produtos').trigger('click');
-        window.scrollTo(0, $("a[name=produtos]").offset().top);
+        // window.scrollTo(0, $("a[name=produtos]").offset().top);
 
         $("#produtos-carrossel").getNiceScroll().resize();
     }
     TelaProduto.prototype.carrosselMaior = function(){
-        $('#cena-produto').css('height', (window.innerHeight - 250) + 'px');
+        // $('#cena-produto').css('height', (window.innerHeight - 250) + 'px');
         $('.produtos .carrossel').removeClass('subcategoria');
         // $('#bt-produtos').trigger('click');
-        window.scrollTo(0, $("a[name=produtos]").offset().top);
+        // window.scrollTo(0, $("a[name=produtos]").offset().top);
 
         $('#produtos-carrossel > ul li.ativo').removeClass('ativo');
 
@@ -801,6 +831,18 @@ var TelaProduto = ( function(){
             tela.find('.load').fadeOut();
          }, 400);
     });
+    // click valores nutricional
+    tela.find('.cena3').on('click', 'a.bt-nutricional', function(event) {
+        event.preventDefault();
+
+        tela.find('.nutricional').show(0).animate({top: 0});
+    });
+    // click FECHAR valores nutricional
+    tela.find('.cena3').on('click', 'a.fechar-2', function(event) {
+        event.preventDefault();
+
+        tela.find('.nutricional').animate({top: '100%'}, function(){ $(this).hide() });
+    });
 
 
 
@@ -881,6 +923,131 @@ var TelaReceita = (function(){
 
 var _telaReceita = new TelaReceita();
 _telaReceita.init();
+
+
+
+
+
+
+
+
+// muda url no scroll
+var mudaUrlScrollInterval;
+function mudaUrlScroll(){
+
+    var topReceita = $("section.receitas").offset().top;
+    var topProdutos = $("section.produtos").offset().top;
+    var topAplicativos = $("section.aplicativos").offset().top;
+
+    switch(scrollTop){
+        case topReceita: url = 'receitas'; break;
+        case topProdutos: url = 'produtos'; break;
+        case topAplicativos: url = 'aplicativos'; break;
+        default: url = ''; break;
+    }
+
+     window.history.pushState({path: __URL + url}, '', __URL + url);
+}
+
+
+// eventos no scroll 
+function eventosScroll(){
+    scrollTop = parseInt(window.scrollY);
+
+    // ativo carrossel receita
+    // receitaCarrosselInit();
+
+    // muda url
+    // clearTimeout(mudaUrlScrollInterval);
+    // mudaUrlScrollInterval = setTimeout( function(){ mudaUrlScroll(); }, 500);
+
+    // menu
+    if ( Menu.secundario === false && scrollTop > 165){
+        Menu.exibeSecundario();
+
+        $('#banner').find('.c-link a.anima').trigger('click');
+
+    }else if(scrollTop == 0){
+        Menu.exibePrincipal();
+    }
+
+
+    // carrossel topo
+    // if ( scrollTop > 0 && scrollTop < 300)
+    //     $('#banner').find('.c-link a.anima').trigger('click');
+
+    // scroll mobile em bloco
+    /*if (Modernizr.touch){
+        if (scrolltime) {
+          clearTimeout(scrolltime);
+        }
+        scrolltime = setTimeout(afterScroll, 500);
+    }*/
+}
+
+
+/*var scrolltime, scrollAnterior, destino = 0;
+
+    var topProdutos = $("section.produtos").offset().top;
+    var topReceita = $("section.receitas").offset().top;
+    var topAplicativos = $("section.aplicativos").offset().top;
+function afterScroll(){
+    var scrollTop = parseInt(window.scrollY);
+
+    if (scrollTop > scrollAnterior){
+        if ( scrollTop > topProdutos-150 && scrollTop < topProdutos){
+            destino = topProdutos;
+        
+        }else if ( scrollTop > topReceita-150 && scrollTop < topReceita){
+            destino = topReceita;
+        
+        }else if ( scrollTop > topAplicativos-150 && scrollTop < topAplicativos){
+            destino = topAplicativos;
+        }            
+
+        if(destino) $("html,body").animate({ scrollTop: destino }, 800, "easeInOutQuint");
+    }
+
+    scrollAnterior = scrollTop;
+}*/
+
+// eventos no load 
+function eventosLoad(){
+    scrollTop = window.scrollY;
+
+    // retira load
+    $('#loader').fadeOut();
+
+    // ativo carrossel receita
+    // receitaCarrosselInit();
+
+    if ( parseInt($('#cena-produto').css('height')) >= window.innerHeight)
+        $('#cena-produto').css('height', (window.innerHeight - 190) + 'px');
+
+    // menu
+    if ( scrollTop > 165 && Menu.secundario === false){
+        Menu.exibeSecundario();
+        
+    }else if(scrollTop == 0){
+        Menu.exibePrincipal();
+    }
+    
+}
+
+// eventos no resize
+function eventosResize(){
+    _telaReceita.update();
+
+    if ( parseInt($('#cena-produto').css('height')) >= window.innerHeight) 
+        $('#cena-produto').css('height', (window.innerHeight - 190) + 'px');
+}
+
+
+var scrollTop = window.scrollY;
+$(window).bind('scroll', eventosScroll);
+$(window).bind('load', eventosLoad);
+$(window).bind('resize', eventosResize);
+
 
 
 

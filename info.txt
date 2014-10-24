@@ -1,11 +1,12 @@
 
 
-- menu
+
+
 - carrossel serviços
 - carrossel notícias
-- produtos: passar para o próximo produto, no ipad não tem hover, como saber qual sabor é o próximo?
+- url amigável
 - receitas
-- tablet
+
 
 
 http://www.awwwards.com/touchswipe-a-jquery-plugin-for-touch-and-gesture-based-interaction.html
@@ -13,6 +14,10 @@ https://github.com/mattbryson/TouchSwipe-Jquery-Plugin
 http://areaaperta.com/nicescroll/
 
 http://www.queness.com/post/11755/11-multi-touch-and-touch-events-javascript-libraries
+
+
+
+
 
 
 

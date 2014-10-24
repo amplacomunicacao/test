@@ -66,6 +66,21 @@ body{font:10px 'TitilliumWeb-Regular', Arial, Helvetica, sans-serif; color:#999;
          url('../fonts/TitilliumWeb-LightItalic/TitilliumWeb-LightItalic.woff') format('woff'), /* Modern Browsers */
          url('../fonts/TitilliumWeb-LightItalic/TitilliumWeb-LightItalic.ttf') format('truetype'), /* Safari, Android, iOS */
          url('../fonts/TitilliumWeb-LightItalic/TitilliumWeb-LightItalic.svg#TitilliumWeb-LightItalic') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+
+
+/* Webfont: Justus-Italic */
+@font-face {
+    font-family: 'Justus';
+    src: url('../fonts/Justus/Justus-Italic.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Justus/Justus-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Justus/Justus-Italic.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/Justus/Justus-Italic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Justus/Justus-Italic.svg#Justus-Italic') format('svg'); /* Legacy iOS */
     font-style: italic;
     font-weight: normal;
     text-rendering: optimizeLegibility;
@@ -78,57 +93,59 @@ body{font:10px 'TitilliumWeb-Regular', Arial, Helvetica, sans-serif; color:#999;
    ========================================================================== */
 .sprite-1 {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(../img/sprite-1.png);}
 
-.app-calculadora {width:84px; height:84px; background-position: -731px -151px}
-.app-calculadora2 {width:62px; height:62px; background-position: -508px -96px}
-.app-calculadora2-ativo {width:62px; height:62px; background-position: -572px -93px}
-.app-cozinha {width:84px; height:84px; background-position: -645px -151px}
-.app-cozinha2 {width:63px; height:63px; background-position: -400px -178px}
-.app-cozinha2-ativo {width:63px; height:63px; background-position: -443px -96px}
-.app-lista2 {width:63px; height:63px; background-position: -270px -178px}
-.app-lista2-ativo {width:63px; height:63px; background-position: -335px -178px}
-.app-receitas2 {width:63px; height:63px; background-position: -140px -179px}
-.app-receitas2-ativo {width:63px; height:63px; background-position: -205px -178px}
-.banner-left {width:67px; height:66px; background-position: -71px -179px}
-.banner-right {width:67px; height:66px; background-position: -2px -179px}
-.bt-nutricional {width:182px; height:29px; background-position: -766px -51px}
-.busca-1 {width:53px; height:53px; background-position: -958px -193px}
-.busca-receita {width:280px; height:47px; background-position: -780px -2px}
-.facebook {width:88px; height:89px; background-position: -515px -2px}
-.fechar {width:40px; height:40px; background-position: -734px -2px}
-.filtrar-receita {width:166px; height:53px; background-position: -817px -138px}
-.google {width:88px; height:89px; background-position: -555px -160px}
-.icon-aplicativo {width:30px; height:30px; background-position: -734px -51px}
-.icon-contato {width:18px; height:13px; background-position: -695px -36px}
-.icon-imprensa {width:14px; height:17px; background-position: -1043px -51px}
-.icon-mais {width:37px; height:36px; background-position: -695px -51px}
-.icon-produto {width:20px; height:29px; background-position: -1019px -142px}
-.icon-receita {width:32px; height:27px; background-position: -1022px -113px}
-.icon-sobre {width:19px; height:17px; background-position: -1041px -82px}
-.icon-tempo {width:7px; height:9px; background-position: -448px -161px}
-.login-1 {width:166px; height:53px; background-position: -780px -82px}
-.mais {width:30px; height:29px; background-position: -985px -162px}
-.menu-mobile {width:32px; height:22px; background-position: -985px -138px}
-.next-2 {width:166px; height:92px; background-position: -347px -2px}
+.app-calculadora {width:84px; height:84px; background-position: -707px -96px}
+.app-calculadora2 {width:62px; height:62px; background-position: -320px -145px}
+.app-calculadora2-ativo {width:62px; height:62px; background-position: -876px -191px}
+.app-cozinha {width:84px; height:84px; background-position: -981px -2px}
+.app-cozinha2 {width:63px; height:63px; background-position: -746px -191px}
+.app-cozinha2-ativo {width:63px; height:63px; background-position: -811px -191px}
+.app-lista2 {width:63px; height:63px; background-position: -616px -186px}
+.app-lista2-ativo {width:63px; height:63px; background-position: -681px -191px}
+.app-receitas2 {width:63px; height:63px; background-position: -428px -148px}
+.app-receitas2-ativo {width:63px; height:63px; background-position: -493px -148px}
+.banner-left {width:67px; height:66px; background-position: -862px -123px}
+.banner-right {width:67px; height:66px; background-position: -793px -123px}
+.bt-nutricional {width:182px; height:29px; background-position: -797px -2px}
+.busca-1 {width:53px; height:53px; background-position: -263px -200px}
+.busca-receita {width:280px; height:47px; background-position: -179px -2px}
+.facebook {width:88px; height:89px; background-position: -437px -57px}
+.fechar {width:40px; height:40px; background-position: -318px -209px}
+.fechar-2 {width:56px; height:56px; background-position: -558px -147px}
+.filtrar-receita {width:166px; height:53px; background-position: -461px -2px}
+.google {width:88px; height:89px; background-position: -347px -51px}
+.icon-aplicativo {width:30px; height:30px; background-position: -360px -224px}
+.icon-busca {width:37px; height:36px; background-position: -1028px -170px}
+.icon-contato {width:18px; height:13px; background-position: -360px -209px}
+.icon-imprensa {width:14px; height:17px; background-position: -447px -237px}
+.icon-mais {width:37px; height:36px; background-position: -941px -33px}
+.icon-produto {width:20px; height:29px; background-position: -485px -213px}
+.icon-receita {width:32px; height:27px; background-position: -392px -224px}
+.icon-sobre {width:19px; height:17px; background-position: -426px -237px}
+.icon-tempo {width:7px; height:9px; background-position: -170px -179px}
+.login-1 {width:166px; height:53px; background-position: -2px -179px}
+.mais {width:30px; height:29px; background-position: -890px -92px}
+.menu-mobile {width:32px; height:22px; background-position: -428px -213px}
+.next-2 {width:166px; height:92px; background-position: -629px -2px}
 .play {width:175px; height:175px; background-position: -2px -2px}
-.ponto {width:3px; height:15px; background-position: -443px -161px}
-.prev-2 {width:166px; height:92px; background-position: -179px -2px}
-.seta-baixo {width:21px; height:11px; background-position: -668px -237px}
-.seta-baixo-ativo {width:21px; height:11px; background-position: -691px -237px}
-.seta-cima {width:21px; height:11px; background-position: -645px -237px}
-.seta-dir {width:42px; height:80px; background-position: -311px -96px}
-.seta-dir-2 {width:42px; height:80px; background-position: -399px -96px}
-.seta-dir-ativo {width:42px; height:80px; background-position: -355px -96px}
-.seta-esq {width:42px; height:80px; background-position: -179px -96px}
-.seta-esq-2 {width:42px; height:80px; background-position: -267px -96px}
-.seta-esq-ativo {width:42px; height:80px; background-position: -223px -96px}
-.seta-l {width:33px; height:32px; background-position: -695px -2px}
-.twitter {width:88px; height:88px; background-position: -605px -2px}
-.ver-mais {width:91px; height:29px; background-position: -950px -51px}
-.ver-mais-2 {width:91px; height:29px; background-position: -948px -82px}
-.ver-mais-3 {width:142px; height:57px; background-position: -636px -92px}
-.ver-mais-4 {width:72px; height:23px; background-position: -948px -113px}
-.ver-todos-2 {width:139px; height:53px; background-position: -817px -193px}
-.youtube {width:88px; height:88px; background-position: -465px -161px}
+.ponto {width:3px; height:15px; background-position: -931px -174px}
+.prev-2 {width:166px; height:92px; background-position: -179px -51px}
+.seta-baixo {width:21px; height:11px; background-position: -941px -71px}
+.seta-baixo-ativo {width:21px; height:11px; background-position: -462px -213px}
+.seta-cima {width:21px; height:11px; background-position: -2px -234px}
+.seta-dir {width:42px; height:80px; background-position: -975px -88px}
+.seta-dir-2 {width:42px; height:80px; background-position: -984px -170px}
+.seta-dir-ativo {width:42px; height:80px; background-position: -1019px -88px}
+.seta-esq {width:42px; height:80px; background-position: -384px -142px}
+.seta-esq-2 {width:42px; height:80px; background-position: -940px -174px}
+.seta-esq-ativo {width:42px; height:80px; background-position: -931px -92px}
+.seta-l {width:33px; height:32px; background-position: -1028px -208px}
+.twitter {width:88px; height:88px; background-position: -617px -96px}
+.ver-mais {width:91px; height:29px; background-position: -170px -200px}
+.ver-mais-2 {width:91px; height:29px; background-position: -797px -92px}
+.ver-mais-3 {width:142px; height:57px; background-position: -797px -33px}
+.ver-mais-4 {width:72px; height:23px; background-position: -170px -231px}
+.ver-todos-2 {width:139px; height:53px; background-position: -179px -145px}
+.youtube {width:88px; height:88px; background-position: -527px -57px}
 
 .app-calculadora2.ativo{ .app-calculadora2-ativo }
 .app-cozinha2.ativo{ .app-cozinha2-ativo }
@@ -143,6 +160,7 @@ header, section, footer{
 	top: 0;
 }
 
+body{ min-width: 1000px; }
 .content{
 	width: 1175px;
 	margin: 0 auto;
@@ -177,7 +195,8 @@ header{
 		z-index: 5;
 		background: #ffc114;
 		img{ margin-top: 7px;}
-		a{ float: right; text-indent: -9999px; margin-top: 20px;}
+		a.menu-mobile{ float: right; text-indent: -9999px; margin-top: 20px;}
+		.content{ width: 97%; }
 	}
 	.menu{
 		width: 100%;
@@ -254,40 +273,61 @@ header{
 				a span{ position: relative; top: 4px;}
 			}
 		}
+
+		li.busca{
+			position: relative;
+			.circulo{
+				display: block; width: 53px; height: 53px; border: 2px solid #fff; border-radius: 100px; background: none; box-sizing: border-box;
+				transition: 0.5s width;
+			}
+			input{
+				font: 1.5em 'TitilliumWeb-Regular';
+				color: #fff;
+				display: none;
+				position: absolute;
+				top: 15px;
+				left: 50px;
+				width: 121px;
+				border: none;
+				background: none;
+			}
+			a{position: absolute; top: 9px; left: 8px; z-index: 2; text-indent: -9999px;}
+		}
 	}
 
-	.banner{
+}
+
+#banner{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	
+	.c-img, .c-img ul, .c-img li{
+		display: block;
 		width: 100%;
 		height: 100%;
+		overflow: hidden;
+	}
+	.c-img ul{width: 310%;}
+	.c-img li{
+		background-size: cover;
+		background-position: center center;
+		position: relative;
+		float: left;
+		display: block;
+		width: 1206px;
+	}
+	/*.c-img li:first-child{ display: block;}*/
+	.c-img img{ display: none;}
+
+	.c-link{
 		position: absolute;
-		top: 0;
-		
-		.c-img, .c-img ul, .c-img li{
-			display: block;
-			width: 100%;
-			height: 100%;
-			overflow: hidden;
-		}
-		.c-img ul{width: 310%;}
-		.c-img li{
-			background-size: cover;
-			background-position: center center;
-			position: relative;
-			float: left;
-			display: block;
-			width: 1206px;
-		}
-		/*.c-img li:first-child{ display: block;}*/
-		.c-img img{ display: none;}
+		bottom: 75px;
+		right: 0;
+		z-index: 2;
 
-		.c-link{
-			position: absolute;
-			bottom: 75px;
-			right: 0;
-			z-index: 2;
-
-			li{ display: inline-block; margin-right: 20px;}
-		}
+		li{ display: inline-block; margin-right: 20px;}
 	}
 }
 
@@ -341,6 +381,7 @@ header{
 	img{ margin: 300px 0 0 49%;}
 }
 .load{ display: none;}
+#loader{ background: #FFC114; z-index: 10;}
 
 .produtos{
 	height: 100%;
@@ -394,7 +435,7 @@ header{
 			.c-txt{
 				position: absolute;
 				left: 20%;
-				top: 14%;
+				top: 30%;
 				z-index: 2;
 				margin-left: -200px;
 
@@ -411,8 +452,8 @@ header{
 					display: inline-block;
 					position: relative;
 					padding-right: 18px;
-					width: 141px;
-					height: 140px;
+					width: 80px;
+					height: 80px;
 
 					img{
 						position: absolute;
@@ -424,12 +465,12 @@ header{
 					    box-sizing: border-box;
 					    content: "";
 					    display: block;
-					    height: 140px;
+					    height: 95px;
 					    left: -7px;
 					    opacity: 0;
 					    position: absolute;
 					    top: -7px;
-					    width: 141px;
+					    width: 95px;
 					}
 					&:hover .mask{ opacity: 1; }
 				}
@@ -451,6 +492,8 @@ header{
 		background: #fff;
 		width: 100%;
 		height: 100%;
+		padding-top: 62px;
+		box-sizing: border-box;
 		
 		.lista-produtos, .lista-produtos li{ display: block; width: 100%; height: 100%; }
 		.lista-produtos li a{
@@ -467,12 +510,16 @@ header{
 				.font2;
 				font-size: 2em;
 				text-transform: uppercase;
-				margin-top: 20px;
+				margin-top: 10px;
 			}
 
 			&:hover{ background: #ededed; }
 
-			img{ margin-top: 5%;}
+			img{
+				height: auto;
+			    margin-top: 10%;
+			    max-width: 200px;
+			}
 		}
 		.lista-produtos a:nth-child(3n){
 			border-right: 0;
@@ -482,7 +529,7 @@ header{
 		a.fechar{
 			position: absolute;
 			right: 20px;
-			top: 20px;
+			top: 80px;
 			text-indent: -9999px;
 		}
 	}
@@ -499,9 +546,11 @@ header{
 			z-index: 3;
 			color: #999;
 			.font3;
-			padding: 0 2%;
-			width: 870px;
+			padding: 120px 2% 0;
+			width: 900px;
 		}
+		.margin-top{ margin-top: 20px;}
+		.margin-left{ margin-left: 120px;}
 		h3{
 			font-size: 6em;
 		}
@@ -510,11 +559,12 @@ header{
 			margin-bottom: 20px;
 		}
 		li{ display: inline-block; padding-right: 18px;}
+		.receitas{ overflow: visible; }
 		.receitas a{
 			display: block;
 			position: relative;
-				width: 80px;
-				height: 80px;
+			width: 80px;
+			height: 80px;
 
 			img{
 				position: absolute;
@@ -538,26 +588,26 @@ header{
 			&:hover .mask{ opacity: 1; }
 		}
 
-		.box1{
-			width: 450px;
+		.box{
+			display: inline-block;
 			float: left;
-			margin-top: 165px;
+			margin-right: 50px;
 		}
-		.box2{
-			width: 400px;
-			float: left;
-		}
+		.box:last-child{ margin-right: 0; }
+		.foto{ max-height: 450px; width: auto;}
 
-		.desc{ font: 1.6em Justus;}
+		.desc{ font: 1.6em 'Justus';}
 		
 		a.fechar{
 			position: absolute;
 			right: 20px;
-			top: 20px;
+			top: 80px;
+			z-index: 3;
 		}
 		a.voltar{
 			position: absolute;
-			top: 20px;
+			z-index: 3;
+			top: 80px;
 			left: 20px;
 			font-size: 1.6em;
 			color: #999;
@@ -570,6 +620,7 @@ header{
 		}
 		a.prev-2{
 			position: absolute;
+			z-index: 3;
 			top: 40%;
 			left: -71px;	
 			transition: 0.3s left ease-in-out;
@@ -577,6 +628,7 @@ header{
 		}
 		a.next-2{
 			position: absolute;
+			z-index: 3;
 			top: 40%;
 			right: -71px;	
 			transition: 0.3s right ease-in-out;
@@ -585,25 +637,71 @@ header{
 
 	}
 
+	/* valores nutricionais */
+	.nutricional{
+		position: absolute;
+		top: 100%;
+		left: 0;
+		padding-top: 65px;
+		display: none;
+		z-index: 3;
+
+		width: 100%;
+		height: 100%;
+		background: #ffcc00;
+		
+
+		.content{ 
+			width: 600px;
+			min-width: 600px;
+			padding-top: 0;
+			color: #fff;
+			.font3;
+			font-size: 1.8em;
+		}
+
+		a.fechar-2{			
+			position: absolute;
+			right: 20px;
+			top: 80px;
+			z-index: 3;
+			text-indent: -9999px;
+		}
+
+		h3{ font-size: 4.2em; }
+		
+		table, p{ margin-left: 10px; font-size: 1em; }
+		td{
+			border-right: 1px solid #fff;
+			border-bottom: 1px solid #fff;
+			min-width: 200px;
+			padding: 2px;
+		}
+		td:nth-child(2){ padding-left: 60px;}
+		td:nth-child(3){ padding-left: 30px; min-width: 80px; border-right: none;}
+	}
+
 
 	.carrossel{
 		overflow: hidden;
 		width: 100%;
-		height: 250px;
+		height: 190px;
 		position: absolute;	
 		z-index: 4;
 		bottom: 0;
 		background: #fff;
 
-		ul{ width: 2500px; height: 250px;}
+		ul{ width: 1900px; height: 190px;}
 		li{
-			width: 250px;
-			height: 250px;
+			width: 190px;
+			height: 190px;
 			float: left;
 			position: relative;
 			text-align: center;
 
 			&:hover, &.ativo{ background: #ededed; }
+
+			img{height: 110px; width: 129px}
 
 			a{ color: #999;}
 
@@ -673,6 +771,8 @@ header{
 		top: 0;
 		overflow: hidden;
 
+		.content{ margin-left: -60px; }
+
 		.c-txt{			
 			position: absolute;
 			z-index: 3;
@@ -704,12 +804,10 @@ header{
 				line-height: 1em;
 			}
 			p{
-				font: 1.6em Justus;
+				font: 1.6em 'Justus';
 				width: 400px;
 				margin-bottom: 15px;
-				margin-left: 70px;
 			}
-			a{ margin-left: 70px; }
 		}
 		
 		.c-img, .c-img ul, .c-img li{
@@ -751,6 +849,7 @@ header{
 		z-index: 4;
 		width: 320px;
 		height: 100%;
+		padding-top: 62px;
 
 		h3{ color: #141414; .font3; font-size: 8em; margin: 25px 0; text-align: center; }
 		.busca-receita{  margin: 0 0 40px 20px; }
@@ -882,12 +981,13 @@ header{
 				.font3;
 				font-size: 5em;
 				text-transform: uppercase;
-				margin: 35px 0 0;
+				width: 450px;
+				margin: 35px auto 0;
 				line-height: 1em;
 			}
 			p{
-				font: 1.6em Justus;
-				width: 400px;
+				font: 1.6em 'Justus';
+				width: 450px;
 				margin: 20px auto 30px;
 			}
 			li{ text-align: center;}
@@ -923,7 +1023,8 @@ header{
 		a.ver-todos{
 			display: block;
 			position: absolute;
-			top: 60px;
+			z-index: 3;
+			top: 80px;
 			right: 3%;
 			.font2;
 			font-size: 1.6em;
@@ -949,7 +1050,7 @@ header{
 		display: none;
 		
 		ul{ height: 100%;}
-		li{ display: block; height: 25%; }		
+		li{ display: block; height: 22%; }		
 		a{
 			display: block;
 			height: 100%;
@@ -961,11 +1062,13 @@ header{
 			box-sizing: border-box;
 			border-bottom: 1px solid #000;
 
-			.sprite-1{ float: left; margin: 38px 17px 0 30px;}
-			.txt{ float: left; margin: 38px 0 0;}
+			.sprite-1{ float: left; margin: 30px 17px 0 30px;}
+			.txt{ float: left; margin: 30px 0 0;}
 			.amarelo{ color: #ffcc00; font-size: 0.9em;}
 		}
 		li:nth-child(2) a .txt{ margin-top: 50px;}
+		li:first-child{ height: 192px; }
+		li:first-child a{ padding-top: 62px; }
 		li.ativo a{
 			background: #222;
 			color: #fff;
@@ -1006,17 +1109,17 @@ header{
 			.c-txt{
 				width: 350px;
 				position: absolute;
-				top: 90px;
+				top: 80px;
 				right: 85px;
 
 				h3{
 					.font3;
-					font-size: 2.8em;
+					font-size: 3em;
 					line-height: 1.2em;
 					text-transform: uppercase;
 					margin-bottom: 15px;
 				}
-				p{ font: 1.4em Justus, Times; }
+				p{ font: 1.4em 'Justus', Times; }
 			}
 
 			.ver-todos-2{
@@ -1044,9 +1147,9 @@ header{
 	}
 
 	.ver-mais-4{
-		position: absolute;
+		/*position: absolute;
 		top: 199px;
-		right: 40px;
+		right: 40px;*/
 		text-indent: -9999px;
 	}
 }
@@ -1112,6 +1215,10 @@ footer{
 
 
 
+/* Sobre - interna
+   ========================================================================== */
+
+
 
 /* ==========================================================================
    Media Queries
@@ -1119,7 +1226,7 @@ footer{
 
 @media only screen and (max-width: 1200px) {
 	
-	.content{ width: 100%; }
+	.content{ width: 98%; }
 }
 
 @media only screen and (max-width: 1000px) {
@@ -1138,6 +1245,8 @@ footer{
 	.servicos .ver-mais-4, .noticias .ver-mais-4{ top: 160px;}
 
 	.receitas .resultado .box{ width: 50%; height: 50%; }
+
+	.produtos .cena3 a.prev-2, .produtos .cena3 a.next-2{ display: none; }
 
 }
 

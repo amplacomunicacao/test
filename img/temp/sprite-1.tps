@@ -223,6 +223,8 @@
             <filename>mais.png</filename>
             <filename>ver-mais-4.png</filename>
             <filename>menu-mobile.png</filename>
+            <filename>fechar-2.png</filename>
+            <filename>icon-busca.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>

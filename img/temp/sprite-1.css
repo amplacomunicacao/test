@@ -1,7 +1,7 @@
 /* ----------------------------------------------------
    created with http://www.codeandweb.com/texturepacker 
    ----------------------------------------------------
-   $TexturePacker:SmartUpdate:18035fcd5665d8a3adebfc029e35dc64:329a03f6d8a0c752c794597a116de6b7:7ea2996863db73e830d4b3d7af1a1b3e$
+   $TexturePacker:SmartUpdate:fb62ab504d6eef838b7a332c38d5aed8:9b683922f5734d8df4eb4a3fa6009d46:7ea2996863db73e830d4b3d7af1a1b3e$
    ----------------------------------------------------
 
    usage: <span class="{-spritename-} sprite"></span>
@@ -12,54 +12,56 @@
 
 .sprite {display:inline-block; overflow:hidden; background-repeat: no-repeat;background-image:url(sprite-1.png);}
 
-.app-calculadora {width:84px; height:84px; background-position: -731px -151px}
-.app-calculadora2 {width:62px; height:62px; background-position: -508px -96px}
-.app-calculadora2-ativo {width:62px; height:62px; background-position: -572px -93px}
-.app-cozinha {width:84px; height:84px; background-position: -645px -151px}
-.app-cozinha2 {width:63px; height:63px; background-position: -400px -178px}
-.app-cozinha2-ativo {width:63px; height:63px; background-position: -443px -96px}
-.app-lista2 {width:63px; height:63px; background-position: -270px -178px}
-.app-lista2-ativo {width:63px; height:63px; background-position: -335px -178px}
-.app-receitas2 {width:63px; height:63px; background-position: -140px -179px}
-.app-receitas2-ativo {width:63px; height:63px; background-position: -205px -178px}
-.banner-left {width:67px; height:66px; background-position: -71px -179px}
-.banner-right {width:67px; height:66px; background-position: -2px -179px}
-.bt-nutricional {width:182px; height:29px; background-position: -766px -51px}
-.busca-1 {width:53px; height:53px; background-position: -958px -193px}
-.busca-receita {width:280px; height:47px; background-position: -780px -2px}
-.facebook {width:88px; height:89px; background-position: -515px -2px}
-.fechar {width:40px; height:40px; background-position: -734px -2px}
-.filtrar-receita {width:166px; height:53px; background-position: -817px -138px}
-.google {width:88px; height:89px; background-position: -555px -160px}
-.icon-aplicativo {width:30px; height:30px; background-position: -734px -51px}
-.icon-contato {width:18px; height:13px; background-position: -695px -36px}
-.icon-imprensa {width:14px; height:17px; background-position: -1043px -51px}
-.icon-mais {width:37px; height:36px; background-position: -695px -51px}
-.icon-produto {width:20px; height:29px; background-position: -1019px -142px}
-.icon-receita {width:32px; height:27px; background-position: -1022px -113px}
-.icon-sobre {width:19px; height:17px; background-position: -1041px -82px}
-.icon-tempo {width:7px; height:9px; background-position: -448px -161px}
-.login-1 {width:166px; height:53px; background-position: -780px -82px}
-.mais {width:30px; height:29px; background-position: -985px -162px}
-.menu-mobile {width:32px; height:22px; background-position: -985px -138px}
-.next-2 {width:166px; height:92px; background-position: -347px -2px}
+.app-calculadora {width:84px; height:84px; background-position: -707px -96px}
+.app-calculadora2 {width:62px; height:62px; background-position: -320px -145px}
+.app-calculadora2-ativo {width:62px; height:62px; background-position: -876px -191px}
+.app-cozinha {width:84px; height:84px; background-position: -981px -2px}
+.app-cozinha2 {width:63px; height:63px; background-position: -746px -191px}
+.app-cozinha2-ativo {width:63px; height:63px; background-position: -811px -191px}
+.app-lista2 {width:63px; height:63px; background-position: -616px -186px}
+.app-lista2-ativo {width:63px; height:63px; background-position: -681px -191px}
+.app-receitas2 {width:63px; height:63px; background-position: -428px -148px}
+.app-receitas2-ativo {width:63px; height:63px; background-position: -493px -148px}
+.banner-left {width:67px; height:66px; background-position: -862px -123px}
+.banner-right {width:67px; height:66px; background-position: -793px -123px}
+.bt-nutricional {width:182px; height:29px; background-position: -797px -2px}
+.busca-1 {width:53px; height:53px; background-position: -263px -200px}
+.busca-receita {width:280px; height:47px; background-position: -179px -2px}
+.facebook {width:88px; height:89px; background-position: -437px -57px}
+.fechar {width:40px; height:40px; background-position: -318px -209px}
+.fechar-2 {width:56px; height:56px; background-position: -558px -147px}
+.filtrar-receita {width:166px; height:53px; background-position: -461px -2px}
+.google {width:88px; height:89px; background-position: -347px -51px}
+.icon-aplicativo {width:30px; height:30px; background-position: -360px -224px}
+.icon-busca {width:37px; height:36px; background-position: -1028px -170px}
+.icon-contato {width:18px; height:13px; background-position: -360px -209px}
+.icon-imprensa {width:14px; height:17px; background-position: -447px -237px}
+.icon-mais {width:37px; height:36px; background-position: -941px -33px}
+.icon-produto {width:20px; height:29px; background-position: -485px -213px}
+.icon-receita {width:32px; height:27px; background-position: -392px -224px}
+.icon-sobre {width:19px; height:17px; background-position: -426px -237px}
+.icon-tempo {width:7px; height:9px; background-position: -170px -179px}
+.login-1 {width:166px; height:53px; background-position: -2px -179px}
+.mais {width:30px; height:29px; background-position: -890px -92px}
+.menu-mobile {width:32px; height:22px; background-position: -428px -213px}
+.next-2 {width:166px; height:92px; background-position: -629px -2px}
 .play {width:175px; height:175px; background-position: -2px -2px}
-.ponto {width:3px; height:15px; background-position: -443px -161px}
-.prev-2 {width:166px; height:92px; background-position: -179px -2px}
-.seta-baixo {width:21px; height:11px; background-position: -668px -237px}
-.seta-baixo-ativo {width:21px; height:11px; background-position: -691px -237px}
-.seta-cima {width:21px; height:11px; background-position: -645px -237px}
-.seta-dir {width:42px; height:80px; background-position: -311px -96px}
-.seta-dir-2 {width:42px; height:80px; background-position: -399px -96px}
-.seta-dir-ativo {width:42px; height:80px; background-position: -355px -96px}
-.seta-esq {width:42px; height:80px; background-position: -179px -96px}
-.seta-esq-2 {width:42px; height:80px; background-position: -267px -96px}
-.seta-esq-ativo {width:42px; height:80px; background-position: -223px -96px}
-.seta-l {width:33px; height:32px; background-position: -695px -2px}
-.twitter {width:88px; height:88px; background-position: -605px -2px}
-.ver-mais {width:91px; height:29px; background-position: -950px -51px}
-.ver-mais-2 {width:91px; height:29px; background-position: -948px -82px}
-.ver-mais-3 {width:142px; height:57px; background-position: -636px -92px}
-.ver-mais-4 {width:72px; height:23px; background-position: -948px -113px}
-.ver-todos-2 {width:139px; height:53px; background-position: -817px -193px}
-.youtube {width:88px; height:88px; background-position: -465px -161px}
+.ponto {width:3px; height:15px; background-position: -931px -174px}
+.prev-2 {width:166px; height:92px; background-position: -179px -51px}
+.seta-baixo {width:21px; height:11px; background-position: -941px -71px}
+.seta-baixo-ativo {width:21px; height:11px; background-position: -462px -213px}
+.seta-cima {width:21px; height:11px; background-position: -2px -234px}
+.seta-dir {width:42px; height:80px; background-position: -975px -88px}
+.seta-dir-2 {width:42px; height:80px; background-position: -984px -170px}
+.seta-dir-ativo {width:42px; height:80px; background-position: -1019px -88px}
+.seta-esq {width:42px; height:80px; background-position: -384px -142px}
+.seta-esq-2 {width:42px; height:80px; background-position: -940px -174px}
+.seta-esq-ativo {width:42px; height:80px; background-position: -931px -92px}
+.seta-l {width:33px; height:32px; background-position: -1028px -208px}
+.twitter {width:88px; height:88px; background-position: -617px -96px}
+.ver-mais {width:91px; height:29px; background-position: -170px -200px}
+.ver-mais-2 {width:91px; height:29px; background-position: -797px -92px}
+.ver-mais-3 {width:142px; height:57px; background-position: -797px -33px}
+.ver-mais-4 {width:72px; height:23px; background-position: -170px -231px}
+.ver-todos-2 {width:139px; height:53px; background-position: -179px -145px}
+.youtube {width:88px; height:88px; background-position: -527px -57px}

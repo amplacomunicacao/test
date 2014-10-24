@@ -1,0 +1,54 @@
+#cache
+#<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+
+#Header set Cache-Control "max-age=604800"
+
+#</FilesMatch>
+
+#<FilesMatch "\.(js|css)$">
+#Header set Cache-Control "public"
+#Header set Expires "Thu, 15 Apr 2010 20:00:00 GMT"
+#</FilesMatch>
+
+
+
+RewriteEngine On
+
+
+#redirecionar www
+
+#RewriteBase /
+#RewriteCond %{HTTP_HOST} !^www.vitarella\.com\.br [NC]
+#RewriteRule (.*) http://www.vitarella.com.br/$1 [R=301,L]
+
+
+#aba wafer no facbeook
+RewriteRule ^wafermega\/?$ http://www.facebook.com/VitarellaOficial?sk=app_364462293578769
+RewriteRule ^dia-das-maes\/([0-9]+)\/?$ facebook_diadasmaes.php?cod=$1
+
+#adm
+RewriteRule ^cms\/?$ cms/index.php
+
+#rss
+RewriteRule ^rss\/?$ paginas/rss/rss.php
+
+#download
+RewriteRule ^embalagens\/?$ embalagens/index.php
+RewriteRule ^downloads\/?$ embalagens/index.php
+RewriteRule ^embalagens\/([a-z,_-]+)\/([0-9]+)\/?(.+)\/?$ embalagens/index.php?i=$1&cod=$2&label=$3
+
+#paginacao
+#RewriteRule ^nosso-estoque\/?$ index.php?i=nosso-estoque&busca=false
+#RewriteRule ^nosso-estoque\/([0-9])\/?$ index.php?i=nosso-estoque&pagina=$1
+
+
+
+#restante
+
+RewriteRule ^([a-z,_-]+)\/?$ index.php?i=$1
+
+RewriteRule ^([a-z,_-]+)\/([0-9]+)\/?$ index.php?i=$1&cod=$2
+
+RewriteRule ^([a-z,_-]+)\/([0-9]+)\/?(.+)\/?$ index.php?i=$1&cod=$2&label=$3
+
+
