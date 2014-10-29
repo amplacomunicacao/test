@@ -36,61 +36,59 @@ $i = ( isset($_GET['i']) ) ? $_GET['i'] : '';
 
 		<a name="topo" class="ancora"></a>
 
-		<header>
-			<div class="menu" id="menu">
-				<div class="row1">
-					<div class="content">
-						<a href="<?= __URL ?>"><img src="img/marca-1.png" height="72" width="126" alt="logomarca"></a>
-						<nav>
-							<ul>
-								<li><a href="<?= __URL ?>sobre"><span class="sprite-1 icon-sobre"></span>&nbsp;&nbsp; Sobre a vitarella</a></li>
-								<li><a href="<?= __URL ?>imprensa"><span class="sprite-1 icon-imprensa"></span>&nbsp;&nbsp; Imprensa</a></li>
-								<li><a href="<?= __URL ?>fale-conosco"><span class="sprite-1 icon-contato"></span>&nbsp;&nbsp; Fale Conosco</a></li>
-								<!-- <li><a href="#" class="sprite-1 login-1 indent">Efetuar login</a></li> -->
-								<!-- <li><a href="#" class="sprite-1 busca-1 indent">pesquisar</a></li> -->
-								<li class="busca">
-									<div class="circulo">
-									<input type="text" name="busca">
-									<a href="#" class="sprite-1 icon-busca">buscar</a>
-									</div>
-								</li>
-							</ul>
-						</nav>
-					</div>					
-				</div>
-				<div class="row2">
-					<div class="bg"></div>
-					<div class="content">
-						<nav>
-							<ul>
-								<li>
-									<span class="linha-l"></span>
-									<a href="#produtos" class="scroll" id="bt-produtos"><span class="sprite-1 icon-produto"></span>&nbsp;&nbsp; Nosso Produtos</a>
-								</li>
-								<li>
-									<span class="linha-l"></span>
-									<a href="#receitas" class="scroll"><span class="sprite-1 icon-receita"></span>&nbsp;&nbsp; Nossas Receitas</a>
-								</li>
-								<li>
-									<span class="linha-l"></span>
-									<a href="#dicas-e-aplicativos" class="scroll"><span class="sprite-1 icon-aplicativo"></span>&nbsp;&nbsp; Dicas e Aplicativos</a>
-									<span class="linha-r"></span>
-								</li>
-							</ul>
-						</nav>
-					</div>
-				</div>
-			</div>
-
-			<div class="menu-2" id="menu-2">
+	
+		<div class="menu" id="menu">
+			<div class="row1">
 				<div class="content">
-					<a href="#topo" class="scroll"><img src="img/marca-1.png" height="48" width="85" alt="logomarca"></a>
-					<a href="#" class="sprite-1 menu-mobile">menu</a>
-				</div>
-				<div class="clear"></div>
+					<a href="<?= __URL ?>"><img src="img/marca-1.png" height="72" width="126" alt="logomarca"></a>
+					<nav>
+						<ul>
+							<li><a href="<?= __URL ?>sobre"><span class="sprite-1 icon-sobre"></span>&nbsp;&nbsp; Sobre a vitarella</a></li>
+							<li><a href="<?= __URL ?>imprensa"><span class="sprite-1 icon-imprensa"></span>&nbsp;&nbsp; Imprensa</a></li>
+							<li><a href="<?= __URL ?>fale-conosco"><span class="sprite-1 icon-contato"></span>&nbsp;&nbsp; Fale Conosco</a></li>
+							<!-- <li><a href="#" class="sprite-1 login-1 indent">Efetuar login</a></li> -->
+							<!-- <li><a href="#" class="sprite-1 busca-1 indent">pesquisar</a></li> -->
+							<li class="busca">
+								<div class="circulo">
+								<input type="text" name="busca">
+								<a href="#" class="sprite-1 icon-busca">buscar</a>
+								</div>
+							</li>
+						</ul>
+					</nav>
+				</div>					
 			</div>
+			<div class="row2">
+				<div class="bg"></div>
+				<div class="content">
+					<nav>
+						<ul>
+							<li>
+								<span class="linha-l"></span>
+								<a href="#produtos" class="scroll" id="bt-produtos"><span class="sprite-1 icon-produto"></span>&nbsp;&nbsp; Nosso Produtos</a>
+							</li>
+							<li>
+								<span class="linha-l"></span>
+								<a href="#receitas" class="scroll"><span class="sprite-1 icon-receita"></span>&nbsp;&nbsp; Nossas Receitas</a>
+							</li>
+							<li>
+								<span class="linha-l"></span>
+								<a href="#dicas-e-aplicativos" class="scroll"><span class="sprite-1 icon-aplicativo"></span>&nbsp;&nbsp; Dicas e Aplicativos</a>
+								<span class="linha-r"></span>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
 
-		</header>
+		<div class="menu-2" id="menu-2">
+			<div class="content">
+				<a href="#topo" class="scroll"><img src="img/marca-1.png" height="48" width="85" alt="logomarca"></a>
+				<a href="#" class="sprite-1 menu-mobile">menu</a>
+			</div>
+			<div class="clear"></div>
+		</div>
 
 
         <?php Paginas::getPagina($i); ?>

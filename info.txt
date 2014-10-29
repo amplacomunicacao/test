@@ -4,7 +4,6 @@
 
 - carrossel serviços
 - carrossel notícias
-- url amigável
 - receitas
 
 

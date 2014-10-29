@@ -118,7 +118,7 @@ body{font:10px 'TitilliumWeb-Regular', Arial, Helvetica, sans-serif; color:#999;
 .icon-contato {width:18px; height:13px; background-position: -360px -209px}
 .icon-imprensa {width:14px; height:17px; background-position: -447px -237px}
 .icon-mais {width:37px; height:36px; background-position: -941px -33px}
-.icon-produto {width:20px; height:29px; background-position: -485px -213px}
+.icon-produto {width:20px; height:29px; background-position: -488px -213px}
 .icon-receita {width:32px; height:27px; background-position: -392px -224px}
 .icon-sobre {width:19px; height:17px; background-position: -426px -237px}
 .icon-tempo {width:7px; height:9px; background-position: -170px -179px}
@@ -129,9 +129,9 @@ body{font:10px 'TitilliumWeb-Regular', Arial, Helvetica, sans-serif; color:#999;
 .play {width:175px; height:175px; background-position: -2px -2px}
 .ponto {width:3px; height:15px; background-position: -931px -174px}
 .prev-2 {width:166px; height:92px; background-position: -179px -51px}
-.seta-baixo {width:21px; height:11px; background-position: -941px -71px}
-.seta-baixo-ativo {width:21px; height:11px; background-position: -462px -213px}
-.seta-cima {width:21px; height:11px; background-position: -2px -234px}
+.seta-baixo {width:21px; height:11px; background-position: -510px -213px}
+.seta-baixo-ativo {width:21px; height:11px; background-position: -77px -234px}
+.seta-cima {width:21px; height:11px; background-position: -54px -234px}
 .seta-dir {width:42px; height:80px; background-position: -975px -88px}
 .seta-dir-2 {width:42px; height:80px; background-position: -984px -170px}
 .seta-dir-ativo {width:42px; height:80px; background-position: -1019px -88px}
@@ -139,6 +139,10 @@ body{font:10px 'TitilliumWeb-Regular', Arial, Helvetica, sans-serif; color:#999;
 .seta-esq-2 {width:42px; height:80px; background-position: -940px -174px}
 .seta-esq-ativo {width:42px; height:80px; background-position: -931px -92px}
 .seta-l {width:33px; height:32px; background-position: -1028px -208px}
+.texto-maior {width:24px; height:16px; background-position: -462px -213px}
+.texto-maior-ativo {width:24px; height:16px; background-position: -28px -234px}
+.texto-menor {width:24px; height:16px; background-position: -2px -234px}
+.texto-menor-ativo {width:24px; height:16px; background-position: -941px -71px}
 .twitter {width:88px; height:88px; background-position: -617px -96px}
 .ver-mais {width:91px; height:29px; background-position: -170px -200px}
 .ver-mais-2 {width:91px; height:29px; background-position: -797px -92px}
@@ -149,6 +153,8 @@ body{font:10px 'TitilliumWeb-Regular', Arial, Helvetica, sans-serif; color:#999;
 
 .app-calculadora2.ativo{ .app-calculadora2-ativo }
 .app-cozinha2.ativo{ .app-cozinha2-ativo }
+.texto-maior:hover{ .texto-maior-ativo }
+.texto-menor:hover{ .texto-menor-ativo }
 
 
 /* ==========================================================================
@@ -183,124 +189,121 @@ a{ text-decoration: none; color: #fff; }
 
 /* Topo
    ========================================================================== */
-header{
-	height: 100%;
-	position: relative;
+
 	
-	.menu-2{
-		width: 100%;
-		height: 62px;
-		position: fixed;
-		top: -62px;
-		z-index: 5;
-		background: #ffc114;
-		img{ margin-top: 7px;}
-		a.menu-mobile{ float: right; text-indent: -9999px; margin-top: 20px;}
-		.content{ width: 97%; }
-	}
-	.menu{
-		width: 100%;
-		height: 165px;
-		position: absolute;
-		top: 0;
-		z-index: 5;
-
-		.row1{
-			height: 110px;
-			background: #ffc114;
-			img{ margin-top: 15px;}
-
-			nav{
-				float: right;
-				ul{ margin-top: 27px;}
-				li{ display: inline-block; float: left; margin-right: 19px;}
-				li:nth-child(1), li:nth-child(2), li:nth-child(3){margin-top: 20px;}
-				li:last-child{margin-right: 0;}
-				a{
-					text-decoration: none;
-					text-transform: uppercase;
-					color: #fff;
-					font-size: 1.4em;
-				}
-
-				.icon-sobre{
-					float: left;
-				    margin-top: 4px;
-				}
-				.icon-imprensa{
-					float: left;
-				    margin-top: 3px;
-				}
-			}
-		}
-		.row2{
-			height: 55px;
-			position: relative;
-			.bg{
-				background: #000;
-				opacity: 0.6;
-				position: absolute;
-				width: 100%;
-				height: 100%;
-			}
-			
-			nav{
-				li{
-					display: inline-block; float: left; width: 33.3%; height: 55px; text-align: center; position: relative;
-					&:hover{ border-bottom: 2px solid #ffcc00;}
-				}
-				a{
-					text-decoration: none;
-					text-transform: uppercase;
-					color: #fff;
-					font-size: 2em;
-					display: block;
-					box-sizing: border-box;
-				    height: 100%;
-				    padding-top: 10px;
-				}
-				.linha-l, .linha-r{
-					display: block;
-					width: 1px;
-					height: 20px;
-					background: #fff;
-					position: absolute;
-					top: 20px;
-					left: 0;
-				}
-				.linha-r{ left: auto; right: 0;}
-
-				a span{ position: relative; top: 4px;}
-			}
-		}
-
-		li.busca{
-			position: relative;
-			.circulo{
-				display: block; width: 53px; height: 53px; border: 2px solid #fff; border-radius: 100px; background: none; box-sizing: border-box;
-				transition: 0.5s width;
-			}
-			input{
-				font: 1.5em 'TitilliumWeb-Regular';
-				color: #fff;
-				display: none;
-				position: absolute;
-				top: 15px;
-				left: 50px;
-				width: 121px;
-				border: none;
-				background: none;
-			}
-			a{position: absolute; top: 9px; left: 8px; z-index: 2; text-indent: -9999px;}
-		}
-	}
-
+.menu-2{
+	width: 100%;
+	height: 62px;
+	position: fixed;
+	top: -62px;
+	z-index: 5;
+	background: #ffc114;
+	img{ margin-top: 7px;}
+	a.menu-mobile{ float: right; text-indent: -9999px; margin-top: 20px;}
+	.content{ width: 97%; }
 }
+.menu{
+	width: 100%;
+	height: 165px;
+	position: absolute;
+	top: 0;
+	z-index: 5;
+
+	.row1{
+		height: 110px;
+		background: #ffc114;
+		img{ margin-top: 15px;}
+
+		nav{
+			float: right;
+			ul{ margin-top: 27px;}
+			li{ display: inline-block; float: left; margin-right: 19px;}
+			li:nth-child(1), li:nth-child(2), li:nth-child(3){margin-top: 20px;}
+			li:last-child{margin-right: 0;}
+			a{
+				text-decoration: none;
+				text-transform: uppercase;
+				color: #fff;
+				font-size: 1.4em;
+			}
+
+			.icon-sobre{
+				float: left;
+			    margin-top: 4px;
+			}
+			.icon-imprensa{
+				float: left;
+			    margin-top: 3px;
+			}
+		}
+	}
+	.row2{
+		height: 55px;
+		position: relative;
+		.bg{
+			background: #000;
+			opacity: 0.6;
+			position: absolute;
+			width: 100%;
+			height: 100%;
+		}
+		
+		nav{
+			li{
+				display: inline-block; float: left; width: 33.3%; height: 55px; text-align: center; position: relative;
+				&:hover{ border-bottom: 2px solid #ffcc00;}
+			}
+			a{
+				text-decoration: none;
+				text-transform: uppercase;
+				color: #fff;
+				font-size: 2em;
+				display: block;
+				box-sizing: border-box;
+			    height: 100%;
+			    padding-top: 10px;
+			}
+			.linha-l, .linha-r{
+				display: block;
+				width: 1px;
+				height: 20px;
+				background: #fff;
+				position: absolute;
+				top: 20px;
+				left: 0;
+			}
+			.linha-r{ left: auto; right: 0;}
+
+			a span{ position: relative; top: 4px;}
+		}
+	}
+
+	li.busca{
+		position: relative;
+		.circulo{
+			display: block; width: 53px; height: 53px; border: 2px solid #fff; border-radius: 100px; background: none; box-sizing: border-box;
+			transition: 0.5s width;
+		}
+		input{
+			font: 1.5em 'TitilliumWeb-Regular';
+			color: #fff;
+			display: none;
+			position: absolute;
+			top: 15px;
+			left: 50px;
+			width: 121px;
+			border: none;
+			background: none;
+		}
+		a{position: absolute; top: 9px; left: 8px; z-index: 2; text-indent: -9999px;}
+	}
+}
+
 
 #banner{
 	width: 100%;
 	height: 100%;
-	position: absolute;
+	position: relative;
 	top: 0;
 	
 	.c-img, .c-img ul, .c-img li{
@@ -1215,10 +1218,88 @@ footer{
 
 
 
-/* Sobre - interna
+/* ==========================================================================
+   Sobre - interna
    ========================================================================== */
 
+.body-sobre{
+	.topo{
+		background: #000;
+		height: 350px;
+	}
 
+	.sidebar{
+		width: 30%;
+		max-width: 380px;
+		float: left;
+		background: #ffcc00;
+		min-height: 100%;
+		
+		li:first-child{ margin-top: 40px; }
+		li:last-child .linha{ display:none; }
+		a{
+			display: block;
+			height: 90px;
+			color: #fff;
+			.font3;
+			font-size: 2.6em;
+			line-height: 3.6em;
+			text-transform: uppercase;
+			padding: 0 18%;
+			box-sizing: border-box;
+			position: relative;
+
+			&:hover, &.ativo{ background: #fff; color: #ffcc00; }
+
+			.linha{
+				border-top: 1px solid #fff;
+			    bottom: 0;
+			    display: block;
+			    left: 14%;
+			    opacity: 0.5;
+			    position: absolute;
+			    width: 75%;
+			}
+		}
+	}
+
+	.bd{
+		width: 70%;
+		float: left;
+		min-height: 100%;
+		padding: 100px 0 70px 40px;
+		box-sizing: border-box;
+	}
+}
+.bd{
+	color: #666;
+	font-family: 'Justus';
+	h2{ .font3; font-size: 6em; color: #999; text-transform: uppercase;}
+	h3{ .font3; font-size: 2.4em; color: #999; margin-top: 40px;}
+	p{ margin-top: 25px; font-size: 1.6em;}
+}
+.breadcamp{
+	height: 50px;
+	box-sizing: border-box;
+	padding: 20px 0 0 40px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	.font3;
+	font-size: 1.4em;
+	color: #999;
+	border-bottom: 1px solid #f1f1f1;
+
+	a{ color: #999;}
+	.ativo{ color: #ffcc00; }
+
+	.texto-menor, .texto-maior{ float: right; text-indent: -9999px; margin-right: 10px;}
+}
+
+.missao ul{ list-style: square; margin-left: 17px;}
+.missao li{ font-family: 'Justus'; font-size: 1.6em; margin-top: 25px;}
+.missao li span{ .font3; font-size: 1.3em; color: #999; }
 
 /* ==========================================================================
    Media Queries

@@ -225,6 +225,10 @@
             <filename>menu-mobile.png</filename>
             <filename>fechar-2.png</filename>
             <filename>icon-busca.png</filename>
+            <filename>texto-maior-ativo.png</filename>
+            <filename>texto-maior.png</filename>
+            <filename>texto-menor-ativo.png</filename>
+            <filename>texto-menor.png</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
