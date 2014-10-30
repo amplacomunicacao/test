@@ -65,15 +65,15 @@ $i = ( isset($_GET['i']) ) ? $_GET['i'] : '';
 						<ul>
 							<li>
 								<span class="linha-l"></span>
-								<a href="#produtos" class="scroll" id="bt-produtos"><span class="sprite-1 icon-produto"></span>&nbsp;&nbsp; Nosso Produtos</a>
+								<a href="<?= __URL ?>#produtos" class="scroll" id="bt-produtos"><span class="sprite-1 icon-produto"></span>&nbsp;&nbsp; Nosso Produtos</a>
 							</li>
 							<li>
 								<span class="linha-l"></span>
-								<a href="#receitas" class="scroll"><span class="sprite-1 icon-receita"></span>&nbsp;&nbsp; Nossas Receitas</a>
+								<a href="<?= __URL ?>#receitas" class="scroll"><span class="sprite-1 icon-receita"></span>&nbsp;&nbsp; Nossas Receitas</a>
 							</li>
 							<li>
 								<span class="linha-l"></span>
-								<a href="#dicas-e-aplicativos" class="scroll"><span class="sprite-1 icon-aplicativo"></span>&nbsp;&nbsp; Dicas e Aplicativos</a>
+								<a href="<?= __URL ?>#dicas-e-aplicativos" class="scroll"><span class="sprite-1 icon-aplicativo"></span>&nbsp;&nbsp; Dicas e Aplicativos</a>
 								<span class="linha-r"></span>
 							</li>
 						</ul>

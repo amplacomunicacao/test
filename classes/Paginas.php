@@ -8,6 +8,7 @@ class Paginas{
 			case 'imprensa': include 'paginas/imprensa/noticias.php'; break;
 			case 'fale-conosco': include 'paginas/fale-conosco/fale-conosco.php'; break;
 			case 'sobre': include 'paginas/sobre/sobre.php'; break;
+			case 'nossa-historia': include 'paginas/sobre/nossa-historia.php'; break;
 			case 'missao-e-valores': include 'paginas/sobre/missao-e-valores.php'; break;
 			case 'area-de-atuacao': include 'paginas/sobre/area-de-atuacao.php'; break;
 			default : include 'paginas/home.php'; break;
