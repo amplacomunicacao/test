@@ -11,6 +11,7 @@ class Paginas{
 			case 'nossa-historia': include 'paginas/sobre/nossa-historia.php'; break;
 			case 'missao-e-valores': include 'paginas/sobre/missao-e-valores.php'; break;
 			case 'area-de-atuacao': include 'paginas/sobre/area-de-atuacao.php'; break;
+			case 'premios': include 'paginas/sobre/premios.php'; break;
 			default : include 'paginas/home.php'; break;
 		}
 	}

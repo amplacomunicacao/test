@@ -229,6 +229,9 @@
             <filename>texto-maior.png</filename>
             <filename>texto-menor-ativo.png</filename>
             <filename>texto-menor.png</filename>
+            <filename>circulo-premios.png</filename>
+            <filename>icon-premios.jpg</filename>
+            <filename>ponto-cinza.jpg</filename>
         </array>
         <key>ignoreFileList</key>
         <array/>
