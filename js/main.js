@@ -8,7 +8,7 @@ $( function(){
         if ( this.value == '' ) this.value = this.defaultValue;
     });
 
-	// banner topo 
+	// banner topo
     $('#banner').carrossel1({'auto': true});
 
     // banner produto
@@ -17,7 +17,7 @@ $( function(){
     // banner receita
     $('#banner-receita').carrossel1();
 
-    // banner aplicativos 
+    // banner aplicativos
     var __telaAplicativo = new TelaAplicativo('banner-aplicativo');
 
     // receita - sidebar
@@ -63,7 +63,7 @@ $( function(){
     });
 
 
-	// scrool nas etapas 
+	// scrool nas etapas
 	var scrollingScreen = false;
 	$(".slide").mousewheel(function (event, delta) {
 
@@ -79,17 +79,17 @@ $( function(){
 		}
 
 	    if (!scrollingScreen) {
-	        scrollingScreen = true; 
-	        
-	        var top = $("body").scrollTop() || $("html").scrollTop(); 
-	        
+	        scrollingScreen = true;
+
+	        var top = $("body").scrollTop() || $("html").scrollTop();
+
 	        var candidates = $(".slide").filter( function(){
 	            if ( delta < 0 )
 	                return $(this).offset().top > top + 1;
 	            else
 	                return $(this).offset().top < top - 1;
 	        });
-	        
+
 	        if (candidates.length > 0) {
 	            if (delta < 0)
 	                top = candidates.first().offset().top;
@@ -101,49 +101,49 @@ $( function(){
                 var full_url = __URL + $(this).data('url');
                 window.history.pushState({path:full_url},'',full_url);
             }*/
-	        
+
 	        $("html,body").animate({ scrollTop:top }, 800, function() {
 	            scrollingScreen = false;
 
 	        });
 	    }
-	    return false; 
+	    return false;
 	});
 
 
 
-    // click ancora - scroll 
+    // click ancora - scroll
     $("a.scroll").click(function(event){
          clickMenu = true;
 
         //prevent the default action for the click event
         event.preventDefault();
-        
+
         //get the full url - like mysitecom/index.htm#home
         var full_url = this.href;
-        
+
         //split the url by # and get the anchor target name - home in mysitecom/index.htm#home
         var parts = full_url.split("#");
         var trgt = parts[1];
-        
+
         //get the top offset of the target anchor
         var target_offset = $("a[name="+trgt+"]").offset();
         var target_top = target_offset.top;
-        
+
         //goto that anchor by setting the body scroll top to anchor top
         // animaMenu(target_top);
         $('html, body').stop().animate({scrollTop:target_top}, 800, function(){ clickMenu = false; });
-        
-        
+
+
         //to change the browser URL to the given link location
         /*if(full_url!=window.location){
             full_url = full_url.substr(0, full_url.lastIndexOf('/')+1 ) + trgt;
             window.history.pushState({path:full_url},'',full_url);
         }*/
-        
+
         // ativo botao do menu
         // $("#menu li a").removeClass('ativo');
-        // $(this).addClass('ativo');      
+        // $(this).addClass('ativo');
     });
 
 
@@ -153,7 +153,7 @@ $( function(){
 
     /* Mobile
        ============================================================================== */
-    // banner topo 
+    // banner topo
     $("#banner, #banner-receita, #banner-produto").swipe({
       swipe:function(event, direction, distance, duration, fingerCount) {
         // $(this).text("You swiped " + direction );
@@ -162,10 +162,10 @@ $( function(){
 
         if (direction === 'left' && i < $(this).find('.c-img ul li').length ){
                 $(this).find('.c-link ul li').eq(i+1).find('a').trigger('click');
-        
+
         }else if (direction === 'right' && i > 0 ){
                 $(this).find('.c-link ul li').eq(i-1).find('a').trigger('click');
-        
+
         }/*else if(direction === 'up'){
             // var top = $(".slide").eq(1).offset().top;
             $("html,body").animate({ scrollTop: '+=300' }, "easeInOutQuint");
@@ -174,7 +174,7 @@ $( function(){
     allowPageScroll: 'vertical'});
 
 
-    // banner receitas     
+    // banner receitas
     $("#banner-aplicativo").swipe({
       swipe:function(event, direction, distance, duration, fingerCount) {
         // $(this).text("You swiped " + direction );
@@ -183,10 +183,10 @@ $( function(){
 
         if (direction === 'left'){
                 $(this).find('a.next').trigger('click');
-        
+
         }else if (direction === 'right'){
                 $(this).find('a.last').trigger('click');
-        
+
         }/*else if(direction === 'up'){
             // var top = $(".slide").eq(1).offset().top;
             $("html,body").animate({ scrollTop: '+=300' }, "easeInOutQuint");
@@ -200,7 +200,7 @@ $( function(){
     /*$("html, body").swipe({
       swipe:function(event, direction, distance, duration, fingerCount) {
         // $(this).text("You swiped " + direction );
-        
+
         if(direction === 'up'){
             alert('')
             var scrollTop = parseInt(window.scrollY);
@@ -211,13 +211,13 @@ $( function(){
 
             if ( scrollTop < topProdutos){
                 destino = topProdutos;
-            
+
             }else if ( scrollTop < topReceita){
                 destino = topReceita;
-            
+
             }else if ( scrollTop < topAplicativos){
                 destino = topAplicativos;
-            }            
+            }
 
             $("html,body").animate({ scrollTop: destino }, 800, "easeInOutQuint");
         }
@@ -232,7 +232,7 @@ $( function(){
       swipeStatus: function(event, phase, direction, distance) {
         // $(this).text("You swiped " + direction );
         console.log(phase);
-        if (phase == "move" && direction === 'left'){            
+        if (phase == "move" && direction === 'left'){
             $('#produtos-carrossel').animate({ scrollLeft: '+=400'}, 800, "easeInOutQuart");
 
         }else if (phase == "move" && direction === 'right'){
@@ -241,7 +241,7 @@ $( function(){
       },
       triggerOnTouchEnd: true, allowPageScroll: 'vertical' });*/
     // $("#produtos-carrossel").niceScroll();
-    
+
     $("#produtos-carrossel").niceScroll({cursorcolor:"#ffcc00",cursoropacitymax:0.7,touchbehavior:true});
     $("#produtos-carrossel").bind('scroll', function(event) {
         scrollAtivo = true;
@@ -290,7 +290,7 @@ var Menu = (function(){
         this.secundario = false;
         $('#menu-2').stop().animate({top: '-62px'}, 400, "easeInOutQuart", function(){
             $('#menu').css({ position: 'absolute'}).delay(400).stop().show().animate({top: 0}, 800, "easeInOutQuart");
-        });        
+        });
     };
 
     Menu.exibeSecundario = function(){
@@ -325,11 +325,11 @@ $('#menu-2 a').click(function(event) {
 
         var self = this,
             total = 0,
-            intervalo, 
+            intervalo,
             innerWidth = window.innerWidth;
 
         total = this.find('.c-img > ul li').css('width', innerWidth+'px').length;
-        
+
         var ul = self.find('.c-img > ul');
         var li = ul.find('li');
         var liTxt = self.find('.c-txt > .content > ul');
@@ -381,7 +381,7 @@ $('#menu-2 a').click(function(event) {
 
             // verifica se eh um banner novo
             if (index !== indexAtual){
-                
+
                 // pega a lista
                 // var li = ul.find('li');
 
@@ -392,7 +392,7 @@ $('#menu-2 a').click(function(event) {
                     // anima
                     li.eq(index).css({'left': '100%', 'z-index': '2'}).addClass('ativo').show(0).animate({ left: 0}, 800, "easeInOutQuart");
                     li.eq(indexAtual).animate({ left: '-100%'}, 800, "easeInOutQuart");
-                
+
                 }else if (index < indexAtual){
                     // retira a ativa
                     $(li).css('z-index', '1').removeClass('ativo');
@@ -442,7 +442,7 @@ $('#menu-2 a').click(function(event) {
         // passando automaticamente
         function iniIntervalo(){
             intervalo = setInterval( function(){
-                
+
                 clickNext();
 
             }, 5000);
@@ -484,7 +484,7 @@ var TelaAplicativo = (function(){
         liTxt,
         tela;
 
-    // contrutor 
+    // contrutor
     function TelaAplicativo(id){
 
         tela = $('#'+id);
@@ -498,14 +498,14 @@ var TelaAplicativo = (function(){
         tela.find('.c-img').scrollLeft(0);
 
         // click anterior - evento
-        tela.find('a.last').click( function(event) {            
+        tela.find('a.last').click( function(event) {
             event.preventDefault();
 
             self.clickLast();
         });
 
         // click proximo - evento
-        tela.find('a.next').click( function(event) {            
+        tela.find('a.next').click( function(event) {
             event.preventDefault();
 
             self.clickNext();
@@ -513,7 +513,7 @@ var TelaAplicativo = (function(){
     }
 
 
-    // click last 
+    // click last
     TelaAplicativo.prototype.clickLast = function(){
 
         var i = tela.find('.c-img').find('.ativo').index();
@@ -527,7 +527,7 @@ var TelaAplicativo = (function(){
             innerWidth = parseInt(tela.find('.c-img > ul li').eq(0).css('width'));
             tela.find('.c-img').animate({ scrollLeft: innerWidth*(i-1)}, 800, "easeInOutQuart");
 
-            // exibe o texto              
+            // exibe o texto
             var txt = tela.find('.c-txt');
             liTxt.find('.ativo').removeClass('ativo').delay(100).fadeOut(200);
             txt.delay(100).animate({ left: 200}, 200, function() {
@@ -541,13 +541,13 @@ var TelaAplicativo = (function(){
             // seleciona na sidebar
             selecionaBtSidebar(i-1);
         }
-        
+
         // desativa botao last ?
         if (i-1 == 0) tela.find('a.last').removeClass('seta-esq-ativo').addClass('seta-esq');
     }
 
 
-    // click next 
+    // click next
     TelaAplicativo.prototype.clickNext = function(){
 
         var i = tela.find('.c-img').find('.ativo').index();
@@ -571,7 +571,7 @@ var TelaAplicativo = (function(){
 
             // ativa o botao last
             tela.find('a.last').removeClass('seta-esq').addClass('seta-esq-ativo');
-            
+
             // seleciona na sidebar
             selecionaBtSidebar(i+1);
         }
@@ -580,7 +580,7 @@ var TelaAplicativo = (function(){
         if (i+1 == total-1) tela.find('a.next').removeClass('seta-dir-ativo').addClass('seta-dir');
     }
 
-    
+
     // atualiza tamanho da li
     TelaAplicativo.prototype.update = function(){
         innerWidth = window.innerWidth;
@@ -589,11 +589,11 @@ var TelaAplicativo = (function(){
     }
 
     $(window).bind('resize', self.update);
- 
-    
-    
 
-    // exibir sidebar 
+
+
+
+    // exibir sidebar
     $('#ver-todos-app').click(function(event) {
         event.preventDefault();
 
@@ -619,16 +619,16 @@ var TelaAplicativo = (function(){
         }
 
     });
-    
-    // click em um link da sidebar 
+
+    // click em um link da sidebar
     $('#sidebar-app a').click(function(event) {
         event.preventDefault();
         showApp( $(this).parent().index() );
     });
 
-    // exibe algum app no carrossel 
+    // exibe algum app no carrossel
     function showApp(ind){
-        
+
         var i = $('#banner-aplicativo').find('.c-img').find('.ativo').index();
         var total = $('#banner-aplicativo').find('.c-img > ul li').length;
 
@@ -645,7 +645,7 @@ var TelaAplicativo = (function(){
         // }
     }
 
-    // seleciona 1 na sidebar 
+    // seleciona 1 na sidebar
     function selecionaBtSidebar(i){
         $('#sidebar-app .ativo').removeClass('ativo');
         $('#sidebar-app ul li').eq(i).addClass('ativo').find('a > span.sprite-1').addClass('ativo');
@@ -779,7 +779,7 @@ var TelaProduto = ( function(){
          }, 400);
     });
 
-    
+
     // click - produto
     tela.find('.cena2').on('click', '.lista-produtos li a', function(event) {
         event.preventDefault();
@@ -901,7 +901,7 @@ var TelaReceita = (function(){
                         /*
                         ------------------------------------------------------------------------------------------------------------
                         tela.css('width', window.innerWidth - 320);
-                          
+
                         var tamanho = parseInt( (window.innerWidth - 320) * 33)/100;
                         $('#cena-receita .resultado .box').css('width', tamanho);
 
@@ -910,7 +910,7 @@ var TelaReceita = (function(){
                          */
                     }, 400);
                 }
-            }); 
+            });
         });
     };
 
@@ -950,7 +950,7 @@ function mudaUrlScroll(){
 }
 
 
-// eventos no scroll 
+// eventos no scroll
 function eventosScroll(){
     scrollTop = parseInt(window.scrollY);
 
@@ -997,13 +997,13 @@ function afterScroll(){
     if (scrollTop > scrollAnterior){
         if ( scrollTop > topProdutos-150 && scrollTop < topProdutos){
             destino = topProdutos;
-        
+
         }else if ( scrollTop > topReceita-150 && scrollTop < topReceita){
             destino = topReceita;
-        
+
         }else if ( scrollTop > topAplicativos-150 && scrollTop < topAplicativos){
             destino = topAplicativos;
-        }            
+        }
 
         if(destino) $("html,body").animate({ scrollTop: destino }, 800, "easeInOutQuint");
     }
@@ -1011,7 +1011,7 @@ function afterScroll(){
     scrollAnterior = scrollTop;
 }*/
 
-// eventos no load 
+// eventos no load
 function eventosLoad(){
     scrollTop = window.scrollY;
 
@@ -1027,18 +1027,18 @@ function eventosLoad(){
     // menu
     if ( scrollTop > 165 && Menu.secundario === false){
         Menu.exibeSecundario();
-        
+
     }else if(scrollTop == 0){
         Menu.exibePrincipal();
     }
-    
+
 }
 
 // eventos no resize
 function eventosResize(){
     _telaReceita.update();
 
-    if ( parseInt($('#cena-produto').css('height')) >= window.innerHeight) 
+    if ( parseInt($('#cena-produto').css('height')) >= window.innerHeight)
         $('#cena-produto').css('height', (window.innerHeight - 190) + 'px');
 }
 
@@ -1070,8 +1070,8 @@ $(window).bind('resize', eventosResize);
 
 
         function update(){
-            var pos = window.scrollY;               
-    
+            var pos = window.scrollY;
+
             self.each( function(){
 
                     var element = $(this);
@@ -1080,12 +1080,12 @@ $(window).bind('resize', eventosResize);
 
                     // caso esteja fora da arrea de visualizacao
                     if (top + height < pos || top > pos + windowHeight) return;
-                    
+
                     element.css('backgroundPosition', settings.xpos + " " + Math.round((top - pos) * settings.yspeed + (settings.yaddpx)) + "px");
             });
         }
 
-    
+
         $(window).bind('scroll', update).resize(update);
         update();
 

@@ -8,7 +8,7 @@ setlocale(LC_ALL, 'pt_BR', 'ptb', 'PT_BR.UTF8');
 date_default_timezone_set('America/Recife');
 
 /* define url root */
-define('__URL', 'http://'.$_SERVER['HTTP_HOST'].'/vitarella_site_novo/');
+define('__URL', 'http://'.$_SERVER['HTTP_HOST'].'/vitarella_site/');
 
 /* define site path */
 // $site_path = realpath(dirname(__FILE__));
@@ -18,8 +18,8 @@ define('__URL', 'http://'.$_SERVER['HTTP_HOST'].'/vitarella_site_novo/');
 function __autoload($classe){
 	if(file_exists("classes/$classe.php")){
 		include "classes/$classe.php";
-	
+
 	}else if(file_exists("../classes/$classe.php")){
 		include "../classes/$classe.php";
-	}	
+	}
 }
