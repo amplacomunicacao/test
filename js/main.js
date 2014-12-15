@@ -962,13 +962,14 @@ function eventosScroll(){
     // mudaUrlScrollInterval = setTimeout( function(){ mudaUrlScroll(); }, 500);
 
     // menu
-    if ( Menu.secundario === false && scrollTop > 165){
+    if ( Menu.secundario === false && scrollTop > 165 && $('body').hasClass('home')){
         Menu.exibeSecundario();
 
         $('#banner').find('.c-link a.anima').trigger('click');
 
-    }else if(scrollTop == 0){
+    }else if(scrollTop == 0 && $('body').hasClass('home')){
         Menu.exibePrincipal();
+    
     }
 
 
@@ -1025,11 +1026,14 @@ function eventosLoad(){
         $('#cena-produto').css('height', (window.innerHeight - 190) + 'px');
 
     // menu
-    if ( scrollTop > 165 && Menu.secundario === false){
+    if ( scrollTop > 165 && Menu.secundario === false && $('body').hasClass('home') ){
         Menu.exibeSecundario();
         
-    }else if(scrollTop == 0){
+    }else if(scrollTop == 0 && $('body').hasClass('home') ){
         Menu.exibePrincipal();
+
+    }else{
+        Menu.exibeSecundario();
     }
     
 }

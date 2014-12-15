@@ -3,7 +3,7 @@
 include 'inc/init.php';
 include 'inc/erro.php';
 
-$i = ( isset($_GET['i']) ) ? $_GET['i'] : '';
+$i = ( isset($_GET['i']) ) ? $_GET['i'] : 'home';
 
 ?>
 <!doctype html>
@@ -23,7 +23,7 @@ $i = ( isset($_GET['i']) ) ? $_GET['i'] : '';
 
         <script src="<?= __URL ?>js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
-    <body>
+    <body class="<?= $i ?>">
         <!--[if lt IE 8]>
             <p class="browsehappy">Você está usando um navegador (browser) <strong>desatualizado</strong>. Por favor <a href="http://browsehappy.com/">atualize seu navegador</a> para uma melhor experiência.</p>
         <![endif]-->
