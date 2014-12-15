@@ -1,5 +1,5 @@
 
-<div class="banner slide" id="banner">				
+<div class="banner slide" id="banner">
 	<div class="c-img">
 		<ul>
 			<li style="background-image: url(img/banner-001.jpg)" class="ativo"><!-- <img src="img/banner-1.jpg" alt="banner"> --></li>
@@ -18,7 +18,7 @@
 						<circle cx="23" cy="23" r="20" class="border-opacity" />
 						<circle cx="23" cy="23" r="20" class="border" />
 						<circle cx="23" cy="23" r="6" fill="white" />
-					</svg> 
+					</svg>
 				</a>
 			</li>
 			<li>
@@ -27,7 +27,7 @@
 						<circle cx="23" cy="23" r="20" class="border-opacity" />
 						<circle cx="23" cy="23" r="20" class="border" />
 						<circle cx="23" cy="23" r="6" fill="white" />
-					</svg> 
+					</svg>
 				</a>
 			</li>
 			<li>
@@ -36,7 +36,7 @@
 						<circle cx="23" cy="23" r="20" class="border-opacity" />
 						<circle cx="23" cy="23" r="20" class="border" />
 						<circle cx="23" cy="23" r="6" fill="white" />
-					</svg> 
+					</svg>
 				</a>
 			</li>
 			</ul>
@@ -50,11 +50,11 @@
 	<a name="produtos" class="ancora"></a>
 
 	<div class="cena-produto" id="cena-produto">
-		
+
 		<div class="load"><img src="<?= __URL ?>img/loader.gif" height="16" width="16" alt="carregando..."></div>
 
 		<div class="cena1">
-			
+
 			<div class="banner" id="banner-produto">
 				<div class="c-img">
 					<ul>
@@ -98,7 +98,7 @@
 								<circle cx="23" cy="23" r="20" class="border-opacity" />
 								<circle cx="23" cy="23" r="20" class="border" />
 								<circle cx="23" cy="23" r="6" fill="white" />
-							</svg> 
+							</svg>
 						</a>
 					</li>
 					<li>
@@ -107,7 +107,7 @@
 								<circle cx="23" cy="23" r="20" class="border-opacity" />
 								<circle cx="23" cy="23" r="20" class="border" />
 								<circle cx="23" cy="23" r="6" fill="white" />
-							</svg> 
+							</svg>
 						</a>
 					</li>
 					<li>
@@ -116,7 +116,7 @@
 								<circle cx="23" cy="23" r="20" class="border-opacity" />
 								<circle cx="23" cy="23" r="20" class="border" />
 								<circle cx="23" cy="23" r="6" fill="white" />
-							</svg> 
+							</svg>
 						</a>
 					</li>
 					</ul>
@@ -130,7 +130,7 @@
 		</div>
 
 		<div class="cena3">
-			
+
 		</div>
 
 	</div>
@@ -217,7 +217,7 @@
 	<a name="receitas" class="ancora"></a>
 	<div id="cena-receita" class="cena-receita">
 		<div class="load"><img src="<?= __URL ?>img/loader.gif" height="16" width="16" alt="carregando..."></div>
-		
+
 		<div class="banner" id="banner-receita">
 			<div class="c-img">
 				<ul>
@@ -263,7 +263,7 @@
 							<circle cx="23" cy="23" r="20" class="border-opacity" />
 							<circle cx="23" cy="23" r="20" class="border" />
 							<circle cx="23" cy="23" r="6" fill="white" />
-						</svg> 
+						</svg>
 					</a>
 				</li>
 				<li>
@@ -272,7 +272,7 @@
 							<circle cx="23" cy="23" r="20" class="border-opacity" />
 							<circle cx="23" cy="23" r="20" class="border" />
 							<circle cx="23" cy="23" r="6" fill="white" />
-						</svg> 
+						</svg>
 					</a>
 				</li>
 				<li>
@@ -281,7 +281,7 @@
 							<circle cx="23" cy="23" r="20" class="border-opacity" />
 							<circle cx="23" cy="23" r="20" class="border" />
 							<circle cx="23" cy="23" r="6" fill="white" />
-						</svg> 
+						</svg>
 					</a>
 				</li>
 				</ul>
@@ -289,7 +289,7 @@
 		</div>
 
 		<div class="resultado">
-			
+
 		</div>
 
 	</div>
@@ -357,7 +357,7 @@
 	<h2 class="hidden">aplicativos</h2>
 	<a name="dicas-e-aplicativos" class="ancora"></a>
 
-	<div class="banner" id="banner-aplicativo">	
+	<div class="banner" id="banner-aplicativo">
 		<div class="c-img">
 			<ul>
 				<li class="ativo" style="background-image: url(img/aplicativo-1.jpg)">
@@ -422,7 +422,7 @@
 							<circle cx="20" cy="20" r="17" class="border-opacity" />
 							<circle cx="20" cy="20" r="17" class="border" />
 							<circle cx="20" cy="20" r="5" fill="#999999" />
-						</svg> 
+						</svg>
 					</a>
 				</li>
 				<li>
@@ -431,7 +431,7 @@
 							<circle cx="20" cy="20" r="17" class="border-opacity" />
 							<circle cx="20" cy="20" r="17" class="border" />
 							<circle cx="20" cy="20" r="5" fill="#999999" />
-						</svg> 
+						</svg>
 					</a>
 				</li>
 				<li>
@@ -440,7 +440,7 @@
 							<circle cx="20" cy="20" r="17" class="border-opacity" />
 							<circle cx="20" cy="20" r="17" class="border" />
 							<circle cx="20" cy="20" r="5" fill="#999999" />
-						</svg> 
+						</svg>
 					</a>
 				</li>
 				</ul>
@@ -448,7 +448,7 @@
 		</div>
 
 		<div class="box right">
-			
+
 			<!-- <img src="img/sevicos-2.jpg" alt="imagem"> -->
 			<div class="c-img">
 				<ul>
@@ -491,7 +491,7 @@
 									<circle cx="20" cy="20" r="17" class="border-opacity" />
 									<circle cx="20" cy="20" r="17" class="border" />
 									<circle cx="20" cy="20" r="5" fill="#999999" />
-								</svg> 
+								</svg>
 							</a>
 						</li>
 						<li>
@@ -500,7 +500,7 @@
 									<circle cx="20" cy="20" r="17" class="border-opacity" />
 									<circle cx="20" cy="20" r="17" class="border" />
 									<circle cx="20" cy="20" r="5" fill="#999999" />
-								</svg> 
+								</svg>
 							</a>
 						</li>
 						<li>
@@ -509,7 +509,7 @@
 									<circle cx="20" cy="20" r="17" class="border-opacity" />
 									<circle cx="20" cy="20" r="17" class="border" />
 									<circle cx="20" cy="20" r="5" fill="#999999" />
-								</svg> 
+								</svg>
 							</a>
 						</li>
 						</ul>

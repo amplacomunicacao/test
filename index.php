@@ -31,12 +31,12 @@ $i = ( isset($_GET['i']) ) ? $_GET['i'] : 'home';
         <div class="load" id="loader"><img src="<?= __URL ?>img/loader.gif" height="16" width="16" alt="carregando..."></div>
 
         <p id="msg-landscape"><img src="img/msg01.gif" alt="gire seu dispositivo" /><br />Gire seu dispositivo.</p>
-	
+
 		<h1 class="hidden">Vitarella</h1>
 
 		<a name="topo" class="ancora"></a>
 
-	
+
 		<div class="menu" id="menu">
 			<div class="row1">
 				<div class="content">
@@ -56,7 +56,7 @@ $i = ( isset($_GET['i']) ) ? $_GET['i'] : 'home';
 							</li>
 						</ul>
 					</nav>
-				</div>					
+				</div>
 			</div>
 			<div class="row2">
 				<div class="bg"></div>
@@ -133,7 +133,7 @@ $i = ( isset($_GET['i']) ) ? $_GET['i'] : 'home';
         <script src="<?= __URL ?>js/vendor/jquery-ui.min.js"></script>
         <script src="<?= __URL ?>js/main.js"></script>
 
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. 
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
             function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
