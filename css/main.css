@@ -1,266 +1,1674 @@
-/*
- * What follows is the result of much research on cross-browser styling.
- * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
- * Kroc Camen, and the H5BP dev community and team.
- */
+* {
+  margin: 0;
+  padding: 0; }
 
-/* ==========================================================================
-   Base styles: opinionated defaults
-   ========================================================================== */
+div, dl, dt, dd, ul, ol, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquot, th, td {
+  margin: 0;
+  padding: 0; }
 
-html {
-    color: #222;
-    font-size: 1em;
-    line-height: 1.4;
-}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border: 0; }
 
-/*
- * Remove text-shadow in selection highlight: h5bp.com/i
- * These selection rule sets have to be separate.
- * Customize the background color to match your design.
- */
+fieldset, img {
+  border: 0; }
 
-::-moz-selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
+adress, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+  font-weight: normal; }
 
-::selection {
-    background: #b3d4fc;
-    text-shadow: none;
-}
+ol, ul {
+  list-style: none; }
 
-/*
- * A better looking default horizontal rule
- */
+th {
+  text-align: left; }
 
-hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: 1px solid #ccc;
-    margin: 1em 0;
-    padding: 0;
-}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+  font-weight: normal; }
 
-/*
- * Remove the gap between images, videos, audio and canvas and the bottom of
- * their containers: h5bp.com/i/440
- */
+acronym {
+  text-decoration: none;
+  border: none;
+  font-style: normal; }
 
-audio,
-canvas,
-img,
-svg,
-video {
-    vertical-align: middle;
-}
+input:focus, textarea:focus {
+  outline: none; }
 
-/*
- * Remove default fieldset styles.
- */
-
-fieldset {
-    border: 0;
-    margin: 0;
-    padding: 0;
-}
-
-/*
- * Allow only vertical resizing of textareas.
- */
+input, textarea {
+  resize: none; }
 
 textarea {
-    resize: vertical;
-}
+  overflow: auto; }
 
-/* ==========================================================================
-   Browse Happy prompt
-   ========================================================================== */
+header, section, footer {
+  display: block; }
 
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
+html, body {
+  height: 100%; }
 
-/* ==========================================================================
-   Author's custom styles
-   ========================================================================== */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* ==========================================================================
-   Helper classes
-   ========================================================================== */
-
-/*
- * Hide visually and from screen readers: h5bp.com/u
- */
+.clear {
+  clear: both; }
 
 .hidden {
-    display: none !important;
-    visibility: hidden;
-}
+  display: none; }
 
-/*
- * Hide only visually, but have it available for screen readers: h5bp.com/v
- */
+.indent, footer .sprite-1 {
+  text-indent: -9999px; }
 
-.visuallyhidden {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
+/* Webfont: Justus-Italic */
+@font-face {
+  font-family: 'Justus';
+  src: url("../fonts/Justus/Justus-Italic.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/Justus/Justus-Italic.eot?#iefix") format("embedded-opentype"), url("../fonts/Justus/Justus-Italic.woff") format("woff"), url("../fonts/Justus/Justus-Italic.ttf") format("truetype"), url("../fonts/Justus/Justus-Italic.svg#Justus-Italic") format("svg");
+  /* Legacy iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility; }
+.font1 {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400; }
+
+.font2, footer, .produtos .cena2 .lista-produtos li a p, .receitas .resultado .box .mask, .aplicativos .banner a.ver-todos {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300; }
+
+.font3, footer .row, .produtos .cena1 .banner .content, .produtos .cena3 .content, .produtos .nutricional .content, .receitas .banner .c-txt p.autor, .receitas .banner .c-txt p.autor span, .receitas .banner .c-txt h3, .receitas aside h3, .receitas aside li a, .aplicativos .banner .c-txt h3, .aplicativos nav a, .servicos .banner .box .c-txt h3, .noticias .banner .box .c-txt h3, .body-sobre .sidebar a, .body-sobre .missao li span, .body-sobre .area-de-atuacao .mapa input[type=submit], .body-sobre .premios nav a, .body-sobre .premios .box .icone, .bd h2, .bd h3, .breadcamp {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
+  font-style: italic; }
+
+.bt-more {
+  padding: 6px 18px;
+  border: 1px solid #999;
+  border-radius: 28px;
+  color: #999; }
+
+.tabs__list {
+  display: table;
+  width: 100%; }
+
+.tabs__item {
+  display: table-cell;
+  height: 80px;
+  border-top: 1px solid #f1f1f1;
+  border-right: 1px solid #f1f1f1;
+  border-bottom: 1px solid #999;
+  font-size: 24px;
+  color: #999;
+  vertical-align: middle;
+  text-align: center; }
+
+.tabs__item:first-child {
+  border-left: 1px solid #f1f1f1; }
+
+.tabs__item--active,
+.tabs__item--active:first-child {
+  border-top: 1px solid #999;
+  border-left: 1px solid #999;
+  border-right: 1px solid #999;
+  border-bottom: 1px solid #fff; }
+
+.tabs__pane {
+  padding-top: 60px; }
+
+.icon--scroll {
+  display: block;
+  width: 30px;
+  height: 56px;
+  background: url("../img/icon-scroll.png") no-repeat; }
+
+.sprite-1 {
+  display: inline-block;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-image: url(../img/sprite-1.png); }
+
+.app-calculadora {
+  width: 84px;
+  height: 84px;
+  background-position: -725px -148px; }
+
+.app-calculadora2 {
+  width: 62px;
+  height: 62px;
+  background-position: -374px -107px; }
+
+.app-calculadora2-ativo {
+  width: 62px;
+  height: 62px;
+  background-position: -438px -96px; }
+
+.app-cozinha {
+  width: 84px;
+  height: 84px;
+  background-position: -815px -2px; }
+
+.app-cozinha2 {
+  width: 63px;
+  height: 63px;
+  background-position: -270px -179px; }
+
+.app-cozinha2-ativo {
+  width: 63px;
+  height: 63px;
+  background-position: -309px -107px; }
+
+.app-lista2 {
+  width: 63px;
+  height: 63px;
+  background-position: -205px -179px; }
+
+.app-lista2-ativo {
+  width: 63px;
+  height: 63px;
+  background-position: -244px -114px; }
+
+.app-receitas2 {
+  width: 63px;
+  height: 63px;
+  background-position: -140px -179px; }
+
+.app-receitas2-ativo {
+  width: 63px;
+  height: 63px;
+  background-position: -179px -114px; }
+
+.banner-left {
+  width: 67px;
+  height: 66px;
+  background-position: -71px -179px; }
+
+.banner-right {
+  width: 67px;
+  height: 66px;
+  background-position: -2px -179px; }
+
+.bt-nutricional {
+  width: 182px;
+  height: 29px;
+  background-position: -945px -57px; }
+
+.busca-1 {
+  width: 53px;
+  height: 53px;
+  background-position: -1113px -2px; }
+
+.busca-receita {
+  width: 280px;
+  height: 47px;
+  background-position: -899px -88px; }
+
+.circulo-premios {
+  width: 103px;
+  height: 103px;
+  background-position: -272px -2px; }
+
+.facebook {
+  width: 88px;
+  height: 89px;
+  background-position: -635px -2px; }
+
+.fechar {
+  width: 40px;
+  height: 40px;
+  background-position: -938px -192px; }
+
+.fechar-2 {
+  width: 56px;
+  height: 56px;
+  background-position: -646px -93px; }
+
+.filtrar-receita {
+  width: 166px;
+  height: 53px;
+  background-position: -945px -2px; }
+
+.google {
+  width: 88px;
+  height: 89px;
+  background-position: -545px -2px; }
+
+.icon-aplicativo {
+  width: 30px;
+  height: 30px;
+  background-position: -1040px -137px; }
+
+.icon-busca {
+  width: 37px;
+  height: 36px;
+  background-position: -980px -192px; }
+
+.icon-contato {
+  width: 18px;
+  height: 13px;
+  background-position: -872px -132px; }
+
+.icon-imprensa {
+  width: 14px;
+  height: 17px;
+  background-position: -746px -234px; }
+
+.icon-mais {
+  width: 37px;
+  height: 36px;
+  background-position: -899px -192px; }
+
+.icon-premios {
+  width: 91px;
+  height: 110px;
+  background-position: -179px -2px; }
+
+.icon-produto {
+  width: 20px;
+  height: 29px;
+  background-position: -1093px -199px; }
+
+.icon-receita {
+  width: 32px;
+  height: 27px;
+  background-position: -1115px -199px; }
+
+.icon-sobre {
+  width: 19px;
+  height: 17px;
+  background-position: -725px -234px; }
+
+.icon-tempo {
+  width: 7px;
+  height: 9px;
+  background-position: -377px -96px; }
+
+.login-1 {
+  width: 166px;
+  height: 53px;
+  background-position: -704px -93px; }
+
+.mais {
+  width: 30px;
+  height: 29px;
+  background-position: -1129px -57px; }
+
+.menu-mobile {
+  width: 32px;
+  height: 22px;
+  background-position: -814px -230px; }
+
+.next-2 {
+  width: 166px;
+  height: 92px;
+  background-position: -467px -160px; }
+
+.play {
+  width: 175px;
+  height: 175px;
+  background-position: -2px -2px; }
+
+.ponto {
+  width: 3px;
+  height: 15px;
+  background-position: -874px -230px; }
+
+.ponto-cinza {
+  width: 6px;
+  height: 6px;
+  background-position: -140px -244px; }
+
+.prev-2 {
+  width: 166px;
+  height: 92px;
+  background-position: -377px -2px; }
+
+.seta-baixo {
+  width: 21px;
+  height: 11px;
+  background-position: -872px -119px; }
+
+.seta-baixo-ativo {
+  width: 21px;
+  height: 11px;
+  background-position: -879px -230px; }
+
+.seta-cima {
+  width: 21px;
+  height: 11px;
+  background-position: -872px -106px; }
+
+.seta-dir {
+  width: 42px;
+  height: 80px;
+  background-position: -811px -148px; }
+
+.seta-dir-2 {
+  width: 42px;
+  height: 80px;
+  background-position: -901px -2px; }
+
+.seta-dir-ativo {
+  width: 42px;
+  height: 80px;
+  background-position: -855px -148px; }
+
+.seta-esq {
+  width: 42px;
+  height: 80px;
+  background-position: -335px -172px; }
+
+.seta-esq-2 {
+  width: 42px;
+  height: 80px;
+  background-position: -423px -171px; }
+
+.seta-esq-ativo {
+  width: 42px;
+  height: 80px;
+  background-position: -379px -171px; }
+
+.seta-l {
+  width: 33px;
+  height: 32px;
+  background-position: -1019px -192px; }
+
+.texto-maior {
+  width: 24px;
+  height: 16px;
+  background-position: -848px -230px; }
+
+.texto-maior-ativo {
+  width: 24px;
+  height: 16px;
+  background-position: -872px -88px; }
+
+.texto-menor {
+  width: 24px;
+  height: 16px;
+  background-position: -762px -234px; }
+
+.texto-menor-ativo {
+  width: 24px;
+  height: 16px;
+  background-position: -788px -234px; }
+
+.twitter {
+  width: 88px;
+  height: 88px;
+  background-position: -725px -2px; }
+
+.ver-mais {
+  width: 91px;
+  height: 29px;
+  background-position: -1072px -137px; }
+
+.ver-mais-2 {
+  width: 91px;
+  height: 29px;
+  background-position: -1072px -168px; }
+
+.ver-mais-3 {
+  width: 142px;
+  height: 57px;
+  background-position: -502px -96px; }
+
+.ver-mais-4 {
+  width: 72px;
+  height: 23px;
+  background-position: -1019px -226px; }
+
+.ver-todos-2 {
+  width: 139px;
+  height: 53px;
+  background-position: -899px -137px; }
+
+.youtube {
+  width: 88px;
+  height: 88px;
+  background-position: -635px -155px; }
+
+body {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 400;
+  font-size: 10px;
+  color: #999;
+  background: #fff; }
+
+#msg-landscape {
+  display: none; }
+
+a.ancora {
+  position: absolute;
+  top: 0; }
+
+a {
+  text-decoration: none;
+  color: #fff; }
+
+.text-right {
+  text-align: right; }
+
+header, section, footer {
+  position: relative;
+  top: 0; }
+
+.menu-2 {
+  width: 100%;
+  height: 62px;
+  position: fixed;
+  top: -62px;
+  z-index: 5;
+  background: #ffc114; }
+  .menu-2 img {
+    margin-top: 7px; }
+  .menu-2 a.menu-mobile {
+    float: right;
+    text-indent: -9999px;
+    margin-top: 20px; }
+  .menu-2 .content {
+    width: 97%; }
+
+.menu {
+  width: 100%;
+  height: 165px;
+  position: absolute;
+  top: 0;
+  z-index: 5; }
+  .menu .row1 {
+    height: 110px;
+    background: #ffc114; }
+    .menu .row1 img {
+      margin-top: 15px; }
+    .menu .row1 nav {
+      float: right; }
+      .menu .row1 nav ul {
+        margin-top: 27px; }
+      .menu .row1 nav li {
+        display: inline-block;
+        float: left;
+        margin-right: 19px; }
+      .menu .row1 nav li:nth-child(1), .menu .row1 nav li:nth-child(2), .menu .row1 nav li:nth-child(3) {
+        margin-top: 20px; }
+      .menu .row1 nav li:last-child {
+        margin-right: 0; }
+      .menu .row1 nav a {
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: 1.4em; }
+      .menu .row1 nav .icon-sobre {
+        float: left;
+        margin-top: 4px; }
+      .menu .row1 nav .icon-imprensa {
+        float: left;
+        margin-top: 3px; }
+  .menu .row2 {
+    height: 55px;
+    position: relative; }
+    .menu .row2 .bg {
+      background: #000;
+      opacity: 0.6;
+      position: absolute;
+      width: 100%;
+      height: 100%; }
+    .menu .row2 nav li {
+      display: inline-block;
+      float: left;
+      width: 33.3%;
+      height: 55px;
+      text-align: center;
+      position: relative; }
+      .menu .row2 nav li:hover {
+        border-bottom: 2px solid #ffc114; }
+    .menu .row2 nav a {
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #fff;
+      font-size: 2em;
+      display: block;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      height: 100%;
+      padding-top: 10px; }
+    .menu .row2 nav .linha-l, .menu .row2 nav .linha-r {
+      display: block;
+      width: 1px;
+      height: 20px;
+      background: #fff;
+      position: absolute;
+      top: 20px;
+      left: 0; }
+    .menu .row2 nav .linha-r {
+      left: auto;
+      right: 0; }
+    .menu .row2 nav a span {
+      position: relative;
+      top: 4px; }
+  .menu li.busca {
+    position: relative; }
+    .menu li.busca .circulo {
+      display: block;
+      width: 53px;
+      height: 53px;
+      border: 2px solid #fff;
+      border-radius: 100px;
+      background: none;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      transition: 0.5s width; }
+    .menu li.busca input {
+      font-family: 'Titillium Web', sans-serif;
+      font-weight: 400;
+      font-size: 1.5em;
+      color: #fff;
+      display: none;
+      position: absolute;
+      top: 15px;
+      left: 50px;
+      width: 121px;
+      border: none;
+      background: none; }
+    .menu li.busca a {
+      position: absolute;
+      top: 9px;
+      left: 8px;
+      z-index: 2;
+      text-indent: -9999px; }
+
+#banner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  /*.c-img li:first-child{ display: block;}*/ }
+  #banner .c-img, #banner .c-img ul, #banner .c-img li {
+    display: block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; }
+  #banner .c-img ul {
+    width: 310%; }
+  #banner .c-img li {
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    float: left;
+    display: block;
+    width: 1206px; }
+  #banner .c-img img {
+    display: none; }
+  #banner .c-link {
     position: absolute;
-    width: 1px;
-}
+    bottom: 75px;
+    right: 0;
+    z-index: 2; }
+    #banner .c-link li {
+      display: inline-block;
+      margin-right: 20px; }
 
-/*
- * Extends the .visuallyhidden class to allow the element to be focusable
- * when navigated to via the keyboard: h5bp.com/p
- */
+.banner .c-link-circulo {
+  width: 100%;
+  bottom: 0; }
+  .banner .c-link-circulo ul {
+    position: absolute;
+    width: 50%;
+    overflow: auto;
+    margin: 0 auto;
+    bottom: 0;
+    right: 25.493716338%;
+    text-align: center; }
+  .banner .c-link-circulo a {
+    opacity: 0.5; }
+  .banner .c-link-circulo svg circle.border {
+    fill: none;
+    stroke: white;
+    stroke-width: 5;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000; }
+  .banner .c-link-circulo svg circle.border-opacity {
+    fill: none;
+    stroke: white;
+    stroke-width: 5;
+    opacity: 0.5; }
+  .banner .c-link-circulo a.anima {
+    opacity: 1; }
+  .banner .c-link-circulo a.anima circle.border {
+    -webkit-animation: dash 40s linear forwards;
+    animation: dash 40s linear forwards; }
+@-webkit-keyframes dash {
+  from {
+    stroke-dashoffset: 1000; }
+  to {
+    stroke-dashoffset: 0; } }
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000; }
+  to {
+    stroke-dashoffset: 0; } }
+footer {
+  clear: both;
+  background: #494949;
+  font-size: 2em;
+  color: #fff; }
+  footer .content {
+    width: 100%;
+    padding: 50px 0 40px;
+    text-align: center; }
+  footer a {
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none; }
+  footer .ponto {
+    margin: 0 15px; }
+  footer .sprite-1 {
+    margin-right: 25px; }
+  footer .row {
+    background: #2e2e2e;
+    height: 40px;
+    font-size: 0.5em; }
+    footer .row p {
+      text-align: center;
+      line-height: 40px;
+      text-transform: uppercase; }
 
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-    clip: auto;
-    height: auto;
-    margin: 0;
-    overflow: visible;
-    position: static;
-    width: auto;
-}
+.load {
+  display: none; }
 
-/*
- * Hide visually and from screen readers, but maintain layout
- */
+#loader {
+  z-index: 10;
+  background: #FFC114; }
 
-.invisible {
-    visibility: hidden;
-}
+.produtos {
+  position: relative;
+  height: 100%; }
+  .produtos .cena-produto {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; }
+  .produtos .cena1 {
+    height: 100%;
+    width: 100%; }
+    .produtos .cena1 .banner {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      overflow: hidden; }
+      .produtos .cena1 .banner .c-img, .produtos .cena1 .banner .c-img ul, .produtos .cena1 .banner .c-img li {
+        display: block;
+        height: 100%;
+        width: 100%;
+        overflow: hidden; }
+      .produtos .cena1 .banner .c-img ul {
+        width: 310%; }
+      .produtos .cena1 .banner .c-img li {
+        position: relative;
+        display: block;
+        float: left;
+        height: 100%;
+        width: 100%;
+        background-position: center center;
+        background-size: cover; }
+      .produtos .cena1 .banner .content {
+        z-index: 2;
+        padding: 0 2%;
+        color: #fff;
+        text-transform: uppercase; }
+      .produtos .cena1 .banner .c-txt {
+        position: absolute;
+        top: 30%;
+        left: 20%;
+        z-index: 2;
+        margin-left: -200px; }
+        .produtos .cena1 .banner .c-txt h3 {
+          font-size: 6em; }
+        .produtos .cena1 .banner .c-txt P {
+          margin-bottom: 33px;
+          font-size: 2em; }
+        .produtos .cena1 .banner .c-txt li {
+          display: none; }
+        .produtos .cena1 .banner .c-txt li:first-child {
+          display: block; }
+        .produtos .cena1 .banner .c-txt a {
+          position: relative;
+          display: inline-block;
+          height: 80px;
+          width: 80px;
+          padding-right: 18px; }
+          .produtos .cena1 .banner .c-txt a img {
+            position: absolute;
+            top: 0; }
+          .produtos .cena1 .banner .c-txt a .mask {
+            position: absolute;
+            display: block;
+            top: -7px;
+            left: -7px;
+            height: 95px;
+            width: 95px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            opacity: 0;
+            border: 8px solid #fff;
+            border-radius: 74px;
+            content: ""; }
+          .produtos .cena1 .banner .c-txt a:hover .mask {
+            opacity: 1; }
+      .produtos .cena1 .banner .c-link {
+        position: absolute;
+        right: 0;
+        bottom: 75px;
+        z-index: 2; }
+        .produtos .cena1 .banner .c-link li {
+          display: inline-block;
+          margin-right: 20px; }
+  .produtos .cena2 {
+    height: 100%;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 62px;
+    background: #fff; }
+    .produtos .cena2 .lista-produtos, .produtos .cena2 .lista-produtos li {
+      display: block;
+      height: 100%;
+      width: 100%; }
+    .produtos .cena2 .lista-produtos li a {
+      display: block;
+      float: left;
+      height: 33%;
+      width: 33%;
+      border-bottom: 1px solid #ededed;
+      border-right: 1px solid #ededed;
+      text-align: center; }
+      .produtos .cena2 .lista-produtos li a p {
+        margin-top: 10px;
+        color: #999;
+        font-size: 2em;
+        text-transform: uppercase; }
+      .produtos .cena2 .lista-produtos li a:hover {
+        background: #ededed; }
+      .produtos .cena2 .lista-produtos li a img {
+        height: auto;
+        max-width: 200px;
+        margin-top: 10%; }
+    .produtos .cena2 .lista-produtos a:nth-child(3n) {
+      width: 33.8%;
+      border-right: 0; }
+    .produtos .cena2 a.fechar {
+      position: absolute;
+      top: 80px;
+      right: 20px;
+      text-indent: -9999px; }
+  .produtos .cena3 {
+    height: 100%;
+    width: 100%;
+    background: url(../img/produto-bg.jpg) no-repeat center center;
+    background-attachment: cover; }
+    .produtos .cena3 .content {
+      z-index: 3;
+      width: 900px;
+      padding: 120px 2% 0;
+      color: #999; }
+    .produtos .cena3 .margin-top {
+      margin-top: 20px; }
+    .produtos .cena3 .margin-left {
+      margin-left: 120px; }
+    .produtos .cena3 h3 {
+      font-size: 6em; }
+    .produtos .cena3 P {
+      margin-bottom: 20px;
+      font-size: 2em; }
+    .produtos .cena3 li {
+      display: inline-block;
+      padding-right: 18px; }
+    .produtos .cena3 .receitas {
+      overflow: visible; }
+    .produtos .cena3 .receitas a {
+      position: relative;
+      display: block;
+      height: 80px;
+      width: 80px; }
+      .produtos .cena3 .receitas a img {
+        position: absolute;
+        top: 0;
+        height: 80px;
+        width: 80px; }
+      .produtos .cena3 .receitas a .mask {
+        position: absolute;
+        display: block;
+        top: -7px;
+        left: -7px;
+        height: 95px;
+        width: 95px;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        opacity: 0;
+        border: 8px solid #fff;
+        border-radius: 74px;
+        content: ""; }
+      .produtos .cena3 .receitas a:hover .mask {
+        opacity: 1; }
+    .produtos .cena3 .box {
+      display: inline-block;
+      float: left;
+      margin-right: 50px; }
+    .produtos .cena3 .box:last-child {
+      margin-right: 0; }
+    .produtos .cena3 .foto {
+      max-height: 450px;
+      width: auto; }
+    .produtos .cena3 .desc {
+      font: 1.6em 'Justus'; }
+    .produtos .cena3 a.fechar {
+      position: absolute;
+      top: 80px;
+      right: 20px;
+      z-index: 3; }
+    .produtos .cena3 a.voltar {
+      position: absolute;
+      top: 80px;
+      left: 20px;
+      z-index: 3;
+      color: #999;
+      font-size: 1.6em; }
+      .produtos .cena3 a.voltar span {
+        float: left;
+        margin-right: 7px;
+        margin-top: -3px; }
+    .produtos .cena3 a.prev-2 {
+      position: absolute;
+      top: 40%;
+      left: -71px;
+      z-index: 3;
+      transition: 0.3s left ease-in-out; }
+      .produtos .cena3 a.prev-2:hover {
+        left: 0; }
+    .produtos .cena3 a.next-2 {
+      position: absolute;
+      top: 40%;
+      right: -71px;
+      z-index: 3;
+      transition: 0.3s right ease-in-out; }
+      .produtos .cena3 a.next-2:hover {
+        right: 0; }
+  .produtos .nutricional {
+    position: absolute;
+    display: none;
+    top: 100%;
+    left: 0;
+    z-index: 3;
+    height: 100%;
+    width: 100%;
+    padding-top: 65px;
+    background: #ffc114; }
+    .produtos .nutricional .content {
+      width: 600px;
+      min-width: 600px;
+      padding-top: 0;
+      color: #fff;
+      font-size: 1.8em; }
+    .produtos .nutricional a.fechar-2 {
+      position: absolute;
+      top: 80px;
+      right: 20px;
+      z-index: 3;
+      text-indent: -9999px; }
+    .produtos .nutricional h3 {
+      font-size: 4.2em; }
+    .produtos .nutricional table, .produtos .nutricional p {
+      margin-left: 10px;
+      font-size: 1em; }
+    .produtos .nutricional td {
+      min-width: 200px;
+      padding: 2px;
+      border-bottom: 1px solid #fff;
+      border-right: 1px solid #fff; }
+    .produtos .nutricional td:nth-child(2) {
+      padding-left: 60px; }
+    .produtos .nutricional td:nth-child(3) {
+      min-width: 80px;
+      padding-left: 30px;
+      border-right: none; }
+  .produtos .carrossel {
+    position: absolute;
+    bottom: 0;
+    z-index: 4;
+    height: 190px;
+    width: 100%;
+    overflow: hidden;
+    background: #fff; }
+    .produtos .carrossel ul {
+      height: 190px;
+      width: 1900px; }
+    .produtos .carrossel li {
+      position: relative;
+      float: left;
+      height: 190px;
+      width: 190px;
+      text-align: center; }
+      .produtos .carrossel li:hover, .produtos .carrossel li.ativo {
+        background: #ededed; }
+      .produtos .carrossel li img {
+        height: 110px;
+        width: 190px; }
+      .produtos .carrossel li a {
+        color: #999; }
+      .produtos .carrossel li p {
+        display: table-cell;
+        vertical-align: middle;
+        height: 50px;
+        width: 250px;
+        margin-top: 30px;
+        font-size: 1.6em;
+        text-align: center;
+        text-transform: uppercase;
+        line-height: 1em; }
+      .produtos .carrossel li .linha {
+        position: absolute;
+        display: block;
+        top: 105px;
+        right: 0;
+        height: 40px;
+        width: 1px;
+        background: #999; }
+  .produtos .carrossel.subcategoria {
+    height: 190px;
+    background: #ededed; }
+    .produtos .carrossel.subcategoria ul {
+      height: 190px;
+      width: 1900px; }
+    .produtos .carrossel.subcategoria li {
+      height: 190px;
+      width: 190px; }
+      .produtos .carrossel.subcategoria li:hover, .produtos .carrossel.subcategoria li.ativo {
+        background: #dcdcdc; }
+      .produtos .carrossel.subcategoria li img {
+        height: 110px;
+        width: 129px; }
 
-/*
- * Clearfix: contain floats
- *
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    `contenteditable` attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that receive the `clearfix` class.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
+.receitas {
+  position: relative;
+  height: 100%;
+  overflow: hidden; }
+  .receitas .cena-receita, .receitas .banner, .receitas .c-img {
+    position: absolute;
+    height: 100%;
+    width: 100%; }
+  .receitas .banner {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; }
+    .receitas .banner .content {
+      margin-left: -60px; }
+    .receitas .banner .c-txt {
+      position: absolute;
+      top: 20%;
+      left: 20%;
+      z-index: 3;
+      width: 100%;
+      color: #fff; }
+      .receitas .banner .c-txt img {
+        position: relative;
+        top: 70px;
+        left: -110px; }
+      .receitas .banner .c-txt p.autor {
+        margin-left: 0;
+        font-size: 1.4em;
+        text-transform: uppercase;
+        line-height: 1.4em; }
+        .receitas .banner .c-txt p.autor span {
+          font-size: 2em; }
+      .receitas .banner .c-txt h3 {
+        margin: 30px 0 15px;
+        font-size: 5em;
+        text-transform: uppercase;
+        line-height: 1em; }
+      .receitas .banner .c-txt p {
+        width: 400px;
+        margin-bottom: 15px;
+        font: 1.6em 'Justus'; }
+    .receitas .banner .c-img, .receitas .banner .c-img ul, .receitas .banner .c-img li {
+      display: block;
+      height: 100%;
+      width: 100%;
+      overflow: hidden; }
+    .receitas .banner .c-txt li {
+      display: none; }
+    .receitas .banner .c-txt li:first-child {
+      display: block; }
+    .receitas .banner .c-img ul {
+      width: 310%; }
+    .receitas .banner .c-img li {
+      position: relative;
+      display: block;
+      float: left;
+      height: 100%;
+      width: 100%;
+      background-position: center center;
+      background-size: cover; }
+    .receitas .banner .c-img img {
+      display: none; }
+    .receitas .banner .c-link {
+      position: absolute;
+      right: 330px;
+      bottom: 75px;
+      z-index: 2; }
+      .receitas .banner .c-link li {
+        display: inline-block;
+        margin-right: 20px; }
+  .receitas aside {
+    position: absolute;
+    right: 0;
+    z-index: 4;
+    height: 100%;
+    width: 320px;
+    padding-top: 62px;
+    background: #333; }
+    .receitas aside h3 {
+      margin: 25px 0;
+      color: #141414;
+      font-size: 8em;
+      text-align: center; }
+    .receitas aside .busca-receita {
+      margin: 0 0 40px 20px; }
+    .receitas aside input[type=text] {
+      display: inline-block;
+      width: 215px;
+      margin-left: 20px;
+      border: none;
+      background: none;
+      color: #fff;
+      font-family: "TitilliumWeb-Light";
+      font-size: 2em;
+      line-height: 2.2em; }
+    .receitas aside input[type=submit] {
+      display: inline-block;
+      height: 30px;
+      width: 30px;
+      border: none;
+      background: none;
+      text-indent: -9999px;
+      cursor: pointer; }
+    .receitas aside li a {
+      display: block;
+      height: 60px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding-left: 25px;
+      border-bottom: 1px solid #000;
+      background: #282828;
+      color: #999;
+      font-size: 2.4em;
+      line-height: 2.4em; }
+      .receitas aside li a:hover, .receitas aside li a.ativo {
+        color: #fff; }
+      .receitas aside li a .seta-baixo {
+        float: right;
+        margin: 25px 20px 0 0; }
+    .receitas aside .submenu {
+      display: none;
+      padding: 15px 0 15px 50px;
+      background: #000;
+      color: #333;
+      list-style-type: square;
+      list-style-position: inside; }
+      .receitas aside .submenu a {
+        display: inline-block;
+        height: 45px;
+        background: #000;
+        color: #999;
+        font-size: 2em; }
+  .receitas .resultado {
+    position: absolute;
+    display: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; }
+    .receitas .resultado ul li {
+      display: block;
+      float: left;
+      height: 100%;
+      width: 100%; }
+    .receitas .resultado .box {
+      position: relative;
+      float: left;
+      height: 50%;
+      width: 33%;
+      overflow: hidden; }
+      .receitas .resultado .box img {
+        min-height: 100%;
+        width: 100%; }
+      .receitas .resultado .box .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: url(../img/receita-mascara.png) repeat-x center center;
+        color: #fff;
+        text-align: center; }
+        .receitas .resultado .box .mask .desc {
+          position: absolute;
+          bottom: 10%;
+          width: 100%; }
+        .receitas .resultado .box .mask h4 {
+          font-size: 3em;
+          line-height: 1em; }
+        .receitas .resultado .box .mask p {
+          font-size: 1.5em; }
+          .receitas .resultado .box .mask p span.amarelo {
+            color: #ffc114; }
 
-.clearfix:before,
-.clearfix:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
-}
+.aplicativos {
+  position: relative;
+  height: 560px;
+  overflow: hidden; }
+  .aplicativos .banner, .aplicativos .c-img {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; }
+  .aplicativos .banner .content {
+    position: absolute;
+    top: 0;
+    text-align: center; }
+  .aplicativos .banner .c-txt {
+    position: absolute;
+    top: 90px;
+    z-index: 2;
+    width: 100%;
+    color: #fff;
+    letter-spacing: 1px; }
+    .aplicativos .banner .c-txt h3 {
+      width: 450px;
+      margin: 35px auto 0;
+      font-size: 5em;
+      text-transform: uppercase;
+      line-height: 1em; }
+    .aplicativos .banner .c-txt p {
+      width: 450px;
+      margin: 20px auto 30px;
+      font: 1.6em 'Justus'; }
+    .aplicativos .banner .c-txt li {
+      text-align: center; }
+  .aplicativos .banner .c-img, .aplicativos .banner .c-img ul, .aplicativos .banner .c-img li {
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow: hidden; }
+  .aplicativos .banner .c-img ul {
+    width: 310%; }
+  .aplicativos .banner .c-img li {
+    position: relative;
+    display: block;
+    float: left;
+    width: 1206px;
+    background-position: center center;
+    background-size: cover; }
+  .aplicativos .banner a.next, .aplicativos .banner a.last {
+    position: absolute;
+    top: 140px;
+    left: 3%;
+    z-index: 2;
+    text-indent: -9999px; }
+  .aplicativos .banner a.next {
+    right: 3%;
+    left: auto; }
+  .aplicativos .banner a.ver-todos {
+    position: absolute;
+    display: block;
+    top: 80px;
+    right: 3%;
+    z-index: 3;
+    color: #fff;
+    font-size: 1.6em; }
+    .aplicativos .banner a.ver-todos span {
+      float: left;
+      margin: -5px 5px 0; }
+  .aplicativos .banner .c-txt li {
+    display: none; }
+  .aplicativos .banner .c-txt li:first-child {
+    display: block; }
+  .aplicativos nav {
+    position: absolute;
+    display: none;
+    top: 0;
+    right: -325px;
+    z-index: 3;
+    height: 100%;
+    width: 325px; }
+    .aplicativos nav ul {
+      height: 100%; }
+    .aplicativos nav li {
+      display: block;
+      height: 22%; }
+    .aplicativos nav a {
+      display: block;
+      height: 100%;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      border-bottom: 1px solid #000;
+      background: #303030;
+      color: #999;
+      font-size: 2.4em;
+      line-height: 30px; }
+      .aplicativos nav a .sprite-1 {
+        float: left;
+        margin: 30px 17px 0 30px; }
+      .aplicativos nav a .txt {
+        float: left;
+        margin: 30px 0 0; }
+      .aplicativos nav a .amarelo {
+        color: #ffc114;
+        font-size: 0.9em; }
+    .aplicativos nav li:nth-child(2) a .txt {
+      margin-top: 50px; }
+    .aplicativos nav li:first-child {
+      height: 192px; }
+    .aplicativos nav li:first-child a {
+      padding-top: 62px; }
+    .aplicativos nav li.ativo a {
+      background: #222;
+      color: #fff; }
 
-.clearfix:after {
-    clear: both;
-}
+.servicos, .noticias {
+  position: relative;
+  max-height: 560px; }
+  .servicos .banner, .noticias .banner, .servicos ul, .noticias ul, .servicos li, .noticias li {
+    position: relative;
+    display: block;
+    width: 100%; }
+  .servicos .banner .box, .noticias .banner .box {
+    position: relative;
+    float: left;
+    width: 50%; }
+    .servicos .banner .box img, .noticias .banner .box img {
+      float: left;
+      width: 100%; }
+    .servicos .banner .box .c-txt, .noticias .banner .box .c-txt {
+      float: right;
+      width: 80%;
+      padding: 11% 0 9%; }
+      .servicos .banner .box .c-txt ul, .noticias .banner .box .c-txt ul {
+        float: right;
+        width: 70%;
+        padding-right: 50px; }
+      .servicos .banner .box .c-txt h3, .noticias .banner .box .c-txt h3 {
+        margin-bottom: 15px;
+        font-size: 2.5vw;
+        text-transform: uppercase;
+        line-height: 1.2em; }
+      .servicos .banner .box .c-txt p, .noticias .banner .box .c-txt p {
+        font: 1.4em 'Justus', Times; }
+    .servicos .banner .box .ver-todos-2, .noticias .banner .box .ver-todos-2 {
+      position: absolute;
+      top: 25px;
+      right: 40.035906643%;
+      color: #999; }
+      .servicos .banner .box .ver-todos-2 span, .noticias .banner .box .ver-todos-2 span {
+        float: left;
+        margin: -7px 5px 0 0; }
+    .servicos .banner .box .c-link, .noticias .banner .box .c-link {
+      position: absolute;
+      z-index: 2; }
+      .servicos .banner .box .c-link li, .noticias .banner .box .c-link li {
+        display: inline-block;
+        width: auto;
+        margin-left: 10px; }
+      .servicos .banner .box .c-link li:first-child, .noticias .banner .box .c-link li:first-child {
+        margin-left: 0; }
+    .servicos .banner .box .c-link-circulo svg circle.border-opacity, .noticias .banner .box .c-link-circulo svg circle.border-opacity, .servicos .banner .box .c-link-circulo svg circle.border, .noticias .banner .box .c-link-circulo svg circle.border {
+      stroke: #999999; }
+  .servicos .banner .box.right, .noticias .banner .box.right {
+    float: right; }
+  .servicos .ver-mais-4, .noticias .ver-mais-4 {
+    float: right;
+    text-indent: -9999px; }
 
-/* ==========================================================================
-   EXAMPLE Media Queries for Responsive Design.
-   These examples override the primary ('mobile first') styles.
-   Modify as content requires.
-   ========================================================================== */
+.noticias .banner .box .c-txt, .noticias .banner .box .ver-mais-4 {
+  float: left; }
+.noticias .play {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 37%;
+  z-index: 2;
+  margin: auto; }
+.noticias .banner .box .c-txt, .noticias .banner .box .c-link {
+  right: auto; }
+.noticias .banner .box .ver-todos-2 {
+  left: 25px; }
+.noticias .banner .c-link-circulo ul {
+  right: 19.389587074%; }
 
-@media only screen and (min-width: 35em) {
-    /* Style adjustments for viewports that meet the condition */
-}
+.body-sobre .topo {
+  z-index: 2;
+  height: 750px;
+  width: 100%;
+  background: url(../img/sobre/01.jpg);
+  background-position: center 0;
+  background-repeat: no-repeat; }
+  .body-sobre .topo .tagline {
+    position: absolute;
+    width: 815px;
+    padding-bottom: 220px;
+    bottom: 0;
+    left: calc(50% - (815px/2));
+    text-align: center; }
+  .body-sobre .topo .tagline span {
+    text-decoration: line-through;
+    color: #ffc114; }
+  .body-sobre .topo h1 {
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 100px;
+    font-weight: 200;
+    font-style: italic;
+    text-transform: uppercase;
+    color: #fff; }
+  .body-sobre .topo p {
+    font-family: 'Justus', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #fff; }
+  .body-sobre .topo .icon--scroll {
+    position: absolute;
+    padding-bottom: 78px;
+    left: calc(50% - 15px);
+    bottom: 0; }
+.body-sobre .topo:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  opacity: 0.4;
+  background: #000;
+  -webkit-transition: opacity 0.75s;
+  -moz-transition: opacity 0.75s;
+  transition: opacity 0.75s; }
+.body-sobre .topo.is-collapsed:before {
+  opacity: 0.7; }
+.body-sobre .sidebar {
+  float: left;
+  min-height: 100%;
+  width: 20.900900901%;
+  background: #ffc114; }
+  .body-sobre .sidebar li:last-child .linha {
+    display: none; }
+  .body-sobre .sidebar a {
+    position: relative;
+    display: block;
+    height: 90px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 18%;
+    color: #fff;
+    font-size: 1.5vw;
+    text-transform: uppercase;
+    line-height: 3.6em; }
+    .body-sobre .sidebar a:hover, .body-sobre .sidebar a.ativo {
+      background: #fff;
+      color: #ffc114; }
+    .body-sobre .sidebar a .linha {
+      position: absolute;
+      display: block;
+      bottom: 0;
+      left: 14%;
+      width: 75%;
+      opacity: 0.5;
+      border-top: 1px solid #fff; }
+.body-sobre .bd {
+  float: left;
+  min-height: 720px;
+  width: 79.099099099%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 32px 0 60px 2.402402402%;
+  background-color: #fff; }
+.body-sobre .missao ul {
+  margin-left: 17px;
+  list-style: square; }
+.body-sobre .missao li {
+  margin-top: 25px;
+  font-family: 'Justus';
+  font-size: 1.6em; }
+.body-sobre .missao li span {
+  color: #999;
+  font-size: 1.3em; }
+.body-sobre .area-de-atuacao {
+  padding-left: 0; }
+  .body-sobre .area-de-atuacao .col1 {
+    float: left;
+    width: 520px;
+    margin-top: 30px;
+    margin-right: 20px;
+    padding-left: 2.402402402%;
+    padding-bottom: 100px; }
+  .body-sobre .area-de-atuacao .col2 {
+    float: left;
+    width: 550px;
+    margin-top: 30px;
+    padding-left: 26px;
+    border-left: 1px solid #f1f1f1; }
+  .body-sobre .area-de-atuacao .mapa {
+    padding: 30px;
+    background: #f2f2f2; }
+    .body-sobre .area-de-atuacao .mapa p {
+      margin: 0; }
+    .body-sobre .area-de-atuacao .mapa form {
+      width: 60%; }
+    .body-sobre .area-de-atuacao .mapa input, .body-sobre .area-de-atuacao .mapa textarea {
+      display: inline-block;
+      width: 40%;
+      padding: 15px;
+      margin-right: 15px;
+      margin-top: 15px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background: none;
+      color: #666;
+      font-family: 'Justus';
+      font-size: 1.6em; }
+    .body-sobre .area-de-atuacao .mapa input[type=submit] {
+      width: auto;
+      padding: 5px 20px;
+      margin-right: 5%;
+      border: none;
+      background: #ffc114;
+      color: #fff;
+      font-size: 1.6em;
+      text-transform: uppercase; }
+    .body-sobre .area-de-atuacao .mapa textarea {
+      height: 100px;
+      width: 90%; }
+    .body-sobre .area-de-atuacao .mapa input[name='ddd'], .body-sobre .area-de-atuacao .mapa input[name='uf'] {
+      width: 6%; }
+    .body-sobre .area-de-atuacao .mapa input[name='telefone'], .body-sobre .area-de-atuacao .mapa input[name='cep'] {
+      width: 27%; }
+.body-sobre .premios {
+  position: relative; }
+  .body-sobre .premios nav {
+    position: absolute;
+    top: 400px;
+    right: 0px; }
+    .body-sobre .premios nav li {
+      margin-bottom: 20px; }
+    .body-sobre .premios nav a {
+      color: #ccc;
+      font-size: 2em; }
+      .body-sobre .premios nav a:hover, .body-sobre .premios nav a.ativo {
+        color: #ffc114; }
+      .body-sobre .premios nav a:hover span, .body-sobre .premios nav a.ativo span {
+        visibility: visible; }
+    .body-sobre .premios nav span {
+      display: inline-block;
+      float: right;
+      height: 10px;
+      width: 30px;
+      visibility: hidden;
+      margin: 15px 0 0 10px;
+      border-top: 1px solid #ffc114; }
+  .body-sobre .premios .box {
+    position: relative;
+    min-height: 250px;
+    width: 80%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 55px 0 0 25px;
+    margin-left: 40px;
+    border-left: 1px solid #f1f1f1;
+    color: #999; }
+    .body-sobre .premios .box.top {
+      padding: 0 0 0 65px;
+      margin-top: 130px; }
+    .body-sobre .premios .box.top .icone {
+      top: 0;
+      left: -45px; }
+    .body-sobre .premios .box h2 {
+      font-size: 5em; }
+    .body-sobre .premios .box .icone {
+      position: absolute;
+      top: -51px;
+      left: -52px;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding-top: 35px;
+      font-size: 2em;
+      text-align: center; }
+.body-sobre .tabs {
+  width: 88%;
+  margin: 0 auto; }
+.body-sobre .tabs__item {
+  width: 33.181473045%; }
 
-@media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
-    /* Style adjustments for high resolution devices */
-}
+.bd {
+  font-family: 'Justus'; }
+  .bd h2 {
+    padding: 50px 0 25px 0;
+    color: #999;
+    font-size: 6em;
+    text-transform: uppercase; }
+  .bd h3 {
+    margin-top: 40px;
+    color: #999;
+    font-size: 2.4em; }
+  .bd p {
+    margin-top: 25px;
+    font-size: 1.6em; }
 
-/* ==========================================================================
-   Print styles.
-   Inlined to avoid the additional HTTP request: h5bp.com/r
-   ========================================================================== */
+.breadcamp {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px 0 20px 40px;
+  border-bottom: 1px solid #f1f1f1;
+  color: #999;
+  font-size: 1.4em; }
+  .breadcamp a {
+    color: #999; }
+  .breadcamp .ativo {
+    color: #ffc114; }
+  .breadcamp .texto-menor, .breadcamp .texto-maior {
+    float: right;
+    margin-right: 10px;
+    text-indent: -9999px; }
 
-@media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster: h5bp.com/s */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+.col-faux-group {
+  position: relative;
+  float: left;
+  width: 100%; }
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+.col-faux-group:before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 20.900900901%;
+  height: 100%;
+  background-color: #ffc114; }
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+.col-faux {
+  position: relative; }
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+.list-info {
+  color: #999; }
 
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
+.list-info > li {
+  list-style-type: square;
+  margin-bottom: 30px;
+  font-family: 'Justus', sans-serif;
+  font-size: 16px; }
 
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
+.list-info__title {
+  font-family: 'Titillium Web', sans-serif;
+  font-weight: 300;
+  font-style: italic;
+  font-size: 20px; }
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+@media only screen and (max-width: 1200px) {
+  .content {
+    width: 98%; } }
+@media only screen and (max-width: 1000px) {
+  body {
+    font-size: 8px;
+    width: 100%;
+    min-width: 800px; }
 
-    thead {
-        display: table-header-group; /* h5bp.com/t */
-    }
+  .aplicativos .banner a.last {
+    margin-left: 0;
+    left: 5%; }
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+  .aplicativos .banner a.next {
+    margin-left: 0;
+    left: 90%; }
 
-    img {
-        max-width: 100% !important;
-    }
+  	/*.servicos .banner .box .c-txt, .noticias .banner .box .c-txt{ width: auto; top: 10%;}
+  
+  	.servicos .banner .box .ver-todos-2, .noticias .banner .box .ver-todos-2{left: 5%;}*/
+  /*header, .receitas, .produtos{height: 650px;}*/
+  .servicos .ver-mais-4, .noticias .ver-mais-4, .noticias .ver-mais-4 {
+    top: 160px; }
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+  .receitas .resultado .box {
+    width: 50%;
+    height: 50%; }
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
-}
+  .produtos .cena3 a.prev-2, .produtos .cena3 a.next-2 {
+    display: none; } }
+/* monitor grande */
+@media only screen and (min-width: 1500px) {
+  /*.receitas .resultado .box{ width: 25%; height: 25%; }*/ }
+@media only all and (orientation: portrait) {
+  #msg-landscape {
+    display: block;
+    text-align: center;
+    font: 14px Arial, Helvetica, sans-serif;
+    color: #000;
+    margin-top: 10%; }
+
+  header, section, footer {
+    display: none; } }
+@media only all and (orientation: landscape) {
+  /*#msg-girar{display:none}*/ }
+
+/*# sourceMappingURL=main.css.map */

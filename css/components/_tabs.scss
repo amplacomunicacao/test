@@ -1,0 +1,32 @@
+.tabs__list {
+	display: table;
+	width: 100%;
+}
+
+.tabs__item {
+	display: table-cell;
+	height: 80px;
+	border-top: 1px solid #f1f1f1;
+	border-right: 1px solid #f1f1f1;
+	border-bottom: 1px solid #999;
+	font-size: 24px;
+	color: #999;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.tabs__item:first-child {
+	border-left: 1px solid #f1f1f1;
+}
+
+.tabs__item--active,
+.tabs__item--active:first-child {
+	border-top: 1px solid #999;
+	border-left: 1px solid #999;
+	border-right: 1px solid #999;
+	border-bottom: 1px solid #fff;
+}
+
+.tabs__pane {
+	padding-top: 60px;
+}

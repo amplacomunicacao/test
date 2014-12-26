@@ -14,12 +14,14 @@ $i = ( isset($_GET['i']) ) ? $_GET['i'] : 'home';
         <title>Massas Cream Crackers Biscoitos e muito mais Vitarella</title>
         <meta name="description" content="No mercado desde 1993, a Vitarella se destaca como uma marca de sucesso no meio da indústria de alimentos. Líder de mercado, a empresa pernambucana conta com uma vasta linha de produtos.">
         <meta name="keywords" content="vitarella, massa, biscoito, massas, macarrão, espaguete, spaghetti, biscoitos, cream cracker, saltvita, maria, maizena, treloso, chocoresco, wafer, amanteigados, sequilhos, fettuccine, sobremesa, lanche, pernambuco" />
-		<meta name="robots" content="all" />
+				<meta name="robots" content="all" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- <link rel="stylesheet" href="css/main.css"> -->
-        <link rel="stylesheet/less" type="text/css" href="<?= __URL ?>css/main.less">
-        <script src="<?= __URL ?>js/vendor/less.js"></script>
+				<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,300,200italic,300italic' rel='stylesheet' type='text/css'>
+
+        <link rel="stylesheet" href="css/main.css">
+        <!-- <link rel="stylesheet/less" type="text/css" href="<?= __URL ?>css/main.less">
+        <script src="<?= __URL ?>js/vendor/less.js"></script> -->
 
         <script src="<?= __URL ?>js/vendor/modernizr-2.8.3.min.js"></script>
     </head>

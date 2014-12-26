@@ -1,10 +1,7 @@
 
 <div class="body-sobre">
 
-	<section class="topo">
-		
-	</section>
-	
+	<?php include 'inc/topo-sobre.php'; ?>
 
 	<div class="clear"></div>
 
@@ -21,7 +18,7 @@
 			<a href="#" class="sprite-1 texto-maior" title="aumentar tamanho do texto">aumentar tamanho do texto</a>
 			<a href="#" class="sprite-1 texto-menor" title="diminuir tamanho do texto">diminuir tamanho do texto</a>
 		</div>
-		
+
 		<h2>Sobre a Vitarella</h2>
 
 		<p>A marca Vitarella nasceu em 1993, em Jaboatão dos Guararapes, Pernambuco. Inicialmente com apenas 30 colaboradores e focada na produção de massas alimentícias, a unidade expandiu seu portfólio e hoje possui mais de 100 produtos cadastrados, atuando também no segmento de biscoitos, com crackers, rosquinhas, recheados, wafers, amanteigados, tortinhas, entre outros - e marcas como Treloso, Chocoresco e Saltvip.</p>

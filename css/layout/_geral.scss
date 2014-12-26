@@ -1,0 +1,20 @@
+// ==========================================================================
+// Geral
+// ==========================================================================
+
+body{
+	font-family: 'Titillium Web', sans-serif; font-weight: 400;
+	font-size:10px;
+	color:#999;
+	background:#fff;
+}
+
+#msg-landscape{display:none}
+a.ancora{ position: absolute; top: 0;}
+a{ text-decoration: none; color: #fff; }
+.text-right{text-align: right;}
+
+header, section, footer{
+	position: relative;
+	top: 0;
+}

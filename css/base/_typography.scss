@@ -1,0 +1,20 @@
+// ==========================================================================
+// Font Face
+// ==========================================================================
+
+/* Webfont: Justus-Italic */
+@font-face {
+    font-family: 'Justus';
+    src: url('../fonts/Justus/Justus-Italic.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Justus/Justus-Italic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../fonts/Justus/Justus-Italic.woff') format('woff'), /* Modern Browsers */
+         url('../fonts/Justus/Justus-Italic.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('../fonts/Justus/Justus-Italic.svg#Justus-Italic') format('svg'); /* Legacy iOS */
+    font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+
+.font1{ font-family: 'Titillium Web', sans-serif; font-weight: 400; }
+.font2{ font-family: 'Titillium Web', sans-serif; font-weight: 300; }
+.font3{ font-family: 'Titillium Web', sans-serif; font-weight: 300; font-style: italic }

@@ -1,0 +1,433 @@
+// ==========================================================================
+// Sobre - interna
+// ==========================================================================
+
+.body-sobre {
+	.topo {
+		z-index: 2;
+		height: 750px;
+		width: 100%;
+		background: url(../img/sobre/01.jpg);
+		background-position: center 0;
+		background-repeat: no-repeat;
+
+		.tagline {
+			position: absolute;
+			width: 815px;
+			padding-bottom: 220px;
+			bottom: 0;
+			left: calc(50% - (815px/2));
+			text-align: center;
+		}
+
+		.tagline span {
+			text-decoration: line-through;
+			color: #ffc114;
+		}
+
+		h1 {
+			font-family: 'Titillium Web', sans-serif;
+			font-size: 100px;
+			font-weight: 200;
+			font-style: italic;
+			text-transform: uppercase;
+			color: #fff;
+		}
+
+		p {
+			font-family: 'Justus', sans-serif;
+			font-weight: 300;
+			font-size: 16px;
+			color: #fff;
+		}
+
+		.icon--scroll {
+			position: absolute;
+			padding-bottom: 78px;
+			left: calc(50% - 15px);
+			bottom: 0;
+		}
+	}
+
+	.topo:before {
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		opacity: 0.4;
+		background: #000;
+		-webkit-transition: opacity 0.75s;
+		   -moz-transition: opacity 0.75s;
+		        transition: opacity 0.75s;
+	}
+
+	.topo.is-collapsed:before {
+		opacity: 0.7;
+	}
+
+	.sidebar {
+		float: left;
+
+		min-height: 100%;
+		width: 20.900900901%;
+
+		background: $amarelo;
+
+		li:last-child .linha {
+			display: none;
+		}
+
+		a {
+			@extend .font3;
+
+			position: relative;
+			display: block;
+
+			height: 90px;
+			@include box-sizing(border-box);
+			padding: 0 18%;
+
+			color: #fff;
+			font-size: 1.5vw;
+			text-transform: uppercase;
+			line-height: 3.6em;
+
+			&:hover, &.ativo {
+				background: #fff;
+
+				color: $amarelo;
+			}
+
+			.linha {
+				position: absolute;
+				display: block;
+				bottom: 0;
+				left: 14%;
+
+				width: 75%;
+				opacity: 0.5;
+				border-top: 1px solid #fff;
+			}
+		}
+	}
+
+	.bd {
+		float: left;
+
+		min-height: 720px;
+		width: 79.099099099%;
+		@include box-sizing(border-box);
+		padding: 32px 0 60px 2.402402402%;
+		background-color: #fff;
+	}
+
+	// missao
+	.missao ul {
+		margin-left: 17px;
+
+		list-style: square;
+	}
+
+	.missao li {
+		margin-top: 25px;
+
+		font-family: 'Justus';
+		font-size: 1.6em;
+	}
+
+	.missao li span {
+		@extend .font3;
+
+		color: #999;
+		font-size: 1.3em;
+	}
+
+	// area de atuacao
+	.area-de-atuacao {
+
+		padding-left: 0;
+
+		.col1 {
+			float: left;
+
+			width: 520px;
+			margin-top: 30px;
+			margin-right: 20px;
+			padding-left: 2.402402402%;
+			padding-bottom: 100px;
+		}
+
+		.col2 {
+			float: left;
+
+			width: 550px;
+			margin-top: 30px;
+			padding-left: 26px;
+			border-left: 1px solid #f1f1f1;
+		}
+
+		.mapa {
+			padding: 30px;
+
+			background: $bg-cinza;
+
+			p {
+				margin: 0;
+			}
+
+			form {
+				width: 60%;
+			}
+
+			input, textarea {
+				display: inline-block;
+
+				width: 40%;
+				padding: 15px;
+				margin-right: 15px;
+				margin-top: 15px;
+				border: 1px solid #ccc;
+				border-radius: 3px;
+
+				background: none;
+
+				color: $fonte-cinza;
+				font-family: 'Justus';
+				font-size: 1.6em;
+			}
+
+			input[type=submit] {
+				@extend .font3;
+
+				width: auto;
+				padding: 5px 20px;
+				margin-right: 5%;
+				border: none;
+
+				background: $amarelo;
+
+				color: #fff;
+				font-size: 1.6em;
+				text-transform: uppercase;
+			}
+
+			textarea {
+				height: 100px;
+				width: 90%;
+			}
+
+			input[name='ddd'], input[name='uf'] {
+				width: 6%;
+			}
+
+			input[name='telefone'], input[name='cep'] {
+				width: 27%;
+			}
+		}
+	}
+
+	// premios
+	.premios {
+		position: relative;
+
+		nav {
+			position: absolute;
+			top: 400px;
+			right: 0px;
+
+			li {
+				margin-bottom: 20px;
+			}
+
+			a {
+				@extend .font3;
+
+				color: #ccc;
+				font-size: 2em;
+
+				&:hover, &.ativo {
+					color: $amarelo;
+				}
+
+				&:hover span, &.ativo span {
+					visibility: visible;
+				}
+			}
+
+			span {
+				display: inline-block;
+				float: right;
+
+				height: 10px;
+				width: 30px;
+				visibility: hidden;
+				margin: 15px 0 0 10px;
+				border-top: 1px solid $amarelo;
+			}
+		}
+
+		.box {
+			position: relative;
+
+			min-height: 250px;
+			width: 80%;
+			@include box-sizing(border-box);
+			padding: 55px 0 0 25px;
+			margin-left: 40px;
+			border-left: 1px solid #f1f1f1;
+
+			color: #999;
+
+			&.top {
+				padding: 0 0 0 65px;
+				margin-top: 130px;
+			}
+
+			&.top .icone {
+				top: 0;
+				left: -45px;
+			}
+
+			h2 {
+				font-size: 5em;
+			}
+
+			.icone {
+				@extend .font3;
+
+				position: absolute;
+				top: -51px;
+				left: -52px;
+
+				@include box-sizing(border-box);
+				padding-top: 35px;
+
+				font-size: 2em;
+				text-align: center;
+			}
+		}
+	}
+
+	.tabs {
+		width: 88%;
+		margin: 0 auto;
+	}
+
+	.tabs__item {
+		width: 33.181473045%;
+	}
+}
+
+.bd {
+	font-family: 'Justus';
+
+	h2 {
+		padding: 50px 0 25px 0;
+		@extend .font3;
+
+		color: #999;
+		font-size: 6em;
+		text-transform: uppercase;
+	}
+
+	h3 {
+		@extend .font3;
+
+		margin-top: 40px;
+
+		color: #999;
+		font-size: 2.4em;
+	}
+
+	p {
+		margin-top: 25px;
+
+		font-size: 1.6em;
+	}
+}
+
+.breadcamp {
+	@extend .font3;
+
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	width: 100%;
+	@include box-sizing(border-box);
+	padding: 20px 0 20px 40px;
+	border-bottom: 1px solid #f1f1f1;
+
+	color: #999;
+	font-size: 1.4em;
+
+	a {
+		color: #999;
+	}
+
+	.ativo {
+		color: $amarelo;
+	}
+
+	.texto-menor, .texto-maior {
+		float: right;
+
+		margin-right: 10px;
+
+		text-indent: -9999px;
+	}
+}
+
+.col-faux-group {
+	position: relative;
+	float: left;
+	width: 100%;
+}
+
+.col-faux-group:before {
+	content: "";
+	position: absolute;
+	display: block;
+	width: 20.900900901%;
+	height: 100%;
+	background-color: #ffc114;
+}
+
+.col-faux {
+	position: relative;
+}
+
+.list-info {
+	color: #999;
+}
+
+.list-info>li {
+	list-style-type: square;
+	margin-bottom: 30px;
+	font-family: 'Justus', sans-serif;
+	font-size: 16px;
+}
+
+.list-info__title {
+	font-family: 'Titillium Web', sans-serif;
+	font-weight: 300;
+	font-style: italic;
+	font-size: 20px;
+}
+
+// .list-info dt:before {
+// 	content: "▪";
+// 	padding-right: 5px;
+// 	font-style: normal;
+// }
+
+// .list-info dd {
+// 	margin-bottom: 30px;
+// 	font-family: 'Justus', sans-serif;
+// 	font-size: 16px;
+// }
+
+

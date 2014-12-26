@@ -926,7 +926,25 @@ _telaReceita.init();
 
 
 
+// parallax
+$('.js-parallax').each(function(){
+	var $obj = $(this);
 
+	$(window).scroll(function() {
+		if($obj.hasClass('topo')){
+			var yPosBg = -($(window).scrollTop() / $obj.data('speed'));
+			var bgPosBg = '50% '+ yPosBg + 'px';
+			$obj.css('background-position', bgPosBg );
+
+		} else {
+			var yPos = ($(window).scrollTop() / $obj.data('speed'));
+			var bgPos = yPos + 'px';
+			$obj.css('bottom', bgPos );
+		}
+	});
+
+	console.log($obj);
+});
 
 
 
@@ -954,6 +972,12 @@ function mudaUrlScroll(){
 function eventosScroll(){
     scrollTop = parseInt(window.scrollY);
 
+    if (scrollTop > 80) {
+    	$('.topo').addClass('is-collapsed');
+    } else {
+			$('.topo').removeClass('is-collapsed');
+    }
+
     // ativo carrossel receita
     // receitaCarrosselInit();
 
@@ -963,13 +987,15 @@ function eventosScroll(){
 
     // menu
     if ( Menu.secundario === false && scrollTop > 165 && $('body').hasClass('home')){
-        Menu.exibeSecundario();
 
+        Menu.exibeSecundario();
         $('#banner').find('.c-link a.anima').trigger('click');
 
     }else if(scrollTop == 0 && $('body').hasClass('home')){
         Menu.exibePrincipal();
-    
+
+    }else if( Menu.secundario === false ){
+    	Menu.exibeSecundario();
     }
 
 
@@ -1028,7 +1054,7 @@ function eventosLoad(){
     // menu
     if ( scrollTop > 165 && Menu.secundario === false && $('body').hasClass('home') ){
         Menu.exibeSecundario();
-        
+
     }else if(scrollTop == 0 && $('body').hasClass('home') ){
         Menu.exibePrincipal();
 
@@ -1058,6 +1084,7 @@ $(window).bind('resize', eventosResize);
 /*
     bg parallax
 */
+
 /*(function($){
 
     $.fn.parallaxBg = function(options){

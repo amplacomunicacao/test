@@ -1,0 +1,42 @@
+// ==========================================================================
+// Media Queries
+// ==========================================================================
+
+@media only screen and (max-width: 1200px) {
+
+	.content{ width: 98%; }
+}
+
+@media only screen and (max-width: 1000px) {
+
+	body{ font-size: 8px; width: 100%; min-width: 800px;}
+
+	.aplicativos .banner a.last{ margin-left: 0; left: 5%;}
+	.aplicativos .banner a.next{ margin-left: 0; left: 90%;}
+
+	/*.servicos .banner .box .c-txt, .noticias .banner .box .c-txt{ width: auto; top: 10%;}
+
+	.servicos .banner .box .ver-todos-2, .noticias .banner .box .ver-todos-2{left: 5%;}*/
+
+	/*header, .receitas, .produtos{height: 650px;}*/
+	.servicos .ver-mais-4, .noticias .ver-mais-4{ top: 160px;}
+
+	.receitas .resultado .box{ width: 50%; height: 50%; }
+
+	.produtos .cena3 a.prev-2, .produtos .cena3 a.next-2{ display: none; }
+
+}
+
+/* monitor grande */
+@media only screen and (min-width: 1500px){
+	/*.receitas .resultado .box{ width: 25%; height: 25%; }*/
+}
+
+@media only all and (orientation: portrait) {
+	#msg-landscape{display:block; text-align:center; font:14px Arial, Helvetica, sans-serif; color:#000; margin-top:10%}
+	header, section, footer{display:none}
+}
+
+@media only all and (orientation: landscape) {
+	/*#msg-girar{display:none}*/
+}
